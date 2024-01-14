@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strobe</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function changeColor() {
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+
+            document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+
+            requestAnimationFrame(changeColor);
+        }
+        changeColor();
+    </script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="icon" href="textures/logo.png" type="image/png">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Coolio - Games</title>
+	<style>
+		body {
+		            margin: 0;
+		            font-family: Arial, sans-serif;
+		            background-color: #1a2023;
+		        }
+		
+		        nav {
+		            background-color: #0e1213;
+		            color: white;
+		            padding: 10px;
+		            display: flex;
+		            justify-content: space-between;
+		            align-items: center;
+		        }
+		
+		        .logo {
+		            display: flex;
+		            align-items: center;
+		            margin-left: 10px;
+		        }
+		
+		        .logo img {
+		            height: 43px;
+		            margin-right: 17px;
+		            draggable: false;
+		        }
+		
+		        h1 {
+		            margin: 0;
+		            font-size: 35px;
+		            font-weight: bold;
+					font-family: "Montserrat", sans-serif;
+		        }
+				
+				h2 {
+    margin: 25px 0;
+    font-size: 60px;
+    font-weight: bold;
+    color: #FFFFFF; /* Hexadecimal code for white */
+    text-align: center; /* Center text horizontally */
+    font-family: "Montserrat", sans-serif;
+}
+		
+		        .buttons {
+		            display: flex;
+		            align-items: center;
+		        }
+		
+		        .button {
+		            margin-left: 50px;
+		            transition: transform 0.2s, box-shadow 0.2s;
+		            position: relative;
+		        }
+		
+		        .button a {
+		            text-decoration: none;
+		            color: white;
+		            padding: 12px 17px;
+		            border-radius: 15px;
+		            font-family: "JetBrains Mono", monospace;
+		            font-weight: 400;
+		            font-size: 18px;
+		            letter-spacing: 0.5px;
+		            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+		        }
+		
+		        .button:not(:last-child)::before {
+		            content: "";
+		            position: absolute;
+		            height: 75%;
+		            width: 2.75px;
+		            background-color: #555;
+		            top: 3px;
+		            right: -25px;
+		            bottom: 0;
+		            transform: skewX(-20deg);
+		        }
+		
+		        .button a:hover {
+		            background-color: #007bff;
+		            box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
+		        }
+		
+		        /* New CSS for boxes */
+		        .box-container {
+		            display: flex;
+		            flex-wrap: wrap;
+		            padding: 20px;
+		            justify-content: center;
+		            align-items: flex-start;
+		        }
+				
+		
+		        .box {
+    width: 200px;
+    height: 150px; /* Set the desired square size */
+    margin: 30px 4px; /* More margin at the top and bottom, 15px on the right and left */
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    border-radius: 25px;
+}
+		
+		.box:hover {
+		    transform: scale(1.05);
+		    box-shadow: 0 0 35px #007bff;
+			
+		}
+		
+		.box img {
+		    width: 105px;
+		    height: 105px;
+		    object-fit: cover;
+		    border-radius: 10px;
+		    position: relative;
+		    top: 15px; /* Move the image down by 5px */
+		}
+		
+		.box p {
+		    position: absolute;
+		    bottom: 5px;
+		    left: 0;
+		    right: 0;
+		    margin: 0;
+		    font-size: 17px; /* Adjust the font size as needed */
+		    font-weight: bold; /* Make the text bold */
+		    color: #fff;
+			font-family: "JetBrains Mono", monospace;
+		    font-weight: 400;
+		}
+		
+		
+		        .iframe-container {
+		            display: none;
+		            position: fixed;
+		            top: 0;
+		            left: 0;
+		            width: 100%;
+		            height: 100%;
+		            background-color: rgba(0, 0, 0, 0.9); /* Adjust the opacity as needed */
+		            z-index: 1000;
+		        }
+		
+		        .box.active .iframe-container {
+		            display: block;
+		        }
+		
+		        .iframe-container iframe {
+		            width: 100%;
+		            height: 100%;
+		            border: none;
+		        }
+				
+				.search-bar {
+    text-align: center;
+    margin: 15px 0;
+}
+
+input[type="text"] {
+    padding: 20px;
+	text-align: center;
+    font-size: 25px;
+    background-color: #111; /* Background color for the search bar */
+	color: #FFF;
+    border: none;
+    border-radius: 10px; /* Smoother edges */
+    width: calc(500px); /* Initial size */
+	height: 60px;
+    transition: width 0.2s ease;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+	font-family: "JetBrains Mono", monospace;
+}
+
+/* Add these styles for the search bar animation */
+input[type="text"]:focus {
+    width: calc(37%); /* Grow 15px on both sides */
+    outline: none;
+}
+		
+	</style>
+</head>
+
+<body>
+	<nav>
+		<div class="logo">
+			<img src="textures/logo.png" alt="Logo" draggable="false">
+			<h1>Coolio</h1>
+		</div>
+		<div class="buttons">
+			<div class="button"><a href="home.html">Home</a></div>
+			<div class="button"><a href="games.html">Games</a></div>
+			<div class="button"><a href="sites.html">Sites</a></div>
+			<div class="button"><a href="school.html">School</a></div>
+			<div class="button"><a href="misc.html">Misc</a></div>
+		</div>
+	</nav>
+<h2>Games</h2>
+
+<div class="search-bar">
+        <input type="text" id="searchInput" oninput="filterGames()" placeholder="Search games">
+    </div>
+	
+	<div class="box-container" id="boxContainer">
+		<!-- Box 1 -->
+		<div class="box" onclick="openGame('https://sd592g.github.io/zj684od4lfg/')">
+			<img src="https://cdn.iconscout.com/icon/free/png-256/minecraft-2752120-2284937.png" alt="image">
+			<p>Minecraft 1.5.2</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<!-- Box 2 -->
+		<div class="box" onclick="openGame('https://webglmath.github.io/drift-hunters/')">
+			<img src="https://imgs.search.brave.com/JNKY_hcSfENonFWmuBcC2JTEuPkhIxGBAb0na2Z3Nxw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kcmlm/dC1odW50ZXJzLmlv/L2RhdGEvaW1hZ2Uv/ZHJpZnQtaHVudGVy/cy5wbmc" alt="image">
+			<p>Drift Hunters</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://unblocked76.github.io/subway-surfers-sanfancisco/')">
+			<img src="https://cdnb.artstation.com/p/assets/images/images/040/799/939/large/celine-j-1-74-shanghai-icon-1024-x.jpg?1629908071" alt="image">
+			<p>Subway Surfers</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://acb.caculatorgeo.online/demo')">
+			<img src="https://play-lh.googleusercontent.com/WNWZaxi9RdJKe2GQM3vqXIAkk69mnIl4Cc8EyZcir2SKlVOxeUv9tZGfNTmNaLC717Ht=w240-h480-rw" alt="image">
+			<p>Roblox</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://ubg77.github.io/game131022/drive-mad/')">
+			<img src="https://imgs.search.brave.com/3rxS6XxMsCh9HgI_yUQlArcH1QyC0pgOTM85j30E-7M/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtZWRzLXNzbC54/Ym94bGl2ZS5jb20v/aW1hZ2U_dXJsPTRy/dDkubFhEQzRIXzkz/bGFWMV9lSEhGVDk0/OWZVaXB6a2lGT0JI/M2ZBaVpaVUNkWW9q/d1V5WDJhVG9uUzFh/SXdNcng2TlVJc0hm/VUhTTHpqR0pGeHht/VDRGa2hvcDFkMnRJ/bW1fTjYuTjFqeHU5/Z3EzTTB5QTdVQlVD/MXphY1R6MXB6V0do/UkN3em54X3FYMXRT/Z1ZLYTlNenE0NllU/S0hXVUFVYzV1ejdV/RS0mZm9ybWF0PXNv/dXJjZQ" alt="image">
+			<p>Drive Mad</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@0d8fb9c7430567ed0900902593eee6ba2ba8d297/ts3.xml')">
+			<img src="https://imgs.search.brave.com/wi3r1Ks_lJo1BF_hFv8LHqSkeFi5JjAm2vIshKAZkuw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9rZXZp/bi5nYW1lcy9hc3Nl/dHMvY2FjaGVfaW1h/Z2UvbmV3L3RpbWUt/c2hvb3Rlci0zLXN3/YXRfMjAweDIwMF9k/OWQud2VicA" alt="image">
+			<p>Time Shooter 3</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/element@9cccb2fafb569c963501a5d818472b561121cea6/totm.xml')">
+			<img src="https://imgs.search.brave.com/z6mhSRABfEsUEOUAMbV5OHwb0q9jjU3CSpxGynodNGs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90b21i/b2Z0aGVtYXNrLmdp/dGh1Yi5pby9pbWcv/dG9tYi1vZi10aGUt/bWFzay5wbmc" alt="image">
+			<p>Tomb Of The Mask</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/RobiFet/workflow@60b41ef8c9123ae41b86bf04c9b39e1a5713aaa9/bin/gs.xml')">
+			<img src="https://imgs.search.brave.com/vLRNaMbqhMHHDNs78OkYMQ92Jwt8PZav8qLVLj2oKY0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9iaXRs/aWZlb25saW5lLmlv/L3VwbG9hZC9pbWdz/L2d1bi1zcGluLWdh/bWUxLnBuZw" alt="image">
+			<p>Gun Spin</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://unblockedgamesworlds.github.io/monkey-mart/')">
+			<img src="https://imgs.search.brave.com/OjxcXjvRCIdFZPNyotGYJRhkZTscxlNjJIYUHV177U8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zbG9w/ZS1nYW1lLmdpdGh1/Yi5pby9pbWcvbWsu/cG5n" alt="image">
+			<p>Monkey Mart</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://unblocked-games.s3.amazonaws.com/games/snow-war-io/index.html')">
+			<img src="https://play-lh.googleusercontent.com/X8FEOENa_t5mlRllBh2RRLc6sMnPIq56Wxa2ndValDOmwzIRhAv7MG6fT97TLQ2DK48" alt="image">
+			<p>Snow War.io</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://unblocked-games.s3.amazonaws.com/games/2021/3/love-tester/unblocked.html')">
+			<img src="https://imgs.search.brave.com/MgMf-psP27oO036Mg8eWzYF2eYle9TfP-8TSpfTq1mA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWdz/Mi5kYWIzZ2FtZXMu/Y29tL2xvdmUtdGVz/dGVyLTItZ2FtZS1l/ZDkuanBn" alt="image">
+			<p>Love Tester</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/89574567@71f165531792ae450fe0a522a52ba4e827344de2/sr3d.xml')">
+			<img src="https://imgs.search.brave.com/nto1rPzOoBj0yVAl0YrDweOoxvHEX5WxuGrXRvE6K7w/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kb29k/b28ubG92ZS9fbmV4/dC9pbWFnZT91cmw9/aHR0cHM6Ly9kb29k/b28ubG92ZS9pbWFn/ZXMvNDMwKjQzMC8z/Yjc5YTg1MzdlYmM0/MTRmYjRmOTY3MmE5/YjhjNjhjOC53ZWJw/Jnc9NjI4JnE9NzU" alt="image">
+			<p>Snow Rider 3D</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@77d7c057275710c07925ba951e9e56902d101c84/3sp.xml')">
+			<img src="https://play-lh.googleusercontent.com/uJn2i9h7KxYQarC_c3K4qH6o7gLtflFnhD_dN14MNkzHJ1NeNFzCL69jpB5mT0vCoQs" alt="image">
+			<p>Slope</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/ko1ov/jd83hf02ld65la32mdl4@79c158753f07cf8fae9c1495b040e2a229c7436e/1v1.xml')">
+			<img src="https://play-lh.googleusercontent.com/-dE43Bqni_bUnq0L-piPxiJG4YiCotk5khMdrQaQBJrXJ3vSgjNeIaKyA34rBvKQSyOy" alt="image">
+			<p>1v1.lol</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@b8b8a03997f38305098c2f2f5fe14907463cd23b/build/ppo2/ppo2.xml')">
+			<img src="https://play-lh.googleusercontent.com/KxcjUrs8S75iOPnKBR2b-s7eGtqbREwLgzttVxaM9Znl5ZxsDCl6qEZHny4rBkMeYA=w240-h480-rw" alt="image">
+			<p>Paper.io 2</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@0d9afabd2522344a702e1b692ad58039f6290b0d/build/c-c/cc.xml')">
+			<img src="https://imgs.search.brave.com/H0RoqK42jTCyYMgoY8skjht9LvM8cc2wU0iJSCnwJfA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2Nv/b2tpZWNsaWNrZXIv/aW1hZ2VzLzUvNWEv/UGVyZmVjdENvb2tp/ZS5wbmcvcmV2aXNp/b24vbGF0ZXN0L3Nj/YWxlLXRvLXdpZHRo/LWRvd24vMjUwP2Ni/PTIwMTMwODI3MDE0/OTEy" alt="image">
+			<p>Cookie Clicker</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://ubg98.github.io/ClickerHeroes/')">
+			<img src="https://imgs.search.brave.com/-TdpDVTj01cuSqEKw7QB_A6YnUPT8U4gpUqziJyA3_o/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9rZXZp/bi5nYW1lcy9hc3Nl/dHMvY2FjaGVfaW1h/Z2UvbmV3L2NsaWNr/ZXItaGVyb2VzXzIw/MHgyMDBfZDlkLndl/YnA" alt="image">
+			<p>Clicker Heros</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/awesome-aws@37c682c65a5a4c1ddc5b5ff2b840924526f209b4/scripts/blf.xml')">
+			<img src="https://d.newsweek.com/en/full/1317374/bitlife-ribbons-how-get-all-complete-list-android-ios-cheats-guide-tips-become.jpg?w=1600&h=1600&q=88&f=75befc746fb83a0c568c44ca07bc5e64" alt="image">
+			<p>BitLife</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+
+		<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@26eeeba4fc0707142876c24a52c87db7bf2d0a38/build/2048/2048.xml')">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png" alt="image">
+			<p>2048</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function openGame(url) {
+		    if (url) {
+		        // Open a new tab
+		        const newTab = window.open('', '_blank');
+		
+		        // Create an iframe element
+		        const iframe = document.createElement('iframe');
+		        iframe.src = url;
+		        iframe.style.position = 'fixed';
+		        iframe.style.top = '0';
+		        iframe.style.left = '0';
+		        iframe.style.width = '100%';
+		        iframe.style.height = '100%';
+		        iframe.style.border = 'none';
+		
+		        // Append the iframe to the new tab
+		        newTab.document.body.appendChild(iframe);
+		    } else {
+		        console.error("Invalid game URL");
+		    }
+		}
+		
+		function filterGames() {
+            var input, filter, boxContainer, boxes, box, p, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            boxContainer = document.getElementById("boxContainer");
+            boxes = boxContainer.getElementsByClassName("box");
+
+            for (i = 0; i < boxes.length; i++) {
+                box = boxes[i];
+                p = box.getElementsByTagName("p")[0];
+                txtValue = p.textContent || p.innerText;
+
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    box.style.display = "";
+                } else {
+                    box.style.display = "none";
+                }
+            }
+        }
+		
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="textures/logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coolio - Sites</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a2023;
+        }
+
+        nav {
+            background-color: #0e1213;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .logo img {
+            height: 43px;
+            margin-right: 17px;
+            draggable: false;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .button {
+            margin-left: 50px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .button a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 17px;
+            border-radius: 15px;
+            font-family: "JetBrains Mono", monospace;
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        .button:not(:last-child)::before {
+            content: "";
+            position: absolute;
+            height: 75%;
+            width: 2.75px;
+            background-color: #555;
+            top: 3px;
+            right: -25px;
+            bottom: 0;
+            transform: skewX(-20deg);
+        }
+
+        .button a:hover {
+            background-color: #007bff;
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
+        }
+
+        /* New CSS for boxes */
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+		
+
+        .box {
+    width: 200px;
+    height: 165px; /* Set the desired square size */
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s; /* Removed margin from the transition property */
+    position: relative;
+    border-radius: 25px;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px #007bff;
+	
+}
+
+.box img {
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 10px;
+    position: relative;
+    top: 15px; /* Move the image down by 5px */
+}
+
+.box p {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    font-size: 18.5px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: #fff;
+	font-family: "JetBrains Mono", monospace;
+    font-weight: 400;
+}
+
+
+        .iframe-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9); /* Adjust the opacity as needed */
+            z-index: 1000;
+        }
+
+        .box.active .iframe-container {
+            display: block;
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="textures/logo.png" alt="Logo" draggable="false">
+            <h1>Coolio</h1>
+        </div>
+        <div class="buttons">
+            <div class="button"><a href="home.html">Home</a></div>
+            <div class="button"><a href="games.html">Games</a></div>
+            <div class="button"><a href="sites.html">Sites</a></div>
+            <div class="button"><a href="school.html">School</a></div>
+            <div class="button"><a href="misc.html">Misc</a></div>
+        </div>
+    </nav>
+
+    <!-- Box container -->
+    <div class="box-container">
+
+        <div class="box" onclick="window.open('https://hdtoday.tv/home', '_blank', 'noopener noreferrer')">
+    <img src="https://imgs.search.brave.com/h70EtSLFh1Ms5tM5URXV2ueaaujs-oiVCYkE_ubxZSs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9wbGF5/LWxoLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9HcHRTVFRtTGFW/X0k1cVljUTRyX1pY/Wjl1RTh1TmNfVEtF/bHV6SFR4RnBTWFZm/dThtYkEyNWozS3Vw/TDNGTVdHWUxTdT13/MjQwLWg0ODAtcnc" alt="image">
+    <p>HDtoday</p>
+</div>
+		
+		<div class="box" onclick="openGame('https://pinetools.com/')">
+            <img src="https://imgs.search.brave.com/nBGGGtdE3AoYqoFcWty86_wAm75w15SveJXaGEO_MCI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4t/MS53ZWJjYXRhbG9n/LmlvL2NhdGFsb2cv/cGluZXRvb2xzL3Bp/bmV0b29scy1pY29u/LWZpbGxlZC0yNTYu/cG5nP3Y9MTY3NTU5/NzUxOTIwMA" alt="image">
+            <p>Pinetools</p>
+            <div class="iframe-container">
+                <iframe src="https://pinetools.com/"></iframe>
+            </div>
+        </div>
+		
+		<div class="box" onclick="openGame('https://sketch.io/sketchpad-v5.1/')">
+            <img src="https://imgs.search.brave.com/V_3pBfeweeGrFJVODJK1JicQm5De8jF-G29X7WPpea4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk3LzMy/LzE5Lzk3MzIxOTA2/NGZiOWMwNTAyYjhj/ZWY5MjhlYTY1NzU2/LnBuZw" alt="image">
+            <p>Sketchpad 5.1</p>
+            <div class="iframe-container">
+                <iframe src="https://sketch.io/sketchpad-v5.1/"></iframe>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function openGame(url) {
+        var newTab = window.open('', '_blank');
+        newTab.document.write('<html><body style="margin:0;"><iframe width="100%" height="100%" src="' + url + '" frameborder="0"></iframe></body></html>');
+        newTab.document.close();
+    }
+    
+    function tryToResumeAudioContext() {
+        // Check if the AudioContext is suspended
+        if (audioContext.state === 'suspended') {
+            // Use a user-triggered event to resume the AudioContext
+            document.addEventListener('click', function () {
+                // Ensure that this is the first user-triggered event to avoid multiple attempts
+                if (audioContext.state === 'suspended') {
+                    audioContext.resume().then(() => {
+                        console.log('AudioContext resumed successfully.');
+                    });
+                }
+            }, { once: true });
+        }
+    }
+
+    // Create an AudioContext
+    var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+    // Call the function to try to resume the AudioContext
+    tryToResumeAudioContext();
+</script>
+</body>
+
+</html>
