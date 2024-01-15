@@ -2,14 +2,15 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" href="/textures/logo.png" type="image/png">
+    <link rel="icon" href="textures/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coolio - Home</title>
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
             background-color: #1a2023;
         }
 
@@ -38,6 +39,30 @@
             margin: 0;
             font-size: 35px;
             font-weight: bold;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        h2 {
+            margin: 325px 0;
+            font-size: 50px;
+            font-weight: bold;
+            color: #FFFFFF; /* Hexadecimal code for white */
+            text-align: center; /* Center text horizontally */
+            font-family: "Montserrat", sans-serif;
+        }
+
+        h3 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #991d1d; /* Hexadecimal code for white */
+            text-align: center; /* Center text horizontally */
+            font-family: "Montserrat", sans-serif;
+            position: relative;
+            bottom: 320px;
+        }
+
+        .coolio-text {
+            color: #007bff; /* Hexadecimal code for blue */
         }
 
         .buttons {
@@ -58,7 +83,7 @@
             border-radius: 15px;
             font-family: "JetBrains Mono", monospace;
             font-weight: 400;
-            font-size: 20px;
+            font-size: 18px;
             letter-spacing: 0.5px;
             transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
         }
@@ -79,6 +104,106 @@
             background-color: #007bff;
             box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
         }
+
+        /* Styles for bottom buttons */
+        .bottombutton-container {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0); /* Transparent background */
+            backdrop-filter: blur(10px); /* Optional: Add blur effect */
+            padding: 10px;
+        }
+
+        .bottombutton {
+            margin: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            top: 10px;
+        }
+
+        .bottombutton a {
+            text-decoration: none; /* No underline by default */
+            font-family: "JetBrains Mono", monospace;
+            font-weight: 400;
+            font-size: 18px;
+            color: #FFF; /* Set text color to white */
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .bottombutton:hover a {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Individual positions for each button */
+        .github {
+            left: 0%;
+        }
+
+        .discord {
+            left: 2.5%;
+            transform: translateX(-50%);
+        }
+
+        .about {
+            left: 85.5%;
+        }
+
+        /* Position for the new button */
+        .aboutblankbutton {
+            text-align: center;
+            position: fixed;
+            bottom: 375px;
+            width: 100%;
+        }
+
+        .aboutblankbutton a {
+            text-decoration: none;
+            color: #fff;
+            font-family: "JetBrains Mono", monospace;
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            padding: 12px 17px;
+            border-radius: 10px;
+            background-color: #007bff;
+            transition: background-color 0.3s;
+        }
+
+        .aboutblankbutton a:hover {
+            background-color: #0072ec;
+        }
+
+        /* Styling for the iframe */
+        .iframe-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+        }
+
+        .iframe-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+        }
+
+        .close-iframe {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #fff;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -92,10 +217,22 @@
             <div class="button"><a href="home.html">Home</a></div>
             <div class="button"><a href="games.html">Games</a></div>
             <div class="button"><a href="sites.html">Sites</a></div>
-            <div class="button"><a href="school.html">School</a></div>
+            <div class="button"><a href="">placeholder</a></div>
             <div class="button"><a href="misc.html">Misc</a></div>
         </div>
     </nav>
+
+    <!-- Welcome Message and Random Phrase -->
+    <h2>Welcome to <span class="coolio-text">Coolio</span></h2>
+    <h3>(Work in progress)</h3>
+<div>
+    <div class="bottombutton-container">
+        <div class="bottombutton github" onclick="window.open('https://github.com/CoolioHolder/coolio', '_blank')"><a>GitHub</a></div>
+        <div class="bottombutton discord" onclick="window.open('https://discord.gg/nbCNsGXHrw', '_blank')"><a>Discord</a></div>
+        <div class="bottombutton about" onclick="window.open('about.html', '_blank')"><a>About</a></div>
+    </div>
+    <script>
+    </script>
 </body>
 
 </html>
