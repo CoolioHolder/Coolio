@@ -2,83 +2,94 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" href="/textures/logo.png" type="image/png">
+    <link rel="icon" href="textures/logo.png" type="image/png">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coolio - Misc</title>
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #1a2023;
-        }
-
-        nav {
-            background-color: #0e1213;
-            color: white;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            margin-left: 10px;
-        }
-
-        .logo img {
-            height: 43px;
-            margin-right: 17px;
-            draggable: false;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 35px;
-            font-weight: bold;
-        }
-
-        .buttons {
-            display: flex;
-            align-items: center;
-        }
-
-        .button {
-            margin-left: 50px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            position: relative;
-        }
-
-        .button a {
-            text-decoration: none;
-            color: white;
-            padding: 12px 17px;
-            border-radius: 15px;
-            font-family: "JetBrains Mono", monospace;
-            font-weight: 400;
-            font-size: 20px;
-            letter-spacing: 0.5px;
-            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-        }
-
-        .button:not(:last-child)::before {
-            content: "";
-            position: absolute;
-            height: 75%;
-            width: 2.75px;
-            background-color: #555;
-            top: 3px;
-            right: -25px;
-            bottom: 0;
-            transform: skewX(-20deg);
-        }
-
-        .button a:hover {
-            background-color: #007bff;
-            box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
-        }
+		            margin: 0;
+		            background-color: #1a2023;
+		        }
+		
+		        nav {
+		            background-color: #0e1213;
+		            color: white;
+		            padding: 10px;
+		            display: flex;
+		            justify-content: space-between;
+		            align-items: center;
+		        }
+		
+		        .logo {
+		            display: flex;
+		            align-items: center;
+		            margin-left: 10px;
+		        }
+		
+		        .logo img {
+		            height: 43px;
+		            margin-right: 17px;
+		            draggable: false;
+		        }
+		
+		        h1 {
+		            margin: 0;
+		            font-size: 35px;
+		            font-weight: bold;
+					font-family: "Montserrat", sans-serif;
+		        }
+				
+				h2 {
+    margin: 25px 0;
+    font-size: 60px;
+    font-weight: bold;
+    color: #FFFFFF; /* Hexadecimal code for white */
+    text-align: center; /* Center text horizontally */
+    font-family: "Montserrat", sans-serif;
+}
+		
+		        .buttons {
+		            display: flex;
+		            align-items: center;
+		        }
+		
+		        .button {
+		            margin-left: 50px;
+		            transition: transform 0.2s, box-shadow 0.2s;
+		            position: relative;
+		        }
+		
+		        .button a {
+		            text-decoration: none;
+		            color: white;
+		            padding: 12px 17px;
+		            border-radius: 15px;
+		            font-family: "JetBrains Mono", monospace;
+		            font-weight: 400;
+		            font-size: 18px;
+		            letter-spacing: 0.5px;
+		            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+		        }
+		
+		        .button:not(:last-child)::before {
+		            content: "";
+		            position: absolute;
+		            height: 75%;
+		            width: 2.75px;
+		            background-color: #555;
+		            top: 3px;
+		            right: -25px;
+		            bottom: 0;
+		            transform: skewX(-20deg);
+		        }
+		
+		        .button a:hover {
+		            background-color: #007bff;
+		            box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
+		        }
 
         /* New CSS for boxes */
         .box-container {
@@ -153,7 +164,7 @@
             <div class="button"><a href="home.html">Home</a></div>
             <div class="button"><a href="games.html">Games</a></div>
             <div class="button"><a href="sites.html">Sites</a></div>
-            <div class="button"><a href="school.html">School</a></div>
+            <div class="button"><a href="">placeholder</a></div>
             <div class="button"><a href="misc.html">Misc</a></div>
         </div>
     </nav>
@@ -165,7 +176,6 @@
             <p>Strobe</p>
             <div class="iframe-container">
                 <!-- Remove the hardcoded URL and replace it with 'strobe.html' -->
-                <iframe src="htmls/strobe.html"></iframe>
             </div>
         </div>
 
@@ -173,7 +183,6 @@
             <p>Fake Update</p>
             <div class="iframe-container">
                 <!-- Remove the hardcoded URL and replace it with 'strobe.html' -->
-                <iframe src="https://fakeupdate.net/win10ue/"></iframe>
             </div>
         </div>
 		
@@ -181,7 +190,6 @@
             <p>Random Fact</p>
             <div class="iframe-container">
                 <!-- Remove the hardcoded URL and replace it with 'strobe.html' -->
-                <iframe src="htmls/randomfact.html'"></iframe>
             </div>
         </div>
 		
@@ -189,7 +197,6 @@
             <p>Ceasar Cipher</p>
             <div class="iframe-container">
                 <!-- Remove the hardcoded URL and replace it with 'strobe.html' -->
-                <iframe src="htmls/secretlanguage.html"></iframe>
             </div>
         </div>
 
@@ -201,27 +208,6 @@
             newTab.document.write('<html><body style="margin:0;"><iframe width="100%" height="100%" src="' + url + '" frameborder="0"></iframe></body></html>');
             newTab.document.close();
         }
-
-        function tryToResumeAudioContext() {
-            // Check if the AudioContext is suspended
-            if (audioContext.state === 'suspended') {
-                // Use a user-triggered event to resume the AudioContext
-                document.addEventListener('click', function () {
-                    // Ensure that this is the first user-triggered event to avoid multiple attempts
-                    if (audioContext.state === 'suspended') {
-                        audioContext.resume().then(() => {
-                            console.log('AudioContext resumed successfully.');
-                        });
-                    }
-                }, { once: true });
-            }
-        }
-
-        // Create an AudioContext
-        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
-        // Call the function to try to resume the AudioContext
-        tryToResumeAudioContext();
     </script>
 </body>
 
