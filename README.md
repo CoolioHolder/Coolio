@@ -1,1 +1,1 @@
-This is for school. Replace the end of the url (README.md) with home.html
+This is for school. Add home.html to the end of the url.
