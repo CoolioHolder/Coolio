@@ -2,83 +2,94 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" href="/textures/logo.png" type="image/png">
+    <link rel="icon" href="textures/logo.png" type="image/png">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coolio - Sites</title>
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #1a2023;
-        }
-
-        nav {
-            background-color: #0e1213;
-            color: white;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            margin-left: 10px;
-        }
-
-        .logo img {
-            height: 43px;
-            margin-right: 17px;
-            draggable: false;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 35px;
-            font-weight: bold;
-        }
-
-        .buttons {
-            display: flex;
-            align-items: center;
-        }
-
-        .button {
-            margin-left: 50px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            position: relative;
-        }
-
-        .button a {
-            text-decoration: none;
-            color: white;
-            padding: 12px 17px;
-            border-radius: 15px;
-            font-family: "JetBrains Mono", monospace;
-            font-weight: 400;
-            font-size: 20px;
-            letter-spacing: 0.5px;
-            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-        }
-
-        .button:not(:last-child)::before {
-            content: "";
-            position: absolute;
-            height: 75%;
-            width: 2.75px;
-            background-color: #555;
-            top: 3px;
-            right: -25px;
-            bottom: 0;
-            transform: skewX(-20deg);
-        }
-
-        .button a:hover {
-            background-color: #007bff;
-            box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
-        }
+		            margin: 0;
+		            background-color: #1a2023;
+		        }
+		
+		        nav {
+		            background-color: #0e1213;
+		            color: white;
+		            padding: 10px;
+		            display: flex;
+		            justify-content: space-between;
+		            align-items: center;
+		        }
+		
+		        .logo {
+		            display: flex;
+		            align-items: center;
+		            margin-left: 10px;
+		        }
+		
+		        .logo img {
+		            height: 43px;
+		            margin-right: 17px;
+		            draggable: false;
+		        }
+		
+		        h1 {
+		            margin: 0;
+		            font-size: 35px;
+		            font-weight: bold;
+					font-family: "Montserrat", sans-serif;
+		        }
+				
+				h2 {
+    margin: 25px 0;
+    font-size: 60px;
+    font-weight: bold;
+    color: #FFFFFF; /* Hexadecimal code for white */
+    text-align: center; /* Center text horizontally */
+    font-family: "Montserrat", sans-serif;
+}
+		
+		        .buttons {
+		            display: flex;
+		            align-items: center;
+		        }
+		
+		        .button {
+		            margin-left: 50px;
+		            transition: transform 0.2s, box-shadow 0.2s;
+		            position: relative;
+		        }
+		
+		        .button a {
+		            text-decoration: none;
+		            color: white;
+		            padding: 12px 17px;
+		            border-radius: 15px;
+		            font-family: "JetBrains Mono", monospace;
+		            font-weight: 400;
+		            font-size: 18px;
+		            letter-spacing: 0.5px;
+		            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+		        }
+		
+		        .button:not(:last-child)::before {
+		            content: "";
+		            position: absolute;
+		            height: 75%;
+		            width: 2.75px;
+		            background-color: #555;
+		            top: 3px;
+		            right: -25px;
+		            bottom: 0;
+		            transform: skewX(-20deg);
+		        }
+		
+		        .button a:hover {
+		            background-color: #007bff;
+		            box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
+		        }
 
         /* New CSS for boxes */
         .box-container {
@@ -151,6 +162,32 @@
             height: 100%;
             border: none;
         }
+		
+		.search-bar {
+    text-align: center;
+    margin: 15px 0;
+}
+
+input[type="text"] {
+    padding: 20px;
+	text-align: center;
+    font-size: 25px;
+    background-color: #111; /* Background color for the search bar */
+	color: #FFF;
+    border: none;
+    border-radius: 10px; /* Smoother edges */
+    width: calc(500px); /* Initial size */
+	height: 60px;
+    transition: width 0.2s ease;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+	font-family: "JetBrains Mono", monospace;
+}
+
+/* Add these styles for the search bar animation */
+input[type="text"]:focus {
+    width: calc(37%); /* Grow 15px on both sides */
+    outline: none;
+}
     </style>
 </head>
 
@@ -164,14 +201,76 @@
             <div class="button"><a href="home.html">Home</a></div>
             <div class="button"><a href="games.html">Games</a></div>
             <div class="button"><a href="sites.html">Sites</a></div>
-            <div class="button"><a href="school.html">School</a></div>
+            <div class="button"><a href="">placeholder</a></div>
             <div class="button"><a href="misc.html">Misc</a></div>
         </div>
     </nav>
+	<h2>Sites</h2>
 
-    <!-- Box container -->
-    <div class="box-container">
+<div class="search-bar">
+        <input type="text" id="searchInput" oninput="filterGames()" placeholder="Search sites">
+    </div>
 
+    <div class="box-container" id="boxContainer">
+        <div class="box" onclick="window.open('https://classroom.google.com/u/1/h', '_blank', 'noopener noreferrer')">
+    <img src="https://img.icons8.com/color/480/google-classroom.png" alt="image">
+    <p>Classroom</p>
+</div>
+
+<div class="box" onclick="window.open('https://mail.google.com/mail/u/1/', '_blank', 'noopener noreferrer')">
+    <img src="https://img.icons8.com/color/480/gmail-new.png" alt="image">
+    <p>Gmail</p>
+</div>
+
+<div class="box" onclick="window.open('https://drive.google.com/drive/u/1/', '_blank', 'noopener noreferrer')">
+    <img src="https://img.icons8.com/color/480/google-drive--v2.png" alt="image">
+    <p>Drive</p>
+</div>
+
+<div class="box" onclick="window.open('https://docs.google.com/presentation/u/1/?tgif=d', '_blank', 'noopener noreferrer')">
+    <img src="https://img.icons8.com/color/480/google-slides.png" alt="image">
+    <p>Slides</p>
+</div>
+
+<div class="box" onclick="window.open('https://docs.google.com/document/u/1/?tgif=c', '_blank', 'noopener noreferrer')">
+    <img src="https://img.icons8.com/color/480/google-docs--v1.png" alt="image">
+    <p>Docs</p>
+</div>
+
+<div class="box" onclick="window.open('https://skyward.iscorp.com/scripts/wsisa.dll/WService=wseduowenwitheewi/seplog01.w', '_blank', 'noopener noreferrer')">
+    <img src="https://asset.brandfetch.io/idzsUUhcmG/idPzY4f0aE.jpeg?updated=1700778101058" alt="image">
+    <p>Skyward</p>
+</div>
+
+<div class="box" onclick="window.open('https://id.blooket.com/login', '_blank', 'noopener noreferrer')">
+    <img src="https://imgs.search.brave.com/o4Rt-WM7CJUyCVlx-68_ZSbT7z23yZQdFqIjItPjfJI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/YWlzZC5uZXQvd3At/Y29udGVudC9maWxl/cy9CbG9va2V0LWxv/Z28tc3F1YXJlLnBu/Zw" alt="image">
+    <p>Blooket</p>
+</div>
+
+<div class="box" onclick="window.open('https://kahoot.it', '_blank', 'noopener noreferrer')">
+    <img src="https://imgs.search.brave.com/i6myqxN6i8ZCKhJ8nLnXiyr7AhB2ezZdd0cXQja8R8Y/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sb2dv/cy13b3JsZC5uZXQv/d3AtY29udGVudC91/cGxvYWRzLzIwMjIv/MDIvS2Fob290LVN5/bWJvbC03MDB4Mzk0/LnBuZw" alt="image">
+    <p>Kahoot</p>
+</div>
+
+<div class="box" onclick="window.open('https://quillbot.com', '_blank', 'noopener noreferrer')">
+    <img src="https://paganresearch.io/images/quillbot.png" alt="image">
+    <p>Quillbot</p>
+</div>
+
+<div class="box" onclick="openGame('https://deepai.org/chat')">
+            <img src="https://asset.brandfetch.io/idG1_A0KsA/idF8Ru1ryl.jpeg?updated=1703247510016" alt="image">
+            <p>AI Chat</p>
+            <div class="iframe-container">
+            </div>
+        </div>
+		
+		<div class="box" onclick="openGame('https://forest.katieprallphotography.com/app')">
+            <img src="https://imgs.search.brave.com/7kiO-h7bN39dZDeODxpufBFjl-kBkuR9OozzeRcKDMk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvMTEvRG9n/ZS1NZW1lLVBORy1Q/aG90b3MucG5n" alt="image">
+            <p>Doge Unblocker</p>
+            <div class="iframe-container">
+            </div>
+        </div>
+		
         <div class="box" onclick="window.open('https://hdtoday.tv/home', '_blank', 'noopener noreferrer')">
     <img src="https://imgs.search.brave.com/h70EtSLFh1Ms5tM5URXV2ueaaujs-oiVCYkE_ubxZSs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9wbGF5/LWxoLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9HcHRTVFRtTGFW/X0k1cVljUTRyX1pY/Wjl1RTh1TmNfVEtF/bHV6SFR4RnBTWFZm/dThtYkEyNWozS3Vw/TDNGTVdHWUxTdT13/MjQwLWg0ODAtcnc" alt="image">
     <p>HDtoday</p>
@@ -181,7 +280,6 @@
             <img src="https://imgs.search.brave.com/nBGGGtdE3AoYqoFcWty86_wAm75w15SveJXaGEO_MCI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4t/MS53ZWJjYXRhbG9n/LmlvL2NhdGFsb2cv/cGluZXRvb2xzL3Bp/bmV0b29scy1pY29u/LWZpbGxlZC0yNTYu/cG5nP3Y9MTY3NTU5/NzUxOTIwMA" alt="image">
             <p>Pinetools</p>
             <div class="iframe-container">
-                <iframe src="https://pinetools.com/"></iframe>
             </div>
         </div>
 		
@@ -189,7 +287,6 @@
             <img src="https://imgs.search.brave.com/V_3pBfeweeGrFJVODJK1JicQm5De8jF-G29X7WPpea4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk3LzMy/LzE5Lzk3MzIxOTA2/NGZiOWMwNTAyYjhj/ZWY5MjhlYTY1NzU2/LnBuZw" alt="image">
             <p>Sketchpad 5.1</p>
             <div class="iframe-container">
-                <iframe src="https://sketch.io/sketchpad-v5.1/"></iframe>
             </div>
         </div>
     </div>
@@ -200,27 +297,26 @@
         newTab.document.write('<html><body style="margin:0;"><iframe width="100%" height="100%" src="' + url + '" frameborder="0"></iframe></body></html>');
         newTab.document.close();
     }
-    
-    function tryToResumeAudioContext() {
-        // Check if the AudioContext is suspended
-        if (audioContext.state === 'suspended') {
-            // Use a user-triggered event to resume the AudioContext
-            document.addEventListener('click', function () {
-                // Ensure that this is the first user-triggered event to avoid multiple attempts
-                if (audioContext.state === 'suspended') {
-                    audioContext.resume().then(() => {
-                        console.log('AudioContext resumed successfully.');
-                    });
+	
+	function filterGames() {
+            var input, filter, boxContainer, boxes, box, p, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            boxContainer = document.getElementById("boxContainer");
+            boxes = boxContainer.getElementsByClassName("box");
+
+            for (i = 0; i < boxes.length; i++) {
+                box = boxes[i];
+                p = box.getElementsByTagName("p")[0];
+                txtValue = p.textContent || p.innerText;
+
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    box.style.display = "";
+                } else {
+                    box.style.display = "none";
                 }
-            }, { once: true });
+            }
         }
-    }
-
-    // Create an AudioContext
-    var audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
-    // Call the function to try to resume the AudioContext
-    tryToResumeAudioContext();
 </script>
 </body>
 
