@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<link rel="icon" href="/textures/logo.png" type="image/png">
+	<link rel="icon" href="textures/logo.png" type="image/png">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
 	<meta charset="UTF-8">
@@ -11,7 +11,6 @@
 	<style>
 		body {
 		            margin: 0;
-		            font-family: Arial, sans-serif;
 		            background-color: #1a2023;
 		        }
 		
@@ -203,7 +202,7 @@ input[type="text"]:focus {
 			<div class="button"><a href="home.html">Home</a></div>
 			<div class="button"><a href="games.html">Games</a></div>
 			<div class="button"><a href="sites.html">Sites</a></div>
-			<div class="button"><a href="school.html">School</a></div>
+			<div class="button"><a href="">placeholder</a></div>
 			<div class="button"><a href="misc.html">Misc</a></div>
 		</div>
 	</nav>
@@ -348,30 +347,55 @@ input[type="text"]:focus {
 			<div class="iframe-container">
 			</div>
 		</div>
-	</div>
+		
+		<div class="box" onclick="openGame('https://unblocked76.github.io/jetpack-joyride/')">
+			<img src="https://imgs.search.brave.com/Mk1md4AlKSYT75_0CJ3rj6JC2tP_5Fk9wJi9zj59VFU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLWhBUEt6/c3l6SDBJMmd4ZXkt/UlhqMHlBLXQ1MDB4/NTAwLmpwZw" alt="image">
+			<p>Jetpack Joyride</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+		
+		<div class="box" onclick="openGame('https://unblocked76.github.io/mario/')">
+			<img src="https://ubg76.github.io/ikone/mario76ez.webp" alt="image">
+			<p>Super Mario Bros</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+		
+		<div class="box" onclick="openGame('https://webglmath.github.io/rooftop-snipers/')">
+			<img src="https://ubg76.github.io/ikone/rooftopsnipers.webp" alt="image">
+			<p>Rooftop Snipers</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+		
+		<div class="box" onclick="openGame('https://unblocked76.github.io/chrome-dino/')">
+			<img src="https://imgs.search.brave.com/WfnCbFMfpSl7rS6N35p-CI4YYDPn5At1O6pnPdoRDw0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9wbGF5/LWxoLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9paUlKcTVKbUxG/WU5JMWJWejRJQkh5/b1hzNTA4SmNFekho/T2dhdTY5Ym52ZUY5/V2F0NTEtYXg5TE1Q/Vk9sbmVLd3FnPXcy/NDAtaDQ4MC1ydw" alt="image">
+			<p>Chrome Dino</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+		
+		<div class="box" onclick="openGame('https://awesometanks.github.io/2/')">
+			<img src="https://ubg76.github.io/ikone/awesometanks2.webp" alt="image">
+			<p>Awesome Tanks 2</p>
+			<div class="iframe-container">
+			</div>
+		</div>
+		
+		<div class="box" onclick="openGame('https://webglmath.github.io/stickmanhook/')">
+			<img src="https://ubg76.github.io/ikone/stickmanhook.webp" alt="image">
+			<p>Stickman Hook</p>
+			<div class="iframe-container">
+			</div>
+		</div>
 
 	<script>
 		function openGame(url) {
-		    if (url) {
-		        // Open a new tab
-		        const newTab = window.open('', '_blank');
-		
-		        // Create an iframe element
-		        const iframe = document.createElement('iframe');
-		        iframe.src = url;
-		        iframe.style.position = 'fixed';
-		        iframe.style.top = '0';
-		        iframe.style.left = '0';
-		        iframe.style.width = '100%';
-		        iframe.style.height = '100%';
-		        iframe.style.border = 'none';
-		
-		        // Append the iframe to the new tab
-		        newTab.document.body.appendChild(iframe);
-		    } else {
-		        console.error("Invalid game URL");
-		    }
-		}
+        var newTab = window.open('', '_blank');
+        newTab.document.write('<html><body style="margin:0;"><iframe width="100%" height="100%" src="' + url + '" frameborder="0"></iframe></body></html>');
+        newTab.document.close();
+    }
 		
 		function filterGames() {
             var input, filter, boxContainer, boxes, box, p, i, txtValue;
