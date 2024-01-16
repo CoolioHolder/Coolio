@@ -2,94 +2,94 @@
 <html lang="en">
 
 <head>
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coolio - Sites</title>
     <style>
         body {
-		            margin: 0;
-		            background-color: #1a2023;
-		        }
-		
-		        nav {
-		            background-color: #0e1213;
-		            color: white;
-		            padding: 10px;
-		            display: flex;
-		            justify-content: space-between;
-		            align-items: center;
-		        }
-		
-		        .logo {
-		            display: flex;
-		            align-items: center;
-		            margin-left: 10px;
-		        }
-		
-		        .logo img {
-		            height: 43px;
-		            margin-right: 17px;
-		            draggable: false;
-		        }
-		
-		        h1 {
-		            margin: 0;
-		            font-size: 35px;
-		            font-weight: bold;
-					font-family: "Montserrat", sans-serif;
-		        }
-				
-				h2 {
-    margin: 25px 0;
-    font-size: 60px;
-    font-weight: bold;
-    color: #FFFFFF; /* Hexadecimal code for white */
-    text-align: center; /* Center text horizontally */
-    font-family: "Montserrat", sans-serif;
-}
-		
-		        .buttons {
-		            display: flex;
-		            align-items: center;
-		        }
-		
-		        .button {
-		            margin-left: 50px;
-		            transition: transform 0.2s, box-shadow 0.2s;
-		            position: relative;
-		        }
-		
-		        .button a {
-		            text-decoration: none;
-		            color: white;
-		            padding: 12px 17px;
-		            border-radius: 15px;
-		            font-family: "JetBrains Mono", monospace;
-		            font-weight: 400;
-		            font-size: 18px;
-		            letter-spacing: 0.5px;
-		            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-		        }
-		
-		        .button:not(:last-child)::before {
-		            content: "";
-		            position: absolute;
-		            height: 75%;
-		            width: 2.75px;
-		            background-color: #555;
-		            top: 3px;
-		            right: -25px;
-		            bottom: 0;
-		            transform: skewX(-20deg);
-		        }
-		
-		        .button a:hover {
-		            background-color: #007bff;
-		            box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
-		        }
+            margin: 0;
+            background-color: #1a2023;
+        }
+
+        nav {
+            background-color: #0e1213;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .logo img {
+            height: 43px;
+            margin-right: 17px;
+            draggable: false;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 35px;
+            font-weight: bold;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        h2 {
+            margin: 25px 0;
+            font-size: 60px;
+            font-weight: bold;
+            color: #FFFFFF; /* Hexadecimal code for white */
+            text-align: center; /* Center text horizontally */
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .button {
+            margin-left: 50px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .button a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 17px;
+            border-radius: 15px;
+            font-family: "JetBrains Mono", monospace;
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        .button:not(:last-child)::before {
+            content: "";
+            position: absolute;
+            height: 75%;
+            width: 2.75px;
+            background-color: #555;
+            top: 3px;
+            right: -25px;
+            bottom: 0;
+            transform: skewX(-20deg);
+        }
+
+        .button a:hover {
+            background-color: #007bff;
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
+        }
 
         /* New CSS for boxes */
         .box-container {
@@ -99,48 +99,46 @@
             justify-content: center;
             align-items: flex-start;
         }
-		
 
         .box {
-    width: 200px;
-    height: 165px; /* Set the desired square size */
-    margin: 10px;
-    text-align: center;
-    cursor: pointer;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s; /* Removed margin from the transition property */
-    position: relative;
-    border-radius: 25px;
-}
+            width: 210px;
+            height: 155px; /* Set the desired square size */
+            margin: 30px 4px; /* More margin at the top and bottom, 15px on the right and left */
+            text-align: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            border-radius: 25px;
+        }
 
-.box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 35px #007bff;
-	
-}
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px #007bff;
 
-.box img {
-    width: 105px;
-    height: 105px;
-    object-fit: cover;
-    border-radius: 10px;
-    position: relative;
-    top: 15px; /* Move the image down by 5px */
-}
+        }
 
-.box p {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    margin: 0;
-    font-size: 18.5px; /* Adjust the font size as needed */
-    font-weight: bold; /* Make the text bold */
-    color: #fff;
-	font-family: "JetBrains Mono", monospace;
-    font-weight: 400;
-}
+        .box img {
+            width: 105px;
+            height: 115px;
+            object-fit: cover;
+            border-radius: 10px;
+            position: relative;
+            top: 10px; /* Move the image down by 5px */
+        }
 
+        .box p {
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            margin: 0;
+            font-size: 16px; /* Adjust the font size as needed */
+            font-weight: bold; /* Make the text bold */
+            color: #fff;
+            font-family: "JetBrains Mono", monospace;
+            font-weight: 400;
+        }
 
         .iframe-container {
             display: none;
@@ -162,32 +160,53 @@
             height: 100%;
             border: none;
         }
-		
-		.search-bar {
-    text-align: center;
-    margin: 15px 0;
-}
 
-input[type="text"] {
-    padding: 20px;
-	text-align: center;
-    font-size: 25px;
-    background-color: #111; /* Background color for the search bar */
-	color: #FFF;
-    border: none;
-    border-radius: 10px; /* Smoother edges */
-    width: calc(500px); /* Initial size */
-	height: 60px;
-    transition: width 0.2s ease;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-	font-family: "JetBrains Mono", monospace;
-}
+        .search-bar {
+            text-align: center;
+        }
 
-/* Add these styles for the search bar animation */
-input[type="text"]:focus {
-    width: calc(37%); /* Grow 15px on both sides */
-    outline: none;
-}
+        .input-container {
+            display: inline-block;
+        }
+
+        input[type="text"] {
+            padding: 20px;
+            text-align: center;
+            font-size: 25px;
+            background-color: #111;
+            color: #FFF;
+            border: none;
+            border-radius: 10px;
+            width: 450px; /* Adjust as needed */
+            transition: width 0.2s ease;
+            box-sizing: border-box;
+            font-family: "JetBrains Mono", monospace;
+        }
+
+        /* Add these styles for the search bar animation */
+        input[type="text"]:focus {
+            width: 600px; /* Adjust as needed */
+            outline: none;
+        }
+
+        /* Hide scrollbar for Chrome, Safari, and Opera */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for Firefox */
+        html {
+            scrollbar-width: none;
+        }
+
+        body {
+            scrollbar-width: none;
+        }
+
+        /* Hide scrollbar for Internet Explorer and Edge */
+        body {
+            -ms-overflow-style: none;
+        }
     </style>
 </head>
 
@@ -202,7 +221,7 @@ input[type="text"]:focus {
             <div class="button"><a href="games.html">Games</a></div>
             <div class="button"><a href="sites.html">Sites</a></div>
             <div class="button"><a href="">placeholder</a></div>
-            <div class="button"><a href="misc.html">Misc</a></div>
+            <div class="button"><a href="other.html">Other</a></div>
         </div>
     </nav>
 	<h2>Sites</h2>
@@ -289,7 +308,29 @@ input[type="text"]:focus {
             <div class="iframe-container">
             </div>
         </div>
-    </div>
+	
+	<div class="box" onclick="openGame('https://forest.katieprallphotography.com/service/hvtrs8%2F-wuw%2Ccpaxyeaoeq.aoo%2F')">
+            <img src="https://forest.katieprallphotography.com/assets/img/crazygames.png" alt="image">
+            <p>Crazy Games</p>
+            <div class="iframe-container">
+            </div>
+        </div>
+	
+	<div class="box" onclick="openGame('https://forest.katieprallphotography.com/service/hvtrs8%2F-dksaopd%2Ccmm')">
+            <img src="https://asset.brandfetch.io/idM8Hlme1a/idXcKu1zLb.png?updated=1667560105720" alt="image">
+            <p>Discord</p>
+            <div class="iframe-container">
+            </div>
+        </div>
+	
+	<div class="box" onclick="openGame('https://forest.katieprallphotography.com/service/hvtrs8%2F-pna%7B.eedopcgnmw%2Ccmm-mcln%2F')">
+            <img src="https://forest.katieprallphotography.com/assets/img/geforcenow.png" alt="image">
+            <p>Geforce NOW</p>
+            <div class="iframe-container">
+            </div>
+        </div>
+	
+	
 
 <script>
     function openGame(url) {
