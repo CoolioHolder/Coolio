@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
     <meta charset="UTF-8">
@@ -59,6 +59,7 @@
             font-family: "Montserrat", sans-serif;
             position: relative;
             bottom: 320px;
+			display: none;
         }
 
         .coolio-text {
@@ -154,28 +155,33 @@
 
         /* Position for the new button */
         .aboutblankbutton {
-            text-align: center;
-            position: fixed;
-            bottom: 375px;
-            width: 100%;
-        }
+    text-align: center;
+    position: fixed;
+    bottom: 45%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 150px;
+    height: 0px;
+    cursor: pointer;
+}
 
-        .aboutblankbutton a {
-            text-decoration: none;
-            color: #fff;
-            font-family: "JetBrains Mono", monospace;
-            font-weight: bold;
-            font-size: 18px;
-            letter-spacing: 0.5px;
-            padding: 12px 17px;
-            border-radius: 10px;
-            background-color: #007bff;
-            transition: background-color 0.3s;
-        }
+.aboutblankbutton a {
+    text-decoration: none;
+    color: #fff;
+	padding: 5px 5px;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    display: block; /* Ensure full width and height */
+    border-radius: 10px;
+    background-color: #007bff;
+    transition: background-color 0.3s;
+}
 
-        .aboutblankbutton a:hover {
-            background-color: #0072ec;
-        }
+.aboutblankbutton a:hover {
+    background-color: #0072ec;
+}
 
         /* Styling for the iframe */
         .iframe-container {
@@ -204,6 +210,17 @@
             color: #fff;
             cursor: pointer;
         }
+		
+		#randomPhrase {
+            font-size: 23px;
+            font-weight: 300;
+            color: #FFFFFF; /* Hexadecimal code for blue */
+            text-align: center;
+            font-family: "JetBrains Mono", monospace;
+            position: relative;
+            bottom: 320px;
+        }
+		
     </style>
 </head>
 
@@ -218,13 +235,14 @@
             <div class="button"><a href="games.html">Games</a></div>
             <div class="button"><a href="sites.html">Sites</a></div>
             <div class="button"><a href="">placeholder</a></div>
-            <div class="button"><a href="misc.html">Misc</a></div>
+            <div class="button"><a href="other.html">Other</a></div>
         </div>
     </nav>
 
     <!-- Welcome Message and Random Phrase -->
     <h2>Welcome to <span class="coolio-text">Coolio</span></h2>
-    <h3>(Work in progress)</h3>
+	<div id="randomPhrase"></div>
+	<div class="aboutblankbutton" onclick="openGame('https://coolioholder.github.io/coolio/home.html')"><a>Open in about:blank</a></div>
 <div>
     <div class="bottombutton-container">
         <div class="bottombutton github" onclick="window.open('https://github.com/CoolioHolder/coolio', '_blank')"><a>GitHub</a></div>
@@ -232,6 +250,47 @@
         <div class="bottombutton about" onclick="window.open('about.html', '_blank')"><a>About</a></div>
     </div>
     <script>
+        function generateRandomPhrase() {
+            const phrases = [
+                "This is literally so cool",
+                "It is not recommended to share this link with anyone.",
+                "Don't get caught using this website.",
+                "bro really?",
+                "I see you",
+				"Developed by Camden",
+				"diet, low fat, zero sugar water",
+				"I advise you use the open in about:blank button",
+				"joe mama",
+				"What do you call prehistoric meat? Jurrasic Pork",
+				"85.171.77.119",
+				"More coming soon!",
+				"oops",
+				"STAWWWWWPPPP",
+				"AGE RATING 4+",
+				"1 + 1 = 3",
+				"hehe",
+				"Where do polar bears keep their money? In a snowbank",
+				"im so good at sleeping i can do it with my eyes closed",
+				"ronal mcdonadl",
+				"im hungry",
+            ];
+
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            return phrases[randomIndex];
+        }
+        const randomPhraseElement = document.getElementById("randomPhrase");
+        randomPhraseElement.innerText = generateRandomPhrase();
+		
+		function openGame(url) {
+    var newTab = window.open('', '_blank');
+    newTab.document.write('<html><body style="margin:0;"><iframe width="100%" height="100%" src="' + url + '" frameborder="0"></iframe></body></html>');
+    newTab.document.close();
+
+    // Redirect the current tab to Google Classroom after loading the website
+    newTab.onload = function () {
+        window.location.href = "https://classroom.google.com/";
+    };
+}
     </script>
 </body>
 
