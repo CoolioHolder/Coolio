@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
     <meta charset="UTF-8">
@@ -46,24 +46,13 @@
             margin: 325px 0;
             font-size: 50px;
             font-weight: bold;
-            color: #FFFFFF; /* Hexadecimal code for white */
-            text-align: center; /* Center text horizontally */
+            color: #FFFFFF;
+            text-align: center;
             font-family: "Montserrat", sans-serif;
-        }
-
-        h3 {
-            font-size: 30px;
-            font-weight: bold;
-            color: #991d1d; /* Hexadecimal code for white */
-            text-align: center; /* Center text horizontally */
-            font-family: "Montserrat", sans-serif;
-            position: relative;
-            bottom: 320px;
-			display: none;
         }
 
         .coolio-text {
-            color: #007bff; /* Hexadecimal code for blue */
+            color: #007bff;
         }
 
         .buttons {
@@ -100,127 +89,103 @@
             bottom: 0;
             transform: skewX(-20deg);
         }
-
-        .button a:hover {
+		
+		.button a:hover {
             background-color: #007bff;
             box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
         }
 
-        /* Styles for bottom buttons */
         .bottombutton-container {
-            position: fixed;
-            bottom: 0;
             width: 100%;
             display: flex;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0); /* Transparent background */
-            backdrop-filter: blur(10px); /* Optional: Add blur effect */
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0);
             padding: 10px;
         }
 
-        .bottombutton {
-            margin: 10px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            position: relative;
-            top: 10px;
-        }
-
         .bottombutton a {
-            text-decoration: none; /* No underline by default */
+            text-decoration: none;
             font-family: "JetBrains Mono", monospace;
             font-weight: 400;
             font-size: 18px;
-            color: #FFF; /* Set text color to white */
+            color: #FFF;
             letter-spacing: 0.5px;
             transition: transform 0.2s, box-shadow 0.2s;
+            display: block;
+            border-radius: 10px;
         }
 
         .bottombutton:hover a {
-            text-decoration: underline; /* Underline on hover */
+            text-decoration: underline;
         }
 
-        /* Individual positions for each button */
+        /* Adjusted positions for each button */
         .github {
-            left: 0%;
+            margin-left: 12px;
         }
 
         .discord {
-            left: 2.5%;
-            transform: translateX(-50%);
+            margin-left: 18px;
         }
 
         .about {
-            left: 85.5%;
+            margin-left: auto;
+            margin-right: 28px;
         }
 
         /* Position for the new button */
         .aboutblankbutton {
-    text-align: center;
-    position: fixed;
-    bottom: 45%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    width: 150px;
-    height: 0px;
-    cursor: pointer;
-}
-
-.aboutblankbutton a {
-    text-decoration: none;
-    color: #fff;
-	padding: 5px 5px;
-    font-family: "JetBrains Mono", monospace;
-    font-weight: bold;
-    font-size: 18px;
-    letter-spacing: 0.5px;
-    display: block; /* Ensure full width and height */
-    border-radius: 10px;
-    background-color: #007bff;
-    transition: background-color 0.3s;
-}
-
-.aboutblankbutton a:hover {
-    background-color: #0072ec;
-}
-
-        /* Styling for the iframe */
-        .iframe-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: none;
-        }
-
-        .iframe-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            height: 80%;
-        }
-
-        .close-iframe {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: #fff;
+            text-align: center;
             cursor: pointer;
+            margin: 10px auto;
+            width: 150px;
+            position: relative;
+            bottom: 315px; /* Adjust the value to fine-tune the position */
         }
-		
-		#randomPhrase {
+
+        .aboutblankbutton a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            font-family: "JetBrains Mono", monospace;
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            display: block;
+            border-radius: 10px;
+            background-color: #007bff;
+            transition: background-color 0.3s;
+        }
+
+        .aboutblankbutton a:hover {
+            background-color: #0060c7;
+        }
+
+        #randomPhrase {
             font-size: 23px;
-            font-weight: 300;
-            color: #FFFFFF; /* Hexadecimal code for blue */
+            font-weight: 400;
+            color: #FFFFFF;
             text-align: center;
             font-family: "JetBrains Mono", monospace;
             position: relative;
             bottom: 320px;
         }
-		
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            scrollbar-width: none;
+        }
+
+        body {
+            scrollbar-width: none;
+        }
+
+        body {
+            -ms-overflow-style: none;
+        }
     </style>
 </head>
 
@@ -241,13 +206,14 @@
 
     <!-- Welcome Message and Random Phrase -->
     <h2>Welcome to <span class="coolio-text">Coolio</span></h2>
-	<div id="randomPhrase"></div>
-	<div class="aboutblankbutton" onclick="openGame('https://coolioholder.github.io/coolio/home.html')"><a>Open in about:blank</a></div>
-<div>
-    <div class="bottombutton-container">
-        <div class="bottombutton github" onclick="window.open('https://github.com/CoolioHolder/coolio', '_blank')"><a>GitHub</a></div>
-        <div class="bottombutton discord" onclick="window.open('https://discord.gg/nbCNsGXHrw', '_blank')"><a>Discord</a></div>
-        <div class="bottombutton about" onclick="window.open('about.html', '_blank')"><a>About</a></div>
+    <div id="randomPhrase"></div>
+    <div class="aboutblankbutton" onclick="openGame('https://coolioholder.github.io/coolio/home.html')"><a>Open in about:blank</a></div>
+    <div>
+        <div class="bottombutton-container">
+            <div class="bottombutton github" onclick="window.open('https://github.com/CoolioHolder/coolio', '_blank')"><a>GitHub</a></div>
+            <div class="bottombutton discord" onclick="window.open('https://discord.gg/nbCNsGXHrw', '_blank')"><a>Discord</a></div>
+            <div class="bottombutton about" onclick="window.open('about.html', '_blank')"><a>About</a></div>
+        </div>
     </div>
     <script>
         function generateRandomPhrase() {
@@ -257,22 +223,19 @@
                 "Don't get caught using this website.",
                 "bro really?",
                 "I see you",
-				"Developed by Camden",
-				"diet, low fat, zero sugar water",
-				"I advise you use the open in about:blank button",
-				"joe mama",
-				"What do you call prehistoric meat? Jurrasic Pork",
-				"85.171.77.119",
-				"More coming soon!",
-				"oops",
-				"STAWWWWWPPPP",
-				"AGE RATING 4+",
-				"1 + 1 = 3",
-				"hehe",
-				"Where do polar bears keep their money? In a snowbank",
-				"im so good at sleeping i can do it with my eyes closed",
-				"ronal mcdonadl",
-				"im hungry",
+                "diet, low fat, zero sugar water",
+                "I advise you use the open in about:blank button",
+                "I advise you use the open in about:blank button",
+                "joe mama",
+                "What do you call prehistoric meat? Jurrasic Pork",
+                "85.171.77.119",
+                "More coming soon!",
+                "AGE RATING 4+",
+                "1 + 1 = 3",
+                "hehe",
+                "Where do polar bears keep their money? In a snowbank",
+                "im so good at sleeping i can do it with my eyes closed",
+                "LOL",
             ];
 
             const randomIndex = Math.floor(Math.random() * phrases.length);
@@ -280,17 +243,15 @@
         }
         const randomPhraseElement = document.getElementById("randomPhrase");
         randomPhraseElement.innerText = generateRandomPhrase();
-		
-		function openGame(url) {
-    var newTab = window.open('', '_blank');
-    newTab.document.write('<html><body style="margin:0;"><iframe width="100%" height="100%" src="' + url + '" frameborder="0"></iframe></body></html>');
-    newTab.document.close();
 
-    // Redirect the current tab to Google Classroom after loading the website
-    newTab.onload = function () {
-        window.location.href = "https://classroom.google.com/";
-    };
-}
+        function openGame(url) {
+            var newTab = window.open('', '_blank');
+            newTab.document.write('<html><body style="margin:0;"><iframe width="100%" height="100%" src="' + url + '" frameborder="0"></iframe></body></html>');
+            newTab.document.close();
+            newTab.onload = function () {
+                window.location.href = "https://classroom.google.com/";
+            };
+        }
     </script>
 </body>
 
