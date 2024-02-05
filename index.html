@@ -123,6 +123,7 @@
             transition: transform 0.2s, box-shadow 0.2s;
             display: block;
             border-radius: 10px;
+			cursor: pointer;
         }
 
         .bottombutton:hover a {
@@ -135,12 +136,12 @@
         }
 
         .discord {
-            margin-left: 18px;
+            margin-left: 25px;
         }
 
         .about {
             margin-left: auto;
-            margin-right: 28px;
+            margin-right: 34px;
         }
 
         /* Position for the new button */
@@ -170,32 +171,6 @@
         .aboutblankbutton a:hover {
             background-color: #0060c7;
         }
-		
-		.socialbuttons {
-    display: flex;
-    position: absolute;
-    top: calc(50% + 35px);
-    left: 40%;
-    transform: translateX(-58%);
-}
-
-.socialbutton {
-    margin: 0 8px;
-    cursor: pointer;
-    text-align: center;
-}
-
-.socialbutton img {
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-    transition: transform 0.3s, border-radius 0.3s;
-}
-
-.socialbutton img:hover {
-    transform: scale(1.125);
-    border-radius: 5px;
-}
 
         #randomPhrase {
     font-size: 23px;
@@ -245,6 +220,13 @@
     <h2>Welcome to <span class="coolio-text">Coolio</span></h2>
     <div id="randomPhrase"></div>
     <div class="aboutblankbutton" onclick="openGame('https://cooliowebsite.github.io/main/home.html')"><a>Open in about:blank</a></div>
+	
+	<div class="bottombutton-container">
+            <div class="bottombutton github" onclick="window.open('https://github.com/CoolioHolder/coolio', '_blank')"><a>GitHub</a></div>
+            <div class="bottombutton discord" onclick="window.open('https://discord.gg/RkWV4NpWSp', '_blank')"><a>Discord</a></div>
+            <div class="bottombutton about" onclick="window.open('about.html', '_blank')"><a>About</a></div>
+        </div>
+    </div>
     <script>
         function generateRandomPhrase() {
             const phrases = [
