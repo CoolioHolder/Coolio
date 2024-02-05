@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coolio - Home</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #1a2023;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        nav {
+            background-color: #0e1213;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .logo img {
+            height: 43px;
+            margin-right: 17px;
+            draggable: false;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 35px;
+            font-weight: bold;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        h2 {
+    margin: auto;
+    font-size: 50px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    top: calc(50% - 55px); /* Adjust this value as needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+        .coolio-text {
+            color: #007bff;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .button {
+            margin-left: 50px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .button a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 17px;
+    border-radius: 15px;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.button:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    height: 75%;
+    width: 2.75px;
+    background-color: #555;
+    top: 3px;
+    right: -25px;
+    bottom: 0;
+    transform: skewX(-20deg);
+}
+
+.button a:hover,
+.button.active a {
+    background-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
+}
+
+        .bottombutton-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 999; /* Ensure it stays on top of other content */
+        }
+
+        .bottombutton a {
+            text-decoration: none;
+            font-family: "JetBrains Mono", monospace;
+            font-weight: 400;
+            font-size: 18px;
+            color: #FFF;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .bottombutton:hover a {
+            text-decoration: underline;
+        }
+
+        /* Adjusted positions for each button */
+        .github {
+            margin-left: 12px;
+        }
+
+        .discord {
+            margin-left: 18px;
+        }
+
+        .about {
+            margin-left: auto;
+            margin-right: 28px;
+        }
+
+        /* Position for the new button */
+        .aboutblankbutton {
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% + 35px); /* Adjust the value to fine-tune the position */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+        .aboutblankbutton a {
+            text-decoration: none;
+            color: #fff;
+            padding: 15px;
+            font-family: "JetBrains Mono", monospace;
+            font-weight: 1000;
+            font-size: 22px;
+            letter-spacing: 0.5px;
+            display: block;
+            border-radius: 10px;
+            background-color: #007bff;
+            transition: background-color 0.3s;
+        }
+
+        .aboutblankbutton a:hover {
+            background-color: #0060c7;
+        }
+		
+		.socialbuttons {
+    display: flex;
+    position: absolute;
+    top: calc(50% + 35px);
+    left: 40%;
+    transform: translateX(-58%);
+}
+
+.socialbutton {
+    margin: 0 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.socialbutton img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    transition: transform 0.3s, border-radius 0.3s;
+}
+
+.socialbutton img:hover {
+    transform: scale(1.125);
+    border-radius: 5px;
+}
+
+        #randomPhrase {
+    font-size: 23px;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: "JetBrains Mono", monospace;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: transparent; /* make the background transparent */
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #007bff; /* set the scrollbar handle color to blue */
+            border-radius: 5px; /* set the border radius to make it rounded */
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="textures/logo.png" alt="Logo" draggable="false">
+            <h1>Coolio</h1>
+        </div>
+        <div class="buttons">
+            <div class="button active"><a href="index.html">Home</a></div>
+            <div class="button"><a href="games.html">Games</a></div>
+            <div class="button"><a href="apps.html">Apps</a></div>
+            <div class="button"><a href="other.html">Other</a></div>
+        </div>
+    </nav>
+
+    <!-- Welcome Message and Random Phrase -->
+    <h2>Welcome to <span class="coolio-text">Coolio</span></h2>
+    <div id="randomPhrase"></div>
+    <div class="aboutblankbutton" onclick="openGame('https://cooliowebsite.github.io/main/home.html')"><a>Open in about:blank</a></div>
+    <script>
+        function generateRandomPhrase() {
+            const phrases = [
+                "This is literally so cool",
+                "It is not recommended to share this link with anyone.",
+                "bro really?",
+                "I see you",
+                "diet, low fat, zero sugar water",
+                "I advise you use the open in about:blank button",
+                "joe mama",
+                "What do you call prehistoric meat? Jurrasic Pork",
+                "More coming soon!",
+                "AGE RATING 4+",
+                "hehe",
+                "Where do polar bears keep their money? In a snowbank",
+                "im so good at sleeping i can do it with my eyes closed",
+                "LOL",
+				"You shouldn't use AI to do all your work. It won't make you any smarter.",
+				"I̷̗͆͊'̵͇̀ṃ̵̔͠ ̴̼͠ä̸͕̱́̂l̸͉͂̋w̸̒̾͜ą̴͒̽ý̴̟͂s̴̘̀̉ ̶͉́͠ͅw̶̖͂͌a̷̳̒t̴͍̐̂c̴͖̓͂h̸͕͑ì̵̩̥n̴̛̙̝͆g̶̞̈́ ̴͇͊̾Ḿ̶̘ͅi̷̙͝k̶͇̑ẽ̸̪̋ ̶̙͊͒ͅW̵̯̓̕ȁ̶͈̓z̷͓͕̒o̷̝͕͛̉w̵͚̿̕s̷͕͒k̵̦̻̓̅ì̷͎̩,̶̣͍͐̎ ̸̞̲̇a̴͇͒l̶̩̺͑̂w̴̲̌͘ȁ̸̠̲̂y̴̥͚̾s̷̝͑̓ ̶̢̹͊̕w̸̛̰̜̎ą̶͋̂t̵͙͋̈́ç̶̄ḥ̵͔̆i̸̦̪͐n̵̛̥̪g̶̡̾͠",
+            ];
+			
+			
+
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            return phrases[randomIndex];
+        }
+        const randomPhraseElement = document.getElementById("randomPhrase");
+        randomPhraseElement.innerText = generateRandomPhrase();
+
+        function openGame(url) {
+            var newTab = window.open('', '_blank');
+            newTab.document.write('<html><body style="margin:0;"><iframe width="100%" height="100%" src="' + url + '" frameborder="0"></iframe></body></html>');
+            newTab.document.close();
+            newTab.onload = function () {
+                window.location.href = "https://classroom.google.com/";
+            };
+        }
+    </script>
+</body>
+
+</html>

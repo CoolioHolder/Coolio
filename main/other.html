@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coolio - Other</title>
+	<style>
+        body {
+        margin: 0;
+        background-color: #1a2023;
+        }
+		
+
+        nav {
+            background-color: #0e1213;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .logo img {
+            height: 43px;
+            margin-right: 17px;
+            draggable: false;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 35px;
+            font-weight: bold;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        h2 {
+            margin: 25px 0;
+            font-size: 60px;
+            font-weight: bold;
+            color: #FFFFFF; /* Hexadecimal code for white */
+            text-align: center; /* Center text horizontally */
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .button {
+            margin-left: 50px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .button a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 17px;
+    border-radius: 15px;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.button:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    height: 75%;
+    width: 2.75px;
+    background-color: #555;
+    top: 3px;
+    right: -25px;
+    bottom: 0;
+    transform: skewX(-20deg);
+}
+
+.button a:hover,
+.button.active a {
+    background-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+    align-items: flex-start;
+	margin-top: 20px;
+}
+
+.box {
+    width: 160px;
+    height: 60px;
+    margin: 20px 15px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.3s, border 0.3s, color 0.25s;
+    position: relative;
+    border-radius: 25px;
+	background-color: #;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 1);
+}
+
+.box:hover {
+    transform: scale(1.15);
+}
+
+.box:hover p {
+color: #007bff;
+}
+
+.box img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 7px;
+    position: relative;
+    top: 15px;
+}
+
+.box p {
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    white-space: nowrap;
+	transition: color 0.3s;
+}
+
+
+
+        .search-bar {
+            text-align: center;
+        }
+
+        .input-container {
+            display: inline-block;
+        }
+
+        input[type="text"] {
+            padding: 15px;
+            text-align: center;
+            font-size: 25px;
+            background-color: #111;
+            color: #FFF;
+            border: none;
+            border-radius: 10px;
+            width: 350px; /* Adjust as needed */
+            transition: width 0.2s ease;
+            box-sizing: border-box;
+            font-family: "JetBrains Mono", monospace;
+			
+        }
+
+        /* Add these styles for the search bar animation */
+        input[type="text"]:focus {
+            width: 500px; /* Adjust as needed */
+            outline: none;
+        }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #007bff; /* set the scrollbar handle color to blue */
+  border-radius: 5px; /* set the border radius to make it rounded */
+}
+
+.red-text {
+    color: red;
+}
+
+.yellow-text {
+	color: yellow;
+}
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="textures/logo.png" alt="Logo" draggable="false">
+            <h1>Coolio</h1>
+        </div>
+        <div class="buttons">
+            <div class="button"><a href="index.html">Home</a></div>
+            <div class="button"><a href="games.html">Games</a></div>
+            <div class="button"><a href="apps.html">Apps</a></div>
+            <div class="button active"><a href="other.html">Other</a></div>
+        </div>
+    </nav>
+
+    <!-- Box container -->
+    <div class="box-container">
+
+        <div class="box" onclick="openGame('htmls/strobe.html')">
+            <p>Strobe</p>
+            <div class="iframe-container">
+                <!-- Remove the hardcoded URL and replace it with 'strobe.html' -->
+            </div>
+        </div>
+
+        <div class="box" onclick="openGame('https://fakeupdate.net/win10ue/')">
+            <p>Fake Update</p>
+            <div class="iframe-container">
+                <!-- Remove the hardcoded URL and replace it with 'strobe.html' -->
+            </div>
+        </div>
+		
+		<div class="box" onclick="openGame('htmls/flicker.html')">
+            <p>Flicker</p>
+            <div class="iframe-container">
+                <!-- Remove the hardcoded URL and replace it with 'strobe.html' -->
+            </div>
+        </div>
+		
+		<div class="box" onclick="openGame('htmls/blackscreen.html')">
+            <p>Black Screen</p>
+            <div class="iframe-container">
+                <!-- Remove the hardcoded URL and replace it with 'strobe.html' -->
+            </div>
+        </div>
+
+    <script>
+        function openGame(url) {
+            var newTab = window.open('', '_blank');
+            newTab.document.write('<html><body style="margin:0;"><iframe width="100%" height="100%" src="' + url + '" frameborder="0"></iframe></body></html>');
+            newTab.document.close();
+        }
+    </script>
+</body>
+
+</html>
