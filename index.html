@@ -56,6 +56,16 @@
     transform: translate(-50%, -50%);
 }
 
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 5px;
+	margin-left: 5px;
+}
+
         .coolio-text {
             color: #007bff;
         }
@@ -184,21 +194,38 @@
     transform: translate(-50%, -50%);
 }
 
-        /* Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
 
-        /* Track */
         ::-webkit-scrollbar-track {
-            background: transparent; /* make the background transparent */
+            background: transparent;
         }
 
-        /* Handle */
         ::-webkit-scrollbar-thumb {
-            background: #007bff; /* set the scrollbar handle color to blue */
-            border-radius: 5px; /* set the border radius to make it rounded */
+            background: #007bff;
+            border-radius: 5px;
         }
+		
+		.blue-text {
+    color: blue;
+}
+
+.yellow-text {
+	color: yellow;
+}
+
+.red-text {
+	color: red;
+}
+
+.orange-text {
+	color: orange;
+}
+
+.green-text {
+	color: #00d517;
+}
     </style>
 </head>
 
@@ -216,10 +243,16 @@
         </div>
     </nav>
 
-    <!-- Welcome Message and Random Phrase -->
     <h2>Welcome to <span class="coolio-text">Coolio</span></h2>
     <div id="randomPhrase"></div>
     <div class="aboutblankbutton" onclick="openGame('https://cooliowebsite.github.io/main/index.html')"><a>Open in about:blank</a></div>
+		<div class="aboutcontainer">
+	<h3><span class="red-text">NW </span>: Not working and I am actively looking for a solution</h3>
+	<h3><span class="blue-text">URL </span>: The game will open as a url to function</h3>
+	<h3><span class="yellow-text">W? </span>: Might be working</h3>
+	<h3><span class="orange-text">WIP </span>: Work in progress / not finished</h3>
+	
+	</div>
 	
 	<div class="bottombutton-container">
             <div class="bottombutton github" onclick="window.open('https://github.com/CoolioHolder/coolio', '_blank')"><a>GitHub</a></div>
@@ -244,8 +277,9 @@
                 "Where do polar bears keep their money? In a snowbank",
                 "im so good at sleeping i can do it with my eyes closed",
                 "LOL",
-				"You shouldn't use AI to do all your work. It won't make you any smarter.",
-				"I̷̗͆͊'̵͇̀ṃ̵̔͠ ̴̼͠ä̸͕̱́̂l̸͉͂̋w̸̒̾͜ą̴͒̽ý̴̟͂s̴̘̀̉ ̶͉́͠ͅw̶̖͂͌a̷̳̒t̴͍̐̂c̴͖̓͂h̸͕͑ì̵̩̥n̴̛̙̝͆g̶̞̈́ ̴͇͊̾Ḿ̶̘ͅi̷̙͝k̶͇̑ẽ̸̪̋ ̶̙͊͒ͅW̵̯̓̕ȁ̶͈̓z̷͓͕̒o̷̝͕͛̉w̵͚̿̕s̷͕͒k̵̦̻̓̅ì̷͎̩,̶̣͍͐̎ ̸̞̲̇a̴͇͒l̶̩̺͑̂w̴̲̌͘ȁ̸̠̲̂y̴̥͚̾s̷̝͑̓ ̶̢̹͊̕w̸̛̰̜̎ą̶͋̂t̵͙͋̈́ç̶̄ḥ̵͔̆i̸̦̪͐n̵̛̥̪g̶̡̾͠",
+		"You shouldn't use AI to do all your work. It won't make you any smarter.",
+		"I̷̗͆͊'̵͇̀ṃ̵̔͠ ̴̼͠ä̸͕̱́̂l̸͉͂̋w̸̒̾͜ą̴͒̽ý̴̟͂s̴̘̀̉ ̶͉́͠ͅw̶̖͂͌a̷̳̒t̴͍̐̂c̴͖̓͂h̸͕͑ì̵̩̥n̴̛̙̝͆g̶̞̈́ ̴͇͊̾Ḿ̶̘ͅi̷̙͝k̶͇̑ẽ̸̪̋ ̶̙͊͒ͅW̵̯̓̕ȁ̶͈̓z̷͓͕̒o̷̝͕͛̉w̵͚̿̕s̷͕͒k̵̦̻̓̅ì̷͎̩,̶̣͍͐̎ ̸̞̲̇a̴͇͒l̶̩̺͑̂w̴̲̌͘ȁ̸̠̲̂y̴̥͚̾s̷̝͑̓ ̶̢̹͊̕w̸̛̰̜̎ą̶͋̂t̵͙͋̈́ç̶̄ḥ̵͔̆i̸̦̪͐n̵̛̥̪g̶̡̾͠",
+		"i ate a Floccinaucinihilipilification",
             ];
 			
 			
