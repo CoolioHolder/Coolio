@@ -193,15 +193,58 @@ color: #007bff;
   border-radius: 5px; /* set the border radius to make it rounded */
 }
 
-.red-text {
-    color: red;
+.blue-text {
+    color: blue;
 }
+
+.yellow-text {
+	color: yellow;
+}
+
+.red-text {
+	color: red;
+}
+
+.orange-text {
+	color: orange;
+}
+
+.green-text {
+	color: #00d517;
+}
+
+h3 {
+    font-size: 21.5px;
+    font-weight: bold;
+    color: #FFFFFF; /* Hexadecimal code for white */
+    text-align: left; /* Center text horizontally */
+    font-family: "Montserrat", sans-serif;
+    margin-top: 0px; /* Add margin to move the h2 elements down by 20px */
+}
+
+.aboutcontainer {
+    position: relative;
+    width: 700px;
+    height: 175px;
+    background-color: rgba(0, 0, 0, 0.6); /* Light black color */
+    margin: auto;
+    padding: 10px;
+    border-radius: 15px;
+    top: 15px; /* Move down by 20 pixels */
+}
+
     </style>
 </head>
 
 <body>
     <nav>
+	<div class="aboutcontainer">
+	<h3><span class="red-text">NW </span>: Not working and I am actively looking for a solution</h3>
+	<h3><span class="blue-text">URL </span>: The game will open as a url to function</h3>
+	<h3><span class="yellow-text">W? </span>: Might be working</h3>
+	<h3><span class="orange-text">WIP </span>: Work in progress / not finished</h3>
         <div class="logo">
+	</div>
             <img src="textures/logo.png" alt="Logo" draggable="false">
             <h1>Coolio</h1>
         </div>
@@ -289,6 +332,13 @@ color: #007bff;
 	    <div class="box" onclick="openGame('https://mathway.com')">
             <img src="https://th.bing.com/th/id/OIP.4xlmsU3dNBb2yUmNovqxrQHaHa?w=184&h=184&c=7&r=0&o=5&pid=1.7" alt="image">
             <p>Mathway</p>
+            <div class="iframe-container">
+            </div>
+        </div>
+
+	    <div class="box" onclick="openGame('https://store.rg-adguard.net/')">
+            <img src="https://cdn-icons-png.flaticon.com/128/888/888865.png" alt="image">
+            <p>Microsoft Store <span class="orange-text">(W?)</span></p>
             <div class="iframe-container">
             </div>
         </div>
