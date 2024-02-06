@@ -45,22 +45,25 @@
         }
 
         h2 {
-            margin: 25px 0;
-            font-size: 60px;
-            font-weight: bold;
-            color: #FFFFFF; /* Hexadecimal code for white */
-            text-align: center; /* Center text horizontally */
-            font-family: "Montserrat", sans-serif;
-        }
+    position: relative;
+    font-size: 60px;
+    font-weight: bold;
+    color: #FFFFFF; /* Hexadecimal code for white */
+    text-align: center; /* Center text horizontally */
+    font-family: "Montserrat", sans-serif;
+    left: 0;
+    margin: 40px;
+    top: 30px; /* Move down by 30 pixels */
+}
 		
 		h3 {
-		margin: 10px 0;
-		margin-left: 10px;
-            font-size: 15px;
-            font-weight: bold;
-            color: #FFFFFF; /* Hexadecimal code for white */
-            font-family: "Montserrat", sans-serif;
-			}
+    font-size: 21.5px;
+    font-weight: bold;
+    color: #FFFFFF; /* Hexadecimal code for white */
+    text-align: left; /* Center text horizontally */
+    font-family: "Montserrat", sans-serif;
+    margin-top: 0px; /* Add margin to move the h2 elements down by 20px */
+}
 
         .buttons {
             display: flex;
@@ -218,6 +221,21 @@ color: #007bff;
 .orange-text {
 	color: orange;
 }
+
+.green-text {
+	color: #00d517;
+}
+
+.aboutcontainer {
+    position: relative;
+    width: 700px;
+    height: 175px;
+    background-color: rgba(0, 0, 0, 0.6); /* Light black color */
+    margin: auto;
+    padding: 10px;
+    border-radius: 15px;
+    top: 15px; /* Move down by 20 pixels */
+}
     </style>
 </head>
 
@@ -234,10 +252,13 @@ color: #007bff;
 			<div class="button"><a href="other.html">Other</a></div>
 		</div>
 	</nav>
+	<div class="aboutcontainer">
 	<h3><span class="red-text">NW </span>: Not working and I am actively looking for a solution</h3>
+	<h3><span class="blue-text">URL </span>: The game will open as a url to function</h3>
 	<h3><span class="yellow-text">W? </span>: Might be working</h3>
 	<h3><span class="orange-text">WIP </span>: Work in progress / not finished</h3>
-	<h3><span class="blue-text">URL </span>: The game will open as a url to function</h3>
+	
+	</div>
 <h2>Games</h2>
 
 <div class="search-bar">
@@ -275,10 +296,10 @@ color: #007bff;
     </div>
 			
 			<div class="box" onclick="openGame(
-        'https://www.gamenora.com/splash/roblox/',
+        'https://forest.katieprallphotography.com/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe-slirpgt%3Darp%5Dpig%3Fcmm%2Crmbnoz.alkelt%24pcrvngr%3Fgcmgnmrc',
         'Roblox')">
         <img src="https://play-lh.googleusercontent.com/WNWZaxi9RdJKe2GQM3vqXIAkk69mnIl4Cc8EyZcir2SKlVOxeUv9tZGfNTmNaLC717Ht=w240-h480-rw" alt="image">
-        <p>Roblox <span class="red-text">(NW)</span></p>
+        <p>Roblox <span class="yellow-text">(W?)</span></p>
     </div>
 		
 		<div class="box" onclick="openGame(
@@ -339,7 +360,7 @@ color: #007bff;
     </div>
 
 		<div class="box" onclick="openGame(
-    'https://kdata1.com/2020/05/slope/',
+    'https://webglmath.github.io/slope/',
     'Slope')">
     <img src="https://play-lh.googleusercontent.com/uJn2i9h7KxYQarC_c3K4qH6o7gLtflFnhD_dN14MNkzHJ1NeNFzCL69jpB5mT0vCoQs" alt="image">
     <p>Slope</p>
@@ -504,7 +525,7 @@ color: #007bff;
 		<div class="box" onclick="openGame(
     'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/element@d16a581fca7911cde19e71e5cc182ddd255e6295/bs.xml',
     'Blocky Snakes')">
-    <img src="https://img.gamedistribution.com/776fa37ed20743b18e38c4e6ecc178bf-512x512.jpeg" alt="image">
+    <img src="https://github.com/cooliowebsite/main/blob/main/textures/blockysnakes.jpeg?raw=true" alt="image">
     <p>Blocky Snakes</p>
 </div>
 
@@ -512,7 +533,7 @@ color: #007bff;
 		<div class="box" onclick="openGame(
     'https://unblocked76.github.io/blockpost2/',
     'Blockpost')">
-    <img src="https://ubg76.github.io/ikone/blockpost.webp" alt="image">
+    <img src="https://github.com/cooliowebsite/main/blob/main/textures/blockpost.png?raw=true" alt="image">
     <p>Blockpost</p>
 </div>
 
@@ -553,7 +574,7 @@ color: #007bff;
     'https://webglmath.github.io/drift-boss/',
     'Drift Boss')">
     <img src="https://ubg76.github.io/ikone/driftboss.webp" alt="image">
-    <p>Drift Boss</p>
+    <p>Drift Boss <span class="yellow-text">(W?)</span></p>
 </div>
 		
 		<div class="box" onclick="openGame(
