@@ -11,17 +11,17 @@
     <style>
         body {
             margin: 0;
-            background-color: #1a2023;
+            background-color: #131313;
         }
 
         nav {
-            background-color: #0e1213;
-            color: white;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    background-color: #0b0b0b;
+    color: white;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
         .logo {
             display: flex;
@@ -60,7 +60,7 @@
         }
 
         .game-info {
-            background-color: #1a2023;
+            background-color: #131313;
             width: 22%; /* Adjust based on your preference */
             height: calc(100vh - 120px); /* Adjust to fill the remaining vertical space */
             display: flex;
@@ -140,33 +140,33 @@
         }
 
         .button a {
-            text-decoration: none;
-            color: white;
-            padding: 12px 17px;
-            border-radius: 15px;
-            font-family: "JetBrains Mono", monospace;
-            font-weight: 400;
-            font-size: 18px;
-            letter-spacing: 0.5px;
-            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-        }
+    text-decoration: none;
+    color: white;
+    padding: 8px 17px;
+    border-radius: 15px;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    transition: color 0.15s, transform 0.2s, box-shadow 0.2s;
+}
 
-        .button:not(:last-child)::before {
-            content: "";
-            position: absolute;
-            height: 75%;
-            width: 2.75px;
-            background-color: #555;
-            top: 3px;
-            right: -25px;
-            bottom: 0;
-            transform: skewX(-20deg);
-        }
+.button:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    height: 75%;
+    width: 2.75px;
+    background-color: #555;
+    top: 3px;
+    right: -25px;
+    bottom: 0;
+    transform: skewX(-20deg);
+}
 
-        .button a:hover {
-            background-color: #007bff;
-            box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
-        }
+.button a:hover,
+.button.active a {
+color: #1859c4;
+}
 
         .copied-message {
             position: fixed;
