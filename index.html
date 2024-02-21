@@ -16,13 +16,13 @@
         }
 
         nav {
-            background-color: #0e1213;
-            color: white;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    background-color: #0b0b0b;
+    color: white;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
         .logo {
             display: flex;
@@ -84,13 +84,13 @@ h3 {
         .button a {
     text-decoration: none;
     color: white;
-    padding: 12px 17px;
+    padding: 8px 17px;
     border-radius: 15px;
     font-family: "JetBrains Mono", monospace;
-    font-weight: 400;
-    font-size: 18px;
+    font-weight: bold;
+    font-size: 20px;
     letter-spacing: 0.5px;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    transition: color 0.15s, transform 0.2s, box-shadow 0.2s;
 }
 
 .button:not(:last-child)::before {
@@ -107,8 +107,7 @@ h3 {
 
 .button a:hover,
 .button.active a {
-    background-color: #007bff;
-    box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
+color: #1859c4;
 }
 
         .bottombutton-container {
@@ -154,12 +153,11 @@ h3 {
             margin-right: 34px;
         }
 
-        /* Position for the new button */
         .aboutblankbutton {
     text-align: center;
     cursor: pointer;
     position: absolute;
-    top: calc(50% + 38px); /* Adjust the value to fine-tune the position */
+    top: calc(50% + 43px); /* Adjust the value to fine-tune the position */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -174,12 +172,13 @@ h3 {
             letter-spacing: 0.5px;
             display: block;
             border-radius: 10px;
-            background-color: #007bff;
-            transition: background-color 0.3s;
+            background-color: #111;
+            transition: transform 0.3s, filter 0.3s;
         }
 
         .aboutblankbutton a:hover {
-            background-color: #0060c7;
+            transform: scale(1.05);
+			filter: brightness(140%);
         }
 
         #randomPhrase {
@@ -226,17 +225,28 @@ h3 {
 .green-text {
 	color: #00d517;
 }
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to bottom, #001c8a, black);
+}
     </style>
 </head>
 
 <body>
+<div id="particles-js"></div>
     <nav>
         <div class="logo">
             <img src="textures/logo.png" alt="Logo" draggable="false">
             <h1>Coolio</h1>
         </div>
         <div class="buttons">
-            <div class="button active"><a href="home.html">Home</a></div>
+            <div class="button active"><a href="https://cooliowebsite.github.io">Home</a></div>
             <div class="button"><a href="games.html">Games</a></div>
             <div class="button"><a href="apps.html">Apps</a></div>
             <div class="button"><a href="other.html">Other</a></div>
@@ -254,6 +264,8 @@ h3 {
             <div class="bottombutton about" onclick="('')"><a>About</a></div>
         </div>
     </div>
+<script src="particles.js"></script>
+<script src="app.js"></script>
     <script>
         function generateRandomPhrase() {
             const phrases = [
