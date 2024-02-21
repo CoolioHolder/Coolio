@@ -12,17 +12,19 @@
         body {
         margin: 0;
         background-color: #1a2023;
+		transition: all 0.3s ease;
         }
 		
 
         nav {
-            background-color: #0e1213;
-            color: white;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    background-color: #0b0b0b;
+    color: white;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
         .logo {
             display: flex;
@@ -44,13 +46,16 @@
         }
 
         h2 {
-            margin: 25px 0;
-            font-size: 60px;
-            font-weight: bold;
-            color: #FFFFFF; /* Hexadecimal code for white */
-            text-align: center; /* Center text horizontally */
-            font-family: "Montserrat", sans-serif;
-        }
+    position: relative;
+    font-size: 60px;
+    font-weight: bold;
+    color: #FFFFFF; /* Hexadecimal code for white */
+    text-align: center; /* Center text horizontally */
+    font-family: "Montserrat", sans-serif;
+    left: 0;
+    margin: 0px;
+    top: 30px;
+}
 
         .buttons {
             display: flex;
@@ -66,13 +71,13 @@
         .button a {
     text-decoration: none;
     color: white;
-    padding: 12px 17px;
+    padding: 8px 17px;
     border-radius: 15px;
     font-family: "JetBrains Mono", monospace;
-    font-weight: 400;
-    font-size: 18px;
+    font-weight: bold;
+    font-size: 20px;
     letter-spacing: 0.5px;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    transition: color 0.15s, transform 0.2s, box-shadow 0.2s;
 }
 
 .button:not(:last-child)::before {
@@ -89,8 +94,7 @@
 
 .button a:hover,
 .button.active a {
-    background-color: #007bff;
-    box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
+color: #1859c4;
 }
 
 .box-container {
@@ -103,39 +107,31 @@
 }
 
 .box {
-    width: 240px;
-    height: 60px;
-    margin: 20px 15px;
+    width: 200px;
+    height: 70px;
+    margin: 20px 20px;
     text-align: center;
     cursor: pointer;
-    overflow: hidden;
-    transition: transform 0.25s, box-shadow 0.3s, border 0.3s, color 0.25s;
     position: relative;
-    border-radius: 25px;
-	background-color: #;
-	box-shadow: 0 0 6px rgba(0, 0, 0, 1);
+    border-radius: 15px;
+	background-color: #111;
+	transition: transform 0.2s, filter 0.2s;
 }
 
 .box:hover {
-    transform: scale(1.15);
-}
-
-.box:hover p {
-color: #007bff;
+	transform: scale(1.10);
+	filter: brightness(140%);
 }
 
 .box p {
-    position: absolute;
-    bottom: 18px;
+    position: relative;
+    bottom: -25px;
     left: 0;
     right: 0;
     margin: 0;
-    font-size: 18px;
+    font-size: 20px;
     color: #fff;
     font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    white-space: nowrap;
-	transition: color 0.3s;
 }
 
 
@@ -149,40 +145,37 @@ color: #007bff;
         }
 
         input[type="text"] {
-            padding: 15px;
-            text-align: center;
-            font-size: 25px;
-            background-color: #111;
-            color: #FFF;
-            border: none;
-            border-radius: 10px;
-            width: 350px; /* Adjust as needed */
-            transition: width 0.2s ease;
-            box-sizing: border-box;
-            font-family: "JetBrains Mono", monospace;
-			
-        }
+    padding: 18px;
+    text-align: center;
+    font-size: 25px;
+    background-color: #0b0b0b; /* Semi-transparent black background */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    width: 400px; /* Adjust as needed */
+    transition: width 0.16s ease;
+    box-sizing: border-box;
+    font-family: "JetBrains Mono", monospace;
+    margin-top: 40px;
+}
 
         /* Add these styles for the search bar animation */
         input[type="text"]:focus {
             width: 500px; /* Adjust as needed */
             outline: none;
         }
-
-/* Scrollbar */
-::-webkit-scrollbar {
+		
+		::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: none;
+  background: #0b0b0b;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #007bff; /* set the scrollbar handle color to blue */
-  border-radius: 5px; /* set the border radius to make it rounded */
+  background: #222;
+  border-radius: 10px;
 }
 
 .blue-text {
@@ -204,17 +197,29 @@ color: #007bff;
 .green-text {
 	color: #00d517;
 }
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to bottom, #001c8a, black);
+}
+
     </style>
 </head>
 
 <body>
+	<div id="particles-js"></div>
     <nav>
         <div class="logo">
             <img src="textures/logo.png" alt="Logo" draggable="false">
             <h1>Coolio</h1>
         </div>
         <div class="buttons">
-            <div class="button"><a href="home.html">Home</a></div>
+            <div class="button"><a href="https://cooliowebsite.github.io">Home</a></div>
             <div class="button"><a href="games.html">Games</a></div>
             <div class="button"><a href="apps.html">Apps</a></div>
             <div class="button active"><a href="other.html">Other</a></div>
@@ -247,13 +252,8 @@ color: #007bff;
             <div class="iframe-container">
             </div>
         </div>
-		
-		<div class="box" onclick="openGame('https://github.com/rocksdanister/lively/releases/download/v2.0.7.4/lively_setup_x86_full_v2074.exe')">
-            <p><p>Wallpaper Bypass <span class="yellow-text">(W?)</span></p></p>
-            <div class="iframe-container">
-            </div>
-        </div>
-
+<script src="particles.js"></script>
+<script src="app.js"></script>
     <script>
         function openGame(url) {
             var newTab = window.open('', '_blank');
