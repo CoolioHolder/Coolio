@@ -194,7 +194,7 @@
             <h1>Coolio</h1>
         </div>
         <div class="buttons">
-            <div class="button"><a href="home.html">Home</a></div>
+            <div class="button"><a href="https://cooliowebsite.github.io">Home</a></div>
             <div class="button"><a href="games.html">Games</a></div>
             <div class="button"><a href="apps.html">Apps</a></div>
             <div class="button"><a href="other.html">Other</a></div>
@@ -216,10 +216,12 @@
     <div class="copied-message" id="copiedMessage">Copied Url!</div>
     <script>
         const gameUrl = sessionStorage.getItem('gameUrl');
-        const gameTitle = sessionStorage.getItem('gameTitle');
-        document.title = `Coolio - ${gameTitle}`;
-        document.getElementById('gameTitle').innerText = gameTitle;
-        document.getElementById('gameIframe').setAttribute('src', gameUrl);
+const gameTitle = sessionStorage.getItem('gameTitle');
+const gameImage = sessionStorage.getItem('gameImage');
+document.title = `Coolio - ${gameTitle}`;
+document.getElementById('gameTitle').innerText = gameTitle;
+document.getElementById('gameIframe').setAttribute('src', gameUrl);
+document.getElementById('gameImage').setAttribute('src', gameImage);
         function goBack() {
             window.history.back();
         }
