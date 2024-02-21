@@ -3,8 +3,8 @@
 
 <head>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Coolio - Games</title>
@@ -12,13 +12,14 @@
         body {
         margin: 0;
         background-color: #1a2023;
+		transition: all 0.3s ease;
         }
 		
 
         nav {
-    background-color: #0e1213;
+    background-color: #0b0b0b;
     color: white;
-    padding: 10px;
+    padding: 7px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,8 +53,8 @@
     text-align: center; /* Center text horizontally */
     font-family: "Montserrat", sans-serif;
     left: 0;
-    margin: 40px;
-    top: 30px; /* Move down by 30 pixels */
+    margin: 0px;
+    top: 30px;
 }
 
         .buttons {
@@ -70,13 +71,13 @@
         .button a {
     text-decoration: none;
     color: white;
-    padding: 12px 17px;
+    padding: 8px 17px;
     border-radius: 15px;
     font-family: "JetBrains Mono", monospace;
-    font-weight: 400;
-    font-size: 18px;
+    font-weight: bold;
+    font-size: 20px;
     letter-spacing: 0.5px;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    transition: color 0.15s, transform 0.2s, box-shadow 0.2s;
 }
 
 .button:not(:last-child)::before {
@@ -93,8 +94,7 @@
 
 .button a:hover,
 .button.active a {
-    background-color: #007bff;
-    box-shadow: 0 0 6px rgba(0, 123, 255, 0.8);
+color: #1859c4;
 }
 
 .box-container {
@@ -107,47 +107,37 @@
 }
 
 .box {
-    width: 160px;
-    height: 160px;
-    margin: 20px 15px;
+    width: 155px;
+    height: 155px;
+    margin: 20px 20px;
     text-align: center;
     cursor: pointer;
     overflow: hidden;
-    transition: transform 0.25s, box-shadow 0.3s, border 0.3s, color 0.25s;
     position: relative;
-    border-radius: 25px;
-	background-color: #;
-}
-
-.box:hover {
-    transform: scale(1.15);
-}
-
-.box:hover p {
-color: #007bff;
+    border-radius: 20px;
 }
 
 .box img {
-    width: 110px;
-    height: 110px;
+    width: 155px;
+    height: 155px;
     object-fit: cover;
-    border-radius: 15px;
     position: relative;
-    top: 15px;
+	transition: transform 0.3s;
+}
+
+.box:hover img {
+	transform: scale(1.10);
 }
 
 .box p {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
+    position: relative;
+    bottom: 0;
+    left: -5px;
     right: 0;
     margin: 0;
-    font-size: 12.5px;
+    font-size: 20px;
     color: #fff;
     font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    white-space: nowrap;
-	transition: color 0.3s;
 }
 
 
@@ -161,40 +151,37 @@ color: #007bff;
         }
 
         input[type="text"] {
-            padding: 15px;
-            text-align: center;
-            font-size: 25px;
-            background-color: #111;
-            color: #FFF;
-            border: none;
-            border-radius: 10px;
-            width: 350px; /* Adjust as needed */
-            transition: width 0.2s ease;
-            box-sizing: border-box;
-            font-family: "JetBrains Mono", monospace;
-			
-        }
+    padding: 18px;
+    text-align: center;
+    font-size: 25px;
+    background-color: #0b0b0b; /* Semi-transparent black background */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    width: 400px; /* Adjust as needed */
+    transition: width 0.16s ease;
+    box-sizing: border-box;
+    font-family: "JetBrains Mono", monospace;
+    margin-top: 40px;
+}
 
         /* Add these styles for the search bar animation */
         input[type="text"]:focus {
             width: 500px; /* Adjust as needed */
             outline: none;
         }
-
-/* Scrollbar */
-::-webkit-scrollbar {
+		
+		::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: none;
+  background: #0b0b0b;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #007bff; /* set the scrollbar handle color to blue */
-  border-radius: 5px; /* set the border radius to make it rounded */
+  background: #222;
+  border-radius: 10px;
 }
 
 .blue-text {
@@ -216,17 +203,46 @@ color: #007bff;
 .green-text {
 	color: #00d517;
 }
+
+.slide-up-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: transform 0.25s;
+    transform: translateY(100%);
+    align-items: center;
+	padding: 5px;
+}
+
+.box:hover .slide-up-box {
+    transform: translateY(0%);
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to bottom, #001c8a, black);
+}
+
     </style>
 </head>
 
 <body>
+<div id="particles-js"></div>
 	<nav>
 		<div class="logo">
 			<img src="textures/logo.png" alt="Logo" draggable="false">
 			<h1>Coolio</h1>
 		</div>
 		<div class="buttons">
-			<div class="button"><a href="home.html">Home</a></div>
+			<div class="button"><a href="https://cooliowebsite.github.io">Home</a></div>
 			<div class="button active"><a href="games.html">Games</a></div>
 			<div class="button"><a href="apps.html">Apps</a></div>
 			<div class="button"><a href="other.html">Other</a></div>
@@ -239,401 +255,382 @@ color: #007bff;
     </div>
 	
 	<div class="box-container" id="boxContainer">
-
-	<div class="box" onclick="openGame(
-        'https://sd592g.github.io/zj684od4lfg/',
-        'Minecraft 1.5.2')">
-        <img src="https://cdn.iconscout.com/icon/free/png-256/minecraft-2752120-2284937.png" alt="image">
-        <p>Minecraft 1.5.2</p>
+	
+	<div class="box" onclick="openGame('https://sd592g.github.io/zj684od4lfg/', 'Minecraft')">
+    <img src="https://cdn.iconscout.com/icon/free/png-256/minecraft-2752120-2284937.png" alt="image">
+    <div class="slide-up-box">
+        <p>Minecraft</p>
     </div>
-		
-		<div class="box" onclick="openGame(
-        'https://webglmath.github.io/drift-hunters/',
-        'Drift Hunters')">
-        <img src="https://imgs.search.brave.com/JNKY_hcSfENonFWmuBcC2JTEuPkhIxGBAb0na2Z3Nxw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kcmlm/dC1odW50ZXJzLmlv/L2RhdGEvaW1hZ2Uv/ZHJpZnQtaHVudGVy/cy5wbmc" alt="image">
+</div>
+
+<div class="box" onclick="openGame('https://view.simpleplantdesign.com/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe-slirpgt%3Darp%5Dpig%3Fcmm%2Crmbnoz.alkelt%24pcrvngr%3Fgcmgnmrc', 'Roblox')">
+    <img src="https://play-lh.googleusercontent.com/WNWZaxi9RdJKe2GQM3vqXIAkk69mnIl4Cc8EyZcir2SKlVOxeUv9tZGfNTmNaLC717Ht=w240-h480-rw" alt="image">
+    <div class="slide-up-box">
+        <p>Roblox <span class="yellow-text">W?</span></p>
+    </div>
+</div>
+		<div class="box" onclick="openGame('https://webglmath.github.io/drift-hunters/', 'Drift Hunters')">
+    <img src="https://imgs.search.brave.com/JNKY_hcSfENonFWmuBcC2JTEuPkhIxGBAb0na2Z3Nxw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kcmlm/dC1odW50ZXJzLmlv/L2RhdGEvaW1hZ2Uv/ZHJpZnQtaHVudGVy/cy5wbmc" alt="image">
+    <div class="slide-up-box">
         <p>Drift Hunters</p>
     </div>
+</div>
+
 		
-		<div class="box" onclick="openGame(
-        'https://unblocked76.github.io/subway-surfers-sanfancisco/',
-        'Subway Surfers')">
-        <img src="https://github.com/cooliowebsite/cooliowebsite.github.io/blob/main/textures/subwaysurfers.png?raw=true" alt="image">
+		<div class="box" onclick="openGame('https://unblocked76.github.io/subway-surfers-sanfancisco/', 'Subway Surfers')">
+    <img src="https://github.com/cooliowebsite/cooliowebsite.github.io/blob/main/textures/ThirtySixthAvatar.png?raw=true" alt="image">
+    <div class="slide-up-box">
         <p>Subway Surfers</p>
     </div>
-			
-			<div class="box" onclick="openGame(
-        'https://forest.katieprallphotography.com/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe-slirpgt%3Darp%5Dpig%3Fcmm%2Crmbnoz.alkelt%24pcrvngr%3Fgcmgnmrc',
-        'Roblox')">
-        <img src="https://play-lh.googleusercontent.com/WNWZaxi9RdJKe2GQM3vqXIAkk69mnIl4Cc8EyZcir2SKlVOxeUv9tZGfNTmNaLC717Ht=w240-h480-rw" alt="image">
-        <p>Roblox</p>
-    </div>
+</div>
+
 		
-		<div class="box" onclick="openGame(
-        'https://ubg77.github.io/game131022/drive-mad/',
-        'Drive Mad')">
-        <img src="https://imgs.search.brave.com/3rxS6XxMsCh9HgI_yUQlArcH1QyC0pgOTM85j30E-7M/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtZWRzLXNzbC54/Ym94bGl2ZS5jb20v/aW1hZ2U_dXJsPTRy/dDkubFhEQzRIXzkz/bGFWMV9lSEhGVDk0/OWZVaXB6a2lGT0JI/M2ZBaVpaVUNkWW9q/d1V5WDJhVG9uUzFh/SXdNcng2TlVJc0hm/VUhTTHpqR0pGeHht/VDRGa2hvcDFkMnRJ/bW1fTjYuTjFqeHU5/Z3EzTTB5QTdVQlVD/MXphY1R6MXB6V0do/UkN3em54X3FYMXRT/Z1ZLYTlNenE0NllU/S0hXVUFVYzV1ejdV/RS0mZm9ybWF0PXNv/dXJjZQ" alt="image">
+		<div class="box" onclick="openGame('https://ubg77.github.io/game131022/drive-mad/', 'Drive Mad')">
+    <img src="https://imgs.search.brave.com/3rxS6XxMsCh9HgI_yUQlArcH1QyC0pgOTM85j30E-7M/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtZWRzLXNzbC54/Ym94bGl2ZS5jb20v/aW1hZ2U_dXJsPTRy/dDkubFhEQzRIXzkz/bGFWMV9lSEhGVDk0/OWZVaXB6a2lGT0JI/M2ZBaVpaVUNkWW9q/d1V5WDJhVG9uUzFh/SXdNcng2TlVJc0hm/VUhTTHpqR0pGeHht/VDRGa2hvcDFkMnRJ/bW1fTjYuTjFqeHU5/Z3EzTTB5QTdVQlVD/MXphY1R6MXB6V0do/UkN3em54X3FYMXRT/Z1ZLYTlNenE0NllU/S0hXVUFVYzV1ejdV/RS0mZm9ybWF0PXNv/dXJjZQ" alt="image">
+    <div class="slide-up-box">
         <p>Drive Mad</p>
     </div>
-		
-		<div class="box" onclick="openGame(
-        'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@0d8fb9c7430567ed0900902593eee6ba2ba8d297/ts3.xml',
-        'Time Shooter 3')">
-        <img src="https://imgs.search.brave.com/wi3r1Ks_lJo1BF_hFv8LHqSkeFi5JjAm2vIshKAZkuw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9rZXZp/bi5nYW1lcy9hc3Nl/dHMvY2FjaGVfaW1h/Z2UvbmV3L3RpbWUt/c2hvb3Rlci0zLXN3/YXRfMjAweDIwMF9k/OWQud2VicA" alt="image">
+</div>
+
+<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@0d8fb9c7430567ed0900902593eee6ba2ba8d297/ts3.xml', 'Time Shooter 3')">
+    <img src="https://github.com/cooliowebsite/cooliowebsite.github.io/blob/main/textures/ts3.png?raw=true" alt="image">
+    <div class="slide-up-box">
         <p>Time Shooter 3</p>
     </div>
+</div>
 
-		
-		<div class="box" onclick="openGame(
-        'https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/element@9cccb2fafb569c963501a5d818472b561121cea6/totm.xml',
-        'Tomb of The Mask')">
-        <img src="https://imgs.search.brave.com/z6mhSRABfEsUEOUAMbV5OHwb0q9jjU3CSpxGynodNGs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90b21i/b2Z0aGVtYXNrLmdp/dGh1Yi5pby9pbWcv/dG9tYi1vZi10aGUt/bWFzay5wbmc" alt="image">
+<div class="box" onclick="openGame('https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/element@9cccb2fafb569c963501a5d818472b561121cea6/totm.xml', 'Tomb of The Mask')">
+    <img src="https://imgs.search.brave.com/z6mhSRABfEsUEOUAMbV5OHwb0q9jjU3CSpxGynodNGs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90b21i/b2Z0aGVtYXNrLmdp/dGh1Yi5pby9pbWcv/dG9tYi1vZi10aGUt/bWFzay5wbmc" alt="image">
+    <div class="slide-up-box">
         <p>Tomb of The Mask</p>
     </div>
+</div>
+
 		
-		<div class="box" onclick="openGame(
-        'https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/RobiFet/workflow@60b41ef8c9123ae41b86bf04c9b39e1a5713aaa9/bin/gs.xml',
-        'Gun Spin')">
-        <img src="https://imgs.search.brave.com/vLRNaMbqhMHHDNs78OkYMQ92Jwt8PZav8qLVLj2oKY0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9iaXRs/aWZlb25saW5lLmlv/L3VwbG9hZC9pbWdz/L2d1bi1zcGluLWdh/bWUxLnBuZw" alt="image">
+		<div class="box" onclick="openGame('https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/RobiFet/workflow@60b41ef8c9123ae41b86bf04c9b39e1a5713aaa9/bin/gs.xml', 'Gun Spin')">
+    <img src="https://imgs.search.brave.com/vLRNaMbqhMHHDNs78OkYMQ92Jwt8PZav8qLVLj2oKY0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9iaXRs/aWZlb25saW5lLmlv/L3VwbG9hZC9pbWdz/L2d1bi1zcGluLWdh/bWUxLnBuZw" alt="image">
+    <div class="slide-up-box">
         <p>Gun Spin</p>
     </div>
-		
-		<div class="box" onclick="openGame(
-        'https://unblockedgamesworlds.github.io/monkey-mart/',
-        'Monkey Mart')">
-        <img src="https://imgs.search.brave.com/OjxcXjvRCIdFZPNyotGYJRhkZTscxlNjJIYUHV177U8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zbG9w/ZS1nYW1lLmdpdGh1/Yi5pby9pbWcvbWsu/cG5n" alt="image">
+</div>
+
+<div class="box" onclick="openGame('https://unblockedgamesworlds.github.io/monkey-mart/', 'Monkey Mart')">
+    <img src="https://imgs.search.brave.com/OjxcXjvRCIdFZPNyotGYJRhkZTscxlNjJIYUHV177U8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zbG9w/ZS1nYW1lLmdpdGh1/Yi5pby9pbWcvbWsu/cG5n" alt="image">
+    <div class="slide-up-box">
         <p>Monkey Mart</p>
     </div>
-		
-		<div class="box" onclick="openGame(
-        'https://unblocked-games.s3.amazonaws.com/games/snow-war-io/index.html',
-        'Snow War.io')">
-        <img src="https://play-lh.googleusercontent.com/X8FEOENa_t5mlRllBh2RRLc6sMnPIq56Wxa2ndValDOmwzIRhAv7MG6fT97TLQ2DK48" alt="image">
+</div>
+
+<div class="box" onclick="openGame('https://unblocked-games.s3.amazonaws.com/games/snow-war-io/index.html', 'Snow War.io')">
+    <img src="https://play-lh.googleusercontent.com/X8FEOENa_t5mlRllBh2RRLc6sMnPIq56Wxa2ndValDOmwzIRhAv7MG6fT97TLQ2DK48" alt="image">
+    <div class="slide-up-box">
         <p>Snow War.io</p>
     </div>
-		
-		<div class="box" onclick="openGame(
-        'https://unblocked-games.s3.amazonaws.com/games/2021/3/love-tester/unblocked.html',
-        'Love Tester')">
-        <img src="https://imgs.search.brave.com/MgMf-psP27oO036Mg8eWzYF2eYle9TfP-8TSpfTq1mA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWdz/Mi5kYWIzZ2FtZXMu/Y29tL2xvdmUtdGVz/dGVyLTItZ2FtZS1l/ZDkuanBn" alt="image">
+</div>
+
+<div class="box" onclick="openGame('https://unblocked-games.s3.amazonaws.com/games/2021/3/love-tester/unblocked.html', 'Love Tester')">
+    <img src="https://imgs.search.brave.com/MgMf-psP27oO036Mg8eWzYF2eYle9TfP-8TSpfTq1mA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWdz/Mi5kYWIzZ2FtZXMu/Y29tL2xvdmUtdGVz/dGVyLTItZ2FtZS1l/ZDkuanBn" alt="image">
+    <div class="slide-up-box">
         <p>Love Tester</p>
     </div>
+</div>
+
 		
-		<div class="box" onclick="openGame(
-        'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/89574567@71f165531792ae450fe0a522a52ba4e827344de2/sr3d.xml',
-        'Snow Rider 3D')">
-        <img src="https://imgs.search.brave.com/XaEqC_k5IJZEopbybpkludHLAtetioF33mjTBjHfo5Y/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9maXJl/Ym95YW5kLXdhdGVy/Z2lybC5jby9kYXRh/L2ltYWdlL3Nub3ct/cmlkZXItM2QucG5n" alt="image">
+		<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/89574567@71f165531792ae450fe0a522a52ba4e827344de2/sr3d.xml', 'Snow Rider 3D')">
+    <img src="https://imgs.search.brave.com/XaEqC_k5IJZEopbybpkludHLAtetioF33mjTBjHfo5Y/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9maXJl/Ym95YW5kLXdhdGVy/Z2lybC5jby9kYXRh/L2ltYWdlL3Nub3ct/cmlkZXItM2QucG5n" alt="image">
+    <div class="slide-up-box">
         <p>Snow Rider 3D</p>
     </div>
+</div>
 
-		<div class="box" onclick="openGame(
-    'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@77d7c057275710c07925ba951e9e56902d101c84/3sp.xml',
-    'Slope')">
+<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@77d7c057275710c07925ba951e9e56902d101c84/3sp.xml', 'Slope')">
     <img src="https://play-lh.googleusercontent.com/uJn2i9h7KxYQarC_c3K4qH6o7gLtflFnhD_dN14MNkzHJ1NeNFzCL69jpB5mT0vCoQs" alt="image">
-    <p>Slope</p>
+    <div class="slide-up-box">
+        <p>Slope</p>
+    </div>
 </div>
 
-
-		<div class="box" onclick="openGame(
-    'https://forest.katieprallphotography.com/service/hvtrs8%2F-1t1%2Clml',
-    '1v1.lol')">
+<div class="box" onclick="openGame('https://forest.katieprallphotography.com/service/hvtrs8%2F-1t1%2Clml', '1v1.lol')">
     <img src="https://play-lh.googleusercontent.com/-dE43Bqni_bUnq0L-piPxiJG4YiCotk5khMdrQaQBJrXJ3vSgjNeIaKyA34rBvKQSyOy" alt="image">
-    <p>1v1.lol</p>
+    <div class="slide-up-box">
+        <p>1v1.lol</p>
+    </div>
 </div>
 
-
-		<div class="box" onclick="openGame(
-    'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@b8b8a03997f38305098c2f2f5fe14907463cd23b/build/ppo2/ppo2.xml',
-    'Paper.io 2')">
+<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@b8b8a03997f38305098c2f2f5fe14907463cd23b/build/ppo2/ppo2.xml', 'Paper.io 2')">
     <img src="https://play-lh.googleusercontent.com/KxcjUrs8S75iOPnKBR2b-s7eGtqbREwLgzttVxaM9Znl5ZxsDCl6qEZHny4rBkMeYA=w240-h480-rw" alt="image">
-    <p>Paper.io 2</p>
+    <div class="slide-up-box">
+        <p>Paper.io 2</p>
+    </div>
 </div>
 
-
-		<div class="box" onclick="openGame(
-    'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@0d9afabd2522344a702e1b692ad58039f6290b0d/build/c-c/cc.xml',
-    'Cookie Clicker')">
+<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@0d9afabd2522344a702e1b692ad58039f6290b0d/build/c-c/cc.xml', 'Cookie Clicker')">
     <img src="https://imgs.search.brave.com/H0RoqK42jTCyYMgoY8skjht9LvM8cc2wU0iJSCnwJfA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2Nv/b2tpZWNsaWNrZXIv/aW1hZ2VzLzUvNWEv/UGVyZmVjdENvb2tp/ZS5wbmcvcmV2aXNp/b24vbGF0ZXN0L3Nj/YWxlLXRvLXdpZHRo/LWRvd24vMjUwP2Ni/PTIwMTMwODI3MDE0/OTEy" alt="image">
-    <p>Cookie Clicker</p>
+    <div class="slide-up-box">
+        <p>Cookie Clicker</p>
+    </div>
 </div>
 
-
-		<div class="box" onclick="openGame(
-    'https://ubg98.github.io/ClickerHeroes/',
-    'Clicker Heroes')">
+<div class="box" onclick="openGame('https://ubg98.github.io/ClickerHeroes/', 'Clicker Heroes')">
     <img src="https://imgs.search.brave.com/-TdpDVTj01cuSqEKw7QB_A6YnUPT8U4gpUqziJyA3_o/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9rZXZp/bi5nYW1lcy9hc3Nl/dHMvY2FjaGVfaW1h/Z2UvbmV3L2NsaWNr/ZXItaGVyb2VzXzIw/MHgyMDBfZDlkLndl/YnA" alt="image">
-    <p>Clicker Heroes</p>
+    <div class="slide-up-box">
+        <p>Clicker Heroes</p>
+    </div>
 </div>
 
-
-		<div class="box" onclick="openGame(
-    'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/awesome-aws@37c682c65a5a4c1ddc5b5ff2b840924526f209b4/scripts/blf.xml',
-    'BitLife')">
+<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/awesome-aws@37c682c65a5a4c1ddc5b5ff2b840924526f209b4/scripts/blf.xml', 'BitLife')">
     <img src="https://d.newsweek.com/en/full/1317374/bitlife-ribbons-how-get-all-complete-list-android-ios-cheats-guide-tips-become.jpg?w=1600&h=1600&q=88&f=75befc746fb83a0c568c44ca07bc5e64" alt="image">
-    <p>BitLife</p>
+    <div class="slide-up-box">
+        <p>BitLife</p>
+    </div>
 </div>
 
-
-		<div class="box" onclick="openGame(
-    'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@26eeeba4fc0707142876c24a52c87db7bf2d0a38/build/2048/2048.xml',
-    '2048')">
+<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@26eeeba4fc0707142876c24a52c87db7bf2d0a38/build/2048/2048.xml', '2048')">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png" alt="image">
-    <p>2048</p>
+    <div class="slide-up-box">
+        <p>2048</p>
+    </div>
 </div>
 
-		
-		<div class="box" onclick="openGame(
-    'https://unblocked76.github.io/jetpack-joyride/',
-    'Jetpack Joyride')">
+<div class="box" onclick="openGame('https://unblocked76.github.io/jetpack-joyride/', 'Jetpack Joyride')">
     <img src="https://imgs.search.brave.com/Mk1md4AlKSYT75_0CJ3rj6JC2tP_5Fk9wJi9zj59VFU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLWhBUEt6/c3l6SDBJMmd4ZXkt/UlhqMHlBLXQ1MDB4/NTAwLmpwZw" alt="image">
-    <p>Jetpack Joyride</p>
+    <div class="slide-up-box">
+        <p>Jetpack Joyride</p>
+    </div>
 </div>
 
-		
-		<div class="box" onclick="openGame(
-    'https://unblocked76.github.io/rooftop-snipers-2/',
-    'Rooftop Snipers 2')">
+<div class="box" onclick="openGame('https://unblocked76.github.io/rooftop-snipers-2/', 'Rooftop Snipers 2')">
     <img src="https://ubg76.github.io/ikone/rooftopsnipers2.webp" alt="image">
-    <p>Rooftop Snipers 2</p>
+    <div class="slide-up-box">
+        <p>Rooftop Snipers 2</p>
+    </div>
 </div>
 
+
 		
-		<div class="box" onclick="openGame(
-    'https://unblocked76.github.io/chrome-dino/',
-    'Chrome Dino')">
+		<div class="box" onclick="openGame('https://unblocked76.github.io/chrome-dino/', 'Chrome Dino')">
     <img src="https://imgs.search.brave.com/WfnCbFMfpSl7rS6N35p-CI4YYDPn5At1O6pnPdoRDw0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9wbGF5/LWxoLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9paUlKcTVKbUxG/WU5JMWJWejRJQkh5/b1hzNTA4SmNFekho/T2dhdTY5Ym52ZUY5/V2F0NTEtYXg5TE1Q/Vk9sbmVLd3FnPXcy/NDAtaDQ4MC1ydw" alt="image">
-    <p>Chrome Dino</p>
+    <div class="slide-up-box">
+        <p>Chrome Dino</p>
+    </div>
 </div>
 
-		
-		<div class="box" onclick="openGame(
-    'https://awesometanks.github.io/2/',
-    'Awesome Tanks 2')">
+<div class="box" onclick="openGame('https://awesometanks.github.io/2/', 'Awesome Tanks 2')">
     <img src="https://ubg76.github.io/ikone/awesometanks2.webp" alt="image">
-    <p>Awesome Tanks 2</p>
+    <div class="slide-up-box">
+        <p>Awesome Tanks 2</p>
+    </div>
 </div>
 
-		
-		<div class="box" onclick="openGame(
-    'https://webglmath.github.io/stickmanhook/',
-    'Stickman Hook')">
+<div class="box" onclick="openGame('https://webglmath.github.io/stickmanhook/', 'Stickman Hook')">
     <img src="https://ubg76.github.io/ikone/stickmanhook.webp" alt="image">
-    <p>Stickman Hook</p>
+    <div class="slide-up-box">
+        <p>Stickman Hook</p>
+    </div>
 </div>
 
-		
-		<div class="box" onclick="openGame(
-    'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/nurimoores/clawapps@58fb3d0c5415516fc50ca617833ee9d98dd0f987/chap6/mcc.xml',
-    'Minecraft Classic')">
+<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/nurimoores/clawapps@58fb3d0c5415516fc50ca617833ee9d98dd0f987/chap6/mcc.xml', 'Minecraft Classic')">
     <img src="https://github.com/cooliowebsite/cooliowebsite.github.io/blob/main/textures/minecraft-classic.jpg?raw=true" alt="image">
-    <p>Minecraft Classic</p>
+    <div class="slide-up-box">
+        <p>Minecraft Classic</p>
+    </div>
 </div>
 
-		
-		<div class="box" onclick="openGame(
-    'https://unblocked76.github.io/wordle/',
-    'Wordle')">
+<div class="box" onclick="openGame('https://unblocked76.github.io/wordle/', 'Wordle')">
     <img src="https://ubg76.github.io/ikone/wordle.webp" alt="image">
-    <p>Wordle+</p>
+    <div class="slide-up-box">
+        <p>Wordle+</p>
+    </div>
 </div>
 
-		
-		<div class="box" onclick="openGame(
-    'https://topvz.github.io/g77/crossy-road/',
-    'Crossy Road')">
+<div class="box" onclick="openGame('https://topvz.github.io/g77/crossy-road/', 'Crossy Road')">
     <img src="https://topvz.github.io/img/crossy-road.png" alt="image">
-    <p>Crossy Road</p>
+    <div class="slide-up-box">
+        <p>Crossy Road</p>
+    </div>
 </div>
 
-		
-		<div class="box" onclick="openGame(
-    'https://webglmath.github.io/the-impossible-quiz-2/',
-    'The Impossible Quiz 2')">
+<div class="box" onclick="openGame('https://webglmath.github.io/the-impossible-quiz-2/', 'The Impossible Quiz 2')">
     <img src="https://ubg76.github.io/ikone/theimpossiblequiz2.webp" alt="image">
-    <p>The Impossible Quiz 2</p>
+    <div class="slide-up-box">
+        <p>The Impossible Quiz 2</p>
+    </div>
 </div>
 
-		
-		<div class="box" onclick="openGame(
-    'https://unblocked76.github.io/quake/',
-    'Quake')">
-    <img src="https://imgs.search.brave.com/1lluONCmCheOsV7AQTH5Gc5fbCXGBTxv24LqEwx15jg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9mb250/bWVtZS5jb20vaW1h/Z2VzL1F1YWtlLUxv/Z28uanBn" alt="image">
-    <p>Quake</p>
+<div class="box" onclick="openGame('https://unblocked76.github.io/quake/', 'Quake')">
+    <img src="https://ubg76.github.io/ikone/quake.webp" alt="image">
+    <div class="slide-up-box">
+        <p>Quake</p>
+    </div>
 </div>
 
-		
-		<div class="box" onclick="window.open('https://arkshocer.github.io/sm64/', '_blank', 'noopener noreferrer')">
+<div class="box" onclick="window.open('https://arkshocer.github.io/sm64/', '_blank', 'noopener noreferrer')">
     <img src="https://imgs.search.brave.com/IwW0sT87EMIxlIGz2NUmcdz52l9PCcEq_rQEMDRGG9U/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMxLmlnbmltZ3Mu/Y29tLzIwMTkvMDUv/MzEvbWFyaW8tNjQt/LS1idXR0b24tMTU1/OTI2Mzk4NzQ0Ny5q/cGc_d2lkdGg9MzAw/JmNyb3A9MToxLHNt/YXJ0JmF1dG89d2Vi/cA" alt="image">
-    <p>Super Mario 64</p>
+    <div class="slide-up-box">
+        <p>Super Mario 64</p>
+    </div>
 </div>
 
-		<div class="box" onclick="openGame(
-        'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/godotpack@46eac786a55b026b450ab931f360d90910e75971/side/eman/face.xml',
-        'Elastic Man')">
-        <img src="https://imgs.search.brave.com/OZ3czmup3CXNjiCNnDn6UyRPLfgnbHB5G_cavB82CFw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9ha2lu/Zy5pby93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMS8wMy9lbGFz/dGljbWFuLmpwZw" alt="image">
+<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/godotpack@46eac786a55b026b450ab931f360d90910e75971/side/eman/face.xml', 'Elastic Man')">
+    <img src="https://imgs.search.brave.com/OZ3czmup3CXNjiCNnDn6UyRPLfgnbHB5G_cavB82CFw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9ha2lu/Zy5pby93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMS8wMy9lbGFz/dGljbWFuLmpwZw" alt="image">
+    <div class="slide-up-box">
         <p>Elastic Man</p>
     </div>
-		
-		<div class="box" onclick="openGame(
-        'https://ubg98.github.io/TinyFishing/',
-        'Tiny Fishing')">
-        <img src="https://ubg98.github.io/assets/img/games/tiny-fishing.png" alt="image">
+</div>
+
+<div class="box" onclick="openGame('https://ubg98.github.io/TinyFishing/', 'Tiny Fishing')">
+    <img src="https://ubg98.github.io/assets/img/games/tiny-fishing.png" alt="image">
+    <div class="slide-up-box">
         <p>Tiny Fishing</p>
     </div>
-		
-		<div class="box" onclick="openGame(
-    'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/element@d16a581fca7911cde19e71e5cc182ddd255e6295/bs.xml',
-    'Blocky Snakes')">
+</div>
+
+<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/element@d16a581fca7911cde19e71e5cc182ddd255e6295/bs.xml', 'Blocky Snakes')">
     <img src="https://github.com/cooliowebsite/main/blob/main/textures/blockysnakes.jpeg?raw=true" alt="image">
-    <p>Blocky Snakes</p>
+    <div class="slide-up-box">
+        <p>Blocky Snakes</p>
+    </div>
 </div>
 
-
-		<div class="box" onclick="openGame(
-    'https://unblocked76.github.io/blockpost2/',
-    'Blockpost')">
+<div class="box" onclick="openGame('https://unblocked76.github.io/blockpost2/', 'Blockpost')">
     <img src="https://github.com/cooliowebsite/main/blob/main/textures/blockpost.png?raw=true" alt="image">
-    <p>Blockpost</p>
+    <div class="slide-up-box">
+        <p>Blockpost</p>
+    </div>
 </div>
 
 
-		<div class="box" onclick="openGame(
-    'https://cubes2048io.github.io/',
-    'Cubes 2048')">
+
+		<div class="box" onclick="openGame('https://cubes2048io.github.io/', 'Cubes 2048')">
     <img src="https://imgs.search.brave.com/1o6XHOaqphQ_10FcMjnDI48P6JcdkpNVCW3prYbLgGs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9hLnNp/bHZlcmdhbWVzLmNv/bS9qL2IvY3ViZXMt/MjA0OC1pby5qcGc_/dHI9dy0xNDA" alt="image">
-    <p>Cubes 2048</p>
+    <div class="slide-up-box">
+        <p>Cubes 2048</p>
+    </div>
 </div>
 
-
-		<div class="box" onclick="openGame(
-    'https://unblocked76.github.io/temple-run-2/',
-    'Temple Run 2')">
+<div class="box" onclick="openGame('https://unblocked76.github.io/temple-run-2/', 'Temple Run 2')">
     <img src="https://imgs.search.brave.com/i1iTk1fhgdy6700Yf-eaAYPkdlNEf1r_Y1KVGkQwJao/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/cGxvbmdhLmNvbS9z/dG9yYWdlL2dhbWUt/dGh1bWJzL3RlbXBs/ZS1ydW4tMi1vbmxp/bmUtZ2FtZS5qcGc" alt="image">
-    <p>Temple Run 2</p>
+    <div class="slide-up-box">
+        <p>Temple Run 2</p>
+    </div>
 </div>
 
-		
-		<div class="box" onclick="openGame(
-    'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Ffive-nights-at-freddy-s.xml',
-    'FNAF')">
+<div class="box" onclick="openGame('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Ffive-nights-at-freddy-s.xml', 'FNAF')">
     <img src="https://img.tineye.com/result/9840c4cf862b80a0a8e04ca2d8a3874f3ccd413b4e51c704134eb41a7069ec21-5?size=160" alt="image">
-    <p>FNAF</p>
+    <div class="slide-up-box">
+        <p>FNAF</p>
+    </div>
 </div>
 
-		
-		<div class="box" onclick="openGame(
-    'https://forest.katieprallphotography.com/service/hvtrs8%2F-hmlg-ko%2Ccmm',
-    'Hole.io')">
+<div class="box" onclick="openGame('https://forest.katieprallphotography.com/service/hvtrs8%2F-hmlg-ko%2Ccmm', 'Hole.io')">
     <img src="https://forest.katieprallphotography.com/assets/img/hole-io.png" alt="image">
-    <p>Hole.io</p>
+    <div class="slide-up-box">
+        <p>Hole.io</p>
+    </div>
+</div>
+
+<div class="box" onclick="openGame('https://ubg98.github.io/DriftBoss/', 'Drift Boss')">
+    <img src="https://ubg76.github.io/ikone/driftboss.webp" alt="image">
+    <div class="slide-up-box">
+        <p>Drift Boss</p>
+    </div>
 </div>
 
 		
-		<div class="box" onclick="openGame(
-    'https://ubg98.github.io/DriftBoss/',
-    'Drift Boss')">
-    <img src="https://ubg76.github.io/ikone/driftboss.webp" alt="image">
-    <p>Drift Boss</p>
-</div>
-		
-		<div class="box" onclick="openGame(
-        'https://topvz.github.io/g5/monster-tracks',
-        'Monster Tracks')">
-        <img src="https://topvz.github.io/img/monster-tracks.png" alt="image">
+		<div class="box" onclick="openGame('https://topvz.github.io/g5/monster-tracks', 'Monster Tracks')">
+    <img src="https://topvz.github.io/img/monster-tracks.png" alt="image">
+    <div class="slide-up-box">
         <p>Monster Tracks</p>
     </div>
-		
-		<div class="box" onclick="openGame(
-        'https://webglmath.github.io/eggy-car/',
-        'Eggy Car')">
-        <img src="https://ubg76.github.io/ikone/eggycar.webp" alt="image">
-        <p>Eggy Car</p>
-    </div>
-	
-	<div class="box" onclick="openGame(
-        'https://retrobowl-unblocked.github.io/new/index.html',
-        'Retrobowl')">
-        <img src="https://imgs.search.brave.com/Wci45XgonImfEf2CnHWlLOipyapYiRzU-9A8waPwJ84/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tb25r/ZXltYXJ0Lm9yZy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMy8w/OS9yZXRyby1ib3ds/LW1pbi5wbmc" alt="image">
-        <p>Retrobowl</p>
-    </div>
-	
-	<div class="box" onclick="window.open('https://quickdraw.withgoogle.com/', '_blank', 'noopener noreferrer')">
-    <img src="https://github.com/cooliowebsite/main/blob/main/textures/quickdraw.png?raw=true" alt="image">
-    <p>Quick Draw</p>
 </div>
 
-<div class="box" onclick="openGame(
-        'https://unblocked76.github.io/soccer-random/',
-        'Soccer Random')">
-        <img src="https://ubg76.github.io/ikone/soccerrandom.webp" alt="image">
+<div class="box" onclick="openGame('https://webglmath.github.io/eggy-car/', 'Eggy Car')">
+    <img src="https://ubg76.github.io/ikone/eggycar.webp" alt="image">
+    <div class="slide-up-box">
+        <p>Eggy Car</p>
+    </div>
+</div>
+
+<div class="box" onclick="openGame('https://retrobowl-unblocked.github.io/new/index.html', 'Retrobowl')">
+    <img src="https://imgs.search.brave.com/Wci45XgonImfEf2CnHWlLOipyapYiRzU-9A8waPwJ84/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tb25r/ZXltYXJ0Lm9yZy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMy8w/OS9yZXRyby1ib3ds/LW1pbi5wbmc" alt="image">
+    <div class="slide-up-box">
+        <p>Retrobowl</p>
+    </div>
+</div>
+
+<div class="box" onclick="window.open('https://quickdraw.withgoogle.com/', '_blank', 'noopener noreferrer')">
+    <img src="https://github.com/cooliowebsite/main/blob/main/textures/quickdraw.png?raw=true" alt="image">
+    <div class="slide-up-box">
+        <p>Quick Draw</p>
+    </div>
+</div>
+
+<div class="box" onclick="openGame('https://unblocked76.github.io/soccer-random/', 'Soccer Random')">
+    <img src="https://ubg76.github.io/ikone/soccerrandom.webp" alt="image">
+    <div class="slide-up-box">
         <p>Soccer Random</p>
     </div>
+</div>
 
-<div class="box" onclick="openGame(
-        'https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://46156367-533157838321271022.preview.editmysite.com/uploads/b/1285710-197579246494492995/files/vr.xml',
-        'Volleyball Random')">
-        <img src="https://github.com/cooliowebsite/cooliowebsite.github.io/blob/main/textures/volley-random-164x164.png?raw=true" alt="image">
+<div class="box" onclick="openGame('https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://46156367-533157838321271022.preview.editmysite.com/uploads/b/1285710-197579246494492995/files/vr.xml', 'Volleyball Random')">
+    <img src="https://github.com/cooliowebsite/cooliowebsite.github.io/blob/main/textures/volley-random-164x164.png?raw=true" alt="image">
+    <div class="slide-up-box">
         <p>Volleyball Random</p>
     </div>
+</div>
 
-<div class="box" onclick="openGame(
-        'https://unblocked76.github.io/boxing-random/',
-        'Boxing Random')">
-        <img src="https://ubg76.github.io/ikone/boxingrandom.webp" alt="image">
+<div class="box" onclick="openGame('https://unblocked76.github.io/boxing-random/', 'Boxing Random')">
+    <img src="https://ubg76.github.io/ikone/boxingrandom.webp" alt="image">
+    <div class="slide-up-box">
         <p>Boxing Random</p>
     </div>
+</div>
 
-<div class="box" onclick="openGame(
-        'https://ubg98.github.io/BasketRandom/',
-        'Basket Random')">
-        <img src="https://ubg76.github.io/ikone/basketrandom.webp" alt="image">
+<div class="box" onclick="openGame('https://ubg98.github.io/BasketRandom/', 'Basket Random')">
+    <img src="https://ubg76.github.io/ikone/basketrandom.webp" alt="image">
+    <div class="slide-up-box">
         <p>Basket Random</p>
     </div>
-	
-<div class="box" onclick="openGame(
-        'https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://googleusercontent.b-cdn.net/pixel-shooter/ps.xml',
-        'Pixel Shooter')">
-        <img src="https://github.com/cooliowebsite/cooliowebsite.github.io/blob/main/textures/Pixel-Shooter.png?raw=true" alt="image">
+</div>
+
+<div class="box" onclick="openGame('https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://googleusercontent.b-cdn.net/pixel-shooter/ps.xml', 'Pixel Shooter')">
+    <img src="https://github.com/cooliowebsite/cooliowebsite.github.io/blob/main/textures/Pixel-Shooter.png?raw=true" alt="image">
+    <div class="slide-up-box">
         <p>Pixel Shooter</p>
     </div>
+</div>
 
-<div class="box" onclick="openGame(
-        'https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/8c491f21-7353-4f1f-b2a0-9544824c4d28%2Fhobo.xml',
-        'Hobo')">
-        <img src="https://github.com/cooliowebsite/cooliowebsite.github.io/blob/main/textures/Hobo-Brawl.png?raw=true" alt="image">
+<div class="box" onclick="openGame('https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/8c491f21-7353-4f1f-b2a0-9544824c4d28%2Fhobo.xml', 'Hobo')">
+    <img src="https://github.com/cooliowebsite/cooliowebsite.github.io/blob/main/textures/Hobo-Brawl.png?raw=true" alt="image">
+    <div class="slide-up-box">
         <p>Hobo</p>
     </div>
+</div>
 
-<div class="box" onclick="openGame(
-        'https://unblocked76.github.io/skyblock/',
-        'Skyblock')">
-        <img src="https://ubg76.github.io/ikone/skyblock.webp" alt="image">
+<div class="box" onclick="openGame('https://unblocked76.github.io/skyblock/', 'Skyblock')">
+    <img src="https://ubg76.github.io/ikone/skyblock.webp" alt="image">
+    <div class="slide-up-box">
         <p>Skyblock</p>
     </div>
+</div>
 
-<div class="box" onclick="openGame(
-        'https://unblocked76.github.io/flappy-bird/',
-        'Flappy Bird')">
-        <img src="https://imgs.search.brave.com/YahGkaMoJMbceEBDlB0d5ONQ5yabDavutXACD2H9rbQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vdGh1bWIv/MC8wYS9GbGFwcHlf/QmlyZF9pY29uLnBu/Zy81MTJweC1GbGFw/cHlfQmlyZF9pY29u/LnBuZw" alt="image">
+<div class="box" onclick="openGame('https://unblocked76.github.io/flappy-bird/', 'Flappy Bird')">
+    <img src="https://imgs.search.brave.com/YahGkaMoJMbceEBDlB0d5ONQ5yabDavutXACD2H9rbQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vdGh1bWIv/MC8wYS9GbGFwcHlf/QmlyZF9pY29uLnBu/Zy81MTJweC1GbGFw/cHlfQmlyZF9pY29u/LnBuZw" alt="image">
+    <div class="slide-up-box">
         <p>Flappy Bird</p>
     </div>
+</div>
 
-<div class="box" onclick="openGame(
-        'https://unblocked76.github.io/mario/',
-        'Super Mario Bros')">
-        <img src="https://ubg76.github.io/ikone/mario76ez.webp" alt="image">
-        <p>Super Mario Bros</p>
+<div class="box" onclick="openGame('https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/godotpack@a808d88ace701810e236b7de190215fa6eed6415/side/gr-cr/gc.xml', 'Grindcraft')">
+    <img src="https://ubg76.github.io/ikone/grindcraft.webp" alt="image">
+    <div class="slide-up-box">
+        <p>Grindcraft</p>
     </div>
+</div>
 
 
-
-	
-	
-
-
-	
-
-	
-
+	<script src="particles.js"></script>
+	<script src="app.js"></script>
 	<script>
 		function openGame(url, title, description) {
     sessionStorage.setItem('gameUrl', url);
@@ -657,7 +654,6 @@ color: #007bff;
                 }
             }
         }
-    </script>
 	</script>
 </body>
 
