@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/apps.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Coolio - Apps</title>
+</head>
+
+<body>
+	<nav>
+		<button class="logo" onclick="window.location.href='index.html'">
+    <img src="textures/icons/logo.png" alt="Logo" draggable="false">
+    <h1>Coolio</h1>
+</button>
+		<div class="buttons">
+			<div class="button"><a href="games.html">Games</a></div>
+			<div class="button active"><a href="apps.html">Apps</a></div>
+			<div class="button"><a href="settings.html">Settings</a></div>
+		</div>
+	</nav>
+
+<div class="search-bar">
+        <input type="text" id="searchInput" oninput="filterGames()" placeholder="Search apps">
+    </div>
+
+    <div class="box-container" id="boxContainer">
+
+<div class="box" onclick="aboutBlank('https://deepai.org/chat')">
+    <img src="https://imgs.search.brave.com/1TddntpPy74xQTHva0LjjRzCBr5olEeENoryafpc5Gk/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9zdHls/ZXMucmVkZGl0bWVk/aWEuY29tL3Q1Xzdo/cW9tZy9zdHlsZXMv/Y29tbXVuaXR5SWNv/bl9kdHpyc2lob3Nn/M2MxLnBuZw" alt="image">
+    <div class="slide-up-box">
+        <p>AI Chat</p>
+    </div>
+</div>
+<script src="js/scripts.js"></script>
+    <script>
+        loadBackgroundFromLocalStorage();
+		loadCloakingState();
+    </script>
+</body>
+
+</html>

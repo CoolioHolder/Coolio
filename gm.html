@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <link rel="icon" type="image/png" sizes="32x32" href="textures/icons/logo.png">
+    <link rel="stylesheet" href="css/gm.css">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <nav>
+		<button class="logo" onclick="window.location.href='index.html'">
+    <img src="textures/icons/logo.png" alt="Logo" draggable="false">
+    <h1>Coolio</h1>
+</button>
+		<div class="buttons">
+			<div class="button"><a href="games.html">Games</a></div>
+			<div class="button"><a href="apps.html">Apps</a></div>
+			<div class="button"><a href="settings.html">Settings</a></div>
+		</div>
+	</nav>
+    <div class="game-info">
+        <div class="game-details">
+            <h3 id="gameTitle">Game Title</h3>
+        </div>
+        <div class="button-container">
+            <button class="gibutton" onclick="goBack()"><img src="textures/icons/back.png" alt="Button 1 Image"></button>
+            <button class="gibutton" onclick="toggleFullScreen()"><img src="textures/icons/fullscreen.png" alt="Button 2 Image"></button>
+        </div>
+    </div>
+    <div class="game">
+        <iframe class="game-iframe" id="gameIframe" src="" frameborder="0"></iframe>
+    </div>
+	<script src="js/scripts.js"></script>
+	<script>
+        loadBackgroundFromLocalStorage();
+		loadCloakingState();
+    </script>
+    <script>
+        const gameUrl = sessionStorage.getItem('gameUrl');
+const gameTitle = sessionStorage.getItem('gameTitle');
+const gameImage = sessionStorage.getItem('gameImage');
+document.title = `Coolio - ${gameTitle}`;
+document.getElementById('gameTitle').innerText = gameTitle;
+document.getElementById('gameIframe').setAttribute('src', gameUrl);
+document.getElementById('gameImage').setAttribute('src', gameImage);
+        function goBack() {
+            window.history.back();
+        }
+        function toggleFullScreen() {
+            const iframe = document.getElementById('gameIframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+
+</html>
