@@ -82,17 +82,7 @@ function openGame(url, title, description) {
         newTab.document.write('<html><body style="margin:0;"><iframe width="100%" height="100%" src="' + url + '" frameborder="0"></iframe></body></html>');
         newTab.document.close();
     }
-	
-	const gameUrl = sessionStorage.getItem('gameUrl');
-const gameTitle = sessionStorage.getItem('gameTitle');
-const gameImage = sessionStorage.getItem('gameImage');
-document.title = `Coolio - ${gameTitle}`;
-document.getElementById('gameTitle').innerText = gameTitle;
-document.getElementById('gameIframe').setAttribute('src', gameUrl);
-document.getElementById('gameImage').setAttribute('src', gameImage);
-        function goBack() {
-            window.history.back();
-        }
+
         function toggleFullScreen() {
             const iframe = document.getElementById('gameIframe');
             if (iframe.requestFullscreen) {
