@@ -6,7 +6,7 @@ body {
     margin: 0;
     background-color: #0b0b0b;
     transition: all 0.3s;
-    background-image: url('textures/backgrounds/default.jpg');
+    background-image: url('.textures/backgrounds/default.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
