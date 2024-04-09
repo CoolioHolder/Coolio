@@ -13,7 +13,7 @@ function disableCloaking() {
     const cloakingEnabled = localStorage.getItem('cloakingEnabled');
     if (cloakingEnabled === 'true') {
         const icon = document.querySelector("link[rel~='icon']"); // Get the favicon link element
-        icon.href = "textures/icons/logo.png"; // Restore favicon
+        icon.href = "https://github.com/cooliowebsite/cooliowebsite.github.io/blob/main/textures/icons/logo.png?raw=true"; // Restore favicon
         localStorage.setItem('cloakingEnabled', false); // Save cloaking state to local storage
         document.title = "Coolio - Settings"; // Restore settings page title
         
