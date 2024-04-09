@@ -23,23 +23,21 @@ body {
         }
 
         nav {
-            background-color: rgba(11, 11, 11, 0.7);
-            border: 3px solid rgba(5, 5, 5, 0.2);
-            color: white;
-            padding: 7px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: absolute;
-            top: 0;
-            left: 10%;
-            right: 10%;
-            height: 70px;
-            border-radius: 15px;
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            margin-top: 20px;
-        }
+	background-color: rgba(11, 11, 11, 0.7);
+	border: 3px solid rgba(5, 5, 5, 0.2);
+    color: white;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    right: 10%;
+	height: 55px;
+	border-radius: 15px;
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
 
         .logo {
             display: flex;
@@ -89,20 +87,20 @@ body {
         }
 
         .button a {
-            text-decoration: none;
-            color: white;
-            border-radius: 10px;
-            font-size: 30px;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            padding: 10px;
-            margin-right: 8px;
-        }
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    padding: 10px;
+    margin-right: 8px;
+}
 
-        .button a:hover,
-        .button.active a {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
+.button a:hover,
+.button.active a {
+    text-shadow: 0 0 13px rgba(255, 255, 255, 0.5);
+}
 
         .button:active {
             transform: scale(0.95);
