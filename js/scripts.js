@@ -1,7 +1,7 @@
 function enableCloaking() {
     const pageTitle = document.title;
     const icon = document.querySelector("link[rel~='icon']");
-    icon.href = ".textures/classroom.webp";
+    icon.href = "textures/classroom.webp";
     localStorage.setItem('cloakingEnabled', true);
     
     // Set the global title
