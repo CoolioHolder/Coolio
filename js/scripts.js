@@ -1,7 +1,7 @@
 function enableCloaking() {
     const pageTitle = document.title;
     const icon = document.querySelector("link[rel~='icon']");
-    icon.href = "textures/classroom.webp";
+    icon.href = ".textures/classroom.webp";
     localStorage.setItem('cloakingEnabled', true);
     
     // Set the global title
@@ -13,7 +13,7 @@ function disableCloaking() {
     const cloakingEnabled = localStorage.getItem('cloakingEnabled');
     if (cloakingEnabled === 'true') {
         const icon = document.querySelector("link[rel~='icon']"); // Get the favicon link element
-        icon.href = "favicon-32x32.png"; // Restore favicon
+        icon.href = "textures/icons/logo.png"; // Restore favicon
         localStorage.setItem('cloakingEnabled', false); // Save cloaking state to local storage
         document.title = "Coolio - Settings"; // Restore settings page title
         
