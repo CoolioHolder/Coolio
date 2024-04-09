@@ -107,17 +107,17 @@ body {
         }
 
         ::-webkit-scrollbar {
-            width: 10px;
-        }
+  width: 0;
+}
 
-        ::-webkit-scrollbar-track {
-            background: #0b0b0b;
-        }
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 
-        ::-webkit-scrollbar-thumb {
-            background: #222;
-            border-radius: 10px;
-        }
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+}
 
         .blue-text {
             color: blue;
