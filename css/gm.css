@@ -6,7 +6,7 @@ body {
     margin: 0;
     background-color: #0b0b0b;
     transition: all 0.3s;
-    background-image: url('.textures/backgrounds/default.jpg');
+    background-image: url('textures/backgrounds/default.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -37,7 +37,7 @@ body {
     top: 20px;
     left: 10%;
     right: 10%;
-	height: 70px;
+	height: 55px;
 	border-radius: 15px;
 	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
@@ -48,7 +48,7 @@ body {
     align-items: center;
     justify-content: center;
     border: none;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: transparent;
     cursor: pointer;
     outline: none;
 	transition: all 0.3s;
@@ -64,7 +64,7 @@ body {
 }
 
 		.logo:hover {
-		background-color: rgba(255, 255, 255, 0.2);
+		text-shadow: 0 0 13px rgba(255, 255, 255, 0.5);
 		}
 
         .logo img {
@@ -202,7 +202,7 @@ body {
 
 .button a:hover,
 .button.active a {
-    background-color: rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 13px rgba(255, 255, 255, 0.5);
 }
 
 .button:active {
