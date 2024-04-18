@@ -23,33 +23,44 @@
 			<div class="button"><a href="settings.html">Settings</a></div>
 		</div>
 	</nav>
-    <div class="game-info">
-        <div class="game-details">
-            <h3 id="gameTitle">Game Title</h3>
-        </div>
-        <div class="button-container">
-            <button class="gibutton" onclick="goBack()"><img src="textures/icons/back.png" alt="Button 1 Image"></button>
-            <button class="gibutton" onclick="toggleFullScreen()"><img src="textures/icons/fullscreen.png" alt="Button 2 Image"></button>
-        </div>
-    </div>
     <div class="game">
         <iframe class="game-iframe" id="gameIframe" src="" frameborder="0"></iframe>
     </div>
+    <div class="game-info">
+        <div class="game-details">
+			<img id="gameImg" src="" alt="Game Image">
+            <h3 id="gameTitle">Game Title</h3>
+        </div>
+        <div class="button-container">
+<button class="gibutton" onclick="goBack()">
+    <img src="textures/icons/back.png" alt="Back" style="max-width: 25px; max-height: 25px;">
+    <span>Back</span>
+</button>
+<button class="gibutton" onclick="toggleFullScreen()">
+    <img src="textures/icons/fullscreen.png" alt="Fullscreen" style="max-width: 25px; max-height: 25px;">
+    <span>Fullscreen</span>
+</button>
+        </div>
+    </div>
+	
+	
+	
 	<script src="js/scripts.js"></script>
 	<script>
         loadBackgroundFromLocalStorage();
     </script>
     <script>
+        const gameImg = sessionStorage.getItem('gameImg');
+        const gameTitle = sessionStorage.getItem('gameTitle');
         const gameUrl = sessionStorage.getItem('gameUrl');
-const gameTitle = sessionStorage.getItem('gameTitle');
-const gameImage = sessionStorage.getItem('gameImage');
-document.title = `Coolio - ${gameTitle}`;
-document.getElementById('gameTitle').innerText = gameTitle;
-document.getElementById('gameIframe').setAttribute('src', gameUrl);
-document.getElementById('gameImage').setAttribute('src', gameImage);
+        document.getElementById('gameImg').src = gameImg;
+        document.getElementById('gameTitle').textContent = gameTitle;
+        document.getElementById('gameIframe').src = gameUrl;
+
         function goBack() {
-            window.history.back();
+            window.location.href = "games.html";
         }
+		
         function toggleFullScreen() {
             const iframe = document.getElementById('gameIframe');
             if (iframe.requestFullscreen) {
