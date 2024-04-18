@@ -28,17 +28,20 @@
     <div class="settings-container">
         <div class="settings-box">
             <div class="header">Background</div>
-            <div class="description" style="font-size: 24px;">Change the background of the site to one of my presets, or upload your own.</div>
+            <div class="description" style="font-size: 27px;">Change the background of the website to something.</div>
             <div class="sbuttons-container">
                 <div class="sbbuttons-container">
                     <input type="file" id="file-input" accept="image/*" onchange="setBackground(event)">
                     <button class="sbutton" onclick="document.getElementById('file-input').click()">Upload</button>
                 </div>
-                <div class="dropdown-container">
-                    <button class="sbutton" onclick="setPresetBackground('textures/backgrounds/default.jpg')">Default</button>
+				
+                <div class="sbbuttons-container">
+                    <button class="xbutton" onclick="setPresetBackground('textures/backgrounds/default.jpg')"><img src="textures/icons/x.png" style="width: 27px; height: 27px;"></button>
+
                 </div>
             </div>
         </div>
+		
 <div class="settings-box">
             <div class="header">Cloaking</div>
             <div class="description" style="font-size: 27px;">Disguise the tab icon and name as google classroom.</div>
@@ -47,11 +50,20 @@
                 <button class="sbutton" onclick="disableCloaking()">Disable</button>
             </div>
         </div>
+		
 		<div class="settings-box">
             <div class="header">About:Blank Cloak</div>
-			<div class="description" style="font-size: 30px;">Disguises the page in an about:blank link</div>
+			<div class="description" style="font-size: 30px;">Disguise the page in an about:blank link</div>
             <div class="sbuttons-container">
                 <button class="sbutton" onclick="aboutBlank('https://cooliowebsite.github.io/settings.html')">Launch</button>
+            </div>
+        </div>
+		
+		<div class="settings-box">
+            <div class="header">Tyler August</div>
+			<div class="description" style="font-size: 30px;">No description available</div>
+            <div class="sbuttons-container">
+                <button class="sbutton" onclick="aboutBlank('tyleraugust.html')">Launch</button>
             </div>
         </div>
     <script src="js/scripts.js"></script>
