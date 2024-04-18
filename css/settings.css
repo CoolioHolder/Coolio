@@ -8,18 +8,7 @@ body {
             background-size: cover;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            animation: blurAnimation 0.75s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
             padding-top: 100px;
-        }
-
-        @keyframes blurAnimation {
-            0% {
-                filter: blur(10px);
-            }
-
-            100% {
-                filter: blur(0);
-            }
         }
 
         nav {
@@ -274,12 +263,9 @@ body {
 
 .xbutton {
             background-color: rgba(255, 255, 255, 0);
-            padding: 10px 10px;
+            padding: 8.5px 10px;
             border-radius: 10px;
             text-decoration: none;
-            color: red;
-			font-weight: bold;
-            font-size: 27px;
             transition: all 0.3s;
             border: 2px solid rgba(255, 255, 255, 0.8);
             cursor: pointer;
