@@ -1,36 +1,3 @@
-function enableCloaking() {
-    const pageTitle = document.title;
-    const icon = document.querySelector("link[rel~='icon']");
-    icon.href = "https://raw.githubusercontent.com/cooliowebsite/cooliowebsite.github.io/main/textures/icons/classroom.webp";
-    localStorage.setItem('cloakingEnabled', true);
-    
-    // Set the global title
-    document.title = "Home";
-}
-
-// Function to disable cloaking
-function disableCloaking() {
-    const cloakingEnabled = localStorage.getItem('cloakingEnabled');
-    if (cloakingEnabled === 'true') {
-        const icon = document.querySelector("link[rel~='icon']"); // Get the favicon link element
-        icon.href = "https://github.com/cooliowebsite/cooliowebsite.github.io/blob/main/textures/icons/logo.png?raw=true"; // Restore favicon
-        localStorage.setItem('cloakingEnabled', false); // Save cloaking state to local storage
-        document.title = "Coolio - Settings"; // Restore settings page title
-        
-    }
-}
-
-// Function to load cloaking state from local storage
-function loadCloakingState() {
-    const cloakingEnabled = localStorage.getItem('cloakingEnabled');
-    if (cloakingEnabled === 'true') {
-        enableCloaking();
-    } else {
-        disableCloaking();
-    }
-}
-
-// Other functions for background handling from local storage
 function setBackground(event) {
     const file = event.target.files[0];
     const reader = new FileReader();
@@ -48,17 +15,21 @@ function setPresetBackground(imageUrl) {
 }
 
 function loadBackgroundFromLocalStorage() {
-    const backgroundImage = localStorage.getItem('backgroundImage');
-    if (backgroundImage) {
-        document.body.style.backgroundImage = `url(${backgroundImage})`;
+    let backgroundImage = localStorage.getItem('backgroundImage');
+    if (!backgroundImage) {
+        backgroundImage = 'textures/backgrounds/default.jpg';
     }
+    document.body.style.backgroundImage = `url(${backgroundImage})`;
 }
 
-function openGame(url, title, description) {
+function openGame(event, url, title) {
+    const imgSrc = event.currentTarget.querySelector('img').src;
+    sessionStorage.setItem('gameImg', imgSrc);
     sessionStorage.setItem('gameUrl', url);
     sessionStorage.setItem('gameTitle', title);
     window.location.href = 'gm.html';
-}	
+}
+
 		function filterGames() {
             var input, filter, boxContainer, boxes, box, p, i, txtValue;
             input = document.getElementById("searchInput");
@@ -82,7 +53,10 @@ function openGame(url, title, description) {
         newTab.document.write('<html><body style="margin:0;"><iframe width="100%" height="100%" src="' + url + '" frameborder="0"></iframe></body></html>');
         newTab.document.close();
     }
-
+	
+        function goBack() {
+            window.history.back();
+        }
         function toggleFullScreen() {
             const iframe = document.getElementById('gameIframe');
             if (iframe.requestFullscreen) {
@@ -93,3 +67,5 @@ function openGame(url, title, description) {
                 iframe.msRequestFullscreen();
             }
         }
+		
+		
