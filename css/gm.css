@@ -12,22 +12,11 @@ body {
     background-size: cover;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    animation: blurAnimation 0.75s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
-        @keyframes blurAnimation {
-            0% {
-                filter: blur(10px); /* Apply blur effect */
-            }
-            100% {
-                filter: blur(0); /* Remove blur effect */
-            }
-        }
-		
-
-        nav {
-	background-color: rgba(11, 11, 11, 0.7);
-	border: 3px solid rgba(5, 5, 5, 0.2);
+nav {
+    background-color: rgba(11, 11, 11, 0.7);
+    border: 3px solid rgba(5, 5, 5, 0.2);
     color: white;
     padding: 7px;
     display: flex;
@@ -37,13 +26,12 @@ body {
     top: 20px;
     left: 10%;
     right: 10%;
-	height: 55px;
-	border-radius: 15px;
-	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    height: 55px;
+    border-radius: 15px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-
-        .logo {
+.logo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,133 +39,128 @@ body {
     background-color: transparent;
     cursor: pointer;
     outline: none;
-	transition: all 0.3s;
-	padding: 10px;
-	color: white;
-	border-radius: 10px;
-	margin-left: 8px;
-	font-weight: -600;
+    transition: all 0.3s;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    margin-left: 8px;
+    font-weight: -600;
 }
 
 .logo:active {
-	transform: scale(0.95);
+    transform: scale(0.95);
 }
 
-		.logo:hover {
-		text-shadow: 0 0 13px rgba(255, 255, 255, 0.5);
-		}
+.logo:hover {
+    text-shadow: 0 0 13px rgba(255, 255, 255, 0.5);
+}
 
-        .logo img {
-            height: 35px;
-            margin-right: 10px;
-            draggable: false;
-        }
+.logo img {
+    height: 35px;
+    margin-right: 10px;
+    draggable: false;
+}
 
-        h1 {
-            margin: 0;
-            font-size: 35px;
-            font-weight: bold;
-            font-family: "Montserrat", sans-serif;
-        }
+h1, h2, h3 {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
 
-        h2 {
-            margin: 25px 0;
-            font-size: 60px;
-            font-weight: bold;
-            color: #FFFFFF;
-            text-align: center;
-            font-family: "Montserrat", sans-serif;
-        }
+h1 {
+    font-size: 35px;
+    font-weight: bold;
+}
 
-        h3 {
-            color: #fff;
-            margin: 0;
-            font-size: 28px;
-            font-weight: 600;
-            font-family: "JetBrains Mono", monospace;
-        }
+h2 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0;
+}
 
-        .game-info {
+h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.game-info {
+    width: calc(20% - 20px);
+    height: calc(100vh - 175px);
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    border: none;
     background-color: #131313;
-    width: 70vw; /* Adjust based on your preference */
-    height: 30px; /* Adjust to fill the remaining vertical space */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    bottom: 20px;
-    padding-bottom: 15px; /* Add padding at the bottom */
-    padding-top: 15px; /* Add padding at the top */
-    transform: translate(-50%, -50%);
-    top: 90%; /* Center the game vertically */
-    left: 50%;
+    z-index: 999;
+    border-radius: 0 20px 20px 0;
+}
+
+#gameImg {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 20px;
+	margin-bottom: 5px;
 }
 
 .game-details {
-    margin-bottom: 30px;
     text-align: center;
-    position: relative; /* Add position relative */
+    position: relative;
+    padding: 25px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .gibutton {
-    background-color: #fff;
-    color: #fff;
+    background-color: #959595;
     border: none;
     border-radius: 10px;
-    width: 50px;
-    height: 50px;
+    padding: 12px 15px;
     cursor: pointer;
     transition: all 0.3s;
-    margin: 0 15px;
-    opacity: 0.7;
-    position: absolute; /* Position the gibuttons absolutely */
-    top: 50%; /* Align vertically */
-}
-
-.gibutton:first-child {
-    left: -100px; /* Adjust the distance from the left for the first button */
-}
-
-.gibutton:nth-child(2) {
-    left: -40px; /* Adjust the distance from the left for the second button */
-}
-
-.gibutton:nth-child(3) {
-    left: 0; /* Adjust the distance from the left for the third button */
+    margin: 10px 0;
+	display: flex;
+    align-items: center;
+	font-size: 20px;
 }
 
 .gibutton:hover {
-    transform: scale(1.13); /* Increase size on hover */
-    opacity: 0.5; /* Adjust opacity on hover */
+    transform: scale(1.08);
+	background-color: #cccccc;
 }
 
 .gibutton img {
-    position: absolute; /* Position the image absolutely */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center the image perfectly */
-    max-width: 60%; /* Limit the max width of the image */
-    max-height: 80%; /* Limit the max height of the image */
+    margin-left: 7px;
+	margin-right: 12px;
 }
 
 .game {
-    width: 70vw;
-    height: calc(100vh - 250px); /* Adjusted to create space for game-info */
-    overflow: hidden;
+    width: calc(80% - 20px);
+    height: calc(100vh - 175px);
     position: absolute;
-    top: 50%; /* Center the game vertically */
-    left: 50%; /* Center the game horizontally */
-    transform: translate(-50%, -50%); /* Center the game perfectly */
+    bottom: 40px;
+    left: 40px;
     border: none;
-    margin-top: 15px;
+    background-color: #171717;
+	border-radius: 20px 0 0 20px;
 }
+
 
 .game-iframe {
     width: 100%;
     height: 100%;
+    overflow: hidden;
     border: none;
+	border-radius: 20px 0 0 20px;
 }
 
+/* Buttons */
 .buttons {
     display: flex;
     align-items: center;
@@ -208,3 +191,5 @@ body {
 .button:active {
     transform: scale(0.95);
 }
+
+
