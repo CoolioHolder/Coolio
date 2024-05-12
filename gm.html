@@ -230,8 +230,8 @@ input:hover {
         document.getElementById('gameIframe').src = gameUrl;
 
         function goBack() {
-            window.location.href = "games.html";
-        }
+    window.history.back();
+}
 		
         function toggleFullScreen() {
             const iframe = document.getElementById('gameIframe');
