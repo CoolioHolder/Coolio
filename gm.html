@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="textures/icons/logo.png">
+    <link rel="stylesheet" href="css/gm.css">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+body {
+    margin: 0;
+    background-image: linear-gradient(to bottom right, #e3e4e6, #f9fafc);
+    transition: all 0.3s;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+	overflow: hidden;
+        }
+
+	nav {
+            background-color: transparent;
+            color: white;
+            border-bottom: 1px solid #212121;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .plogo {
+    font-size: 25px;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    float: left;
+    margin-right: auto;
+	margin-left: 20px;
+}
+
+        .buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .button {
+            margin-left: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+		
+		.button-container {
+    display: flex; /* Display buttons horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+        .button a {
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    padding: 10px;
+    margin-right: 8px;
+}
+
+.button a:hover,
+.button.active a {
+    text-shadow: 0 0 13px rgba(255, 255, 255, 0.5);
+}
+
+
+
+.button:active {
+	transform: scale(0.95);
+}
+
+.extras {
+            position: relative;
+            display: inline-block;
+            margin-right: 15px;
+			cursor: pointer;
+        }
+		
+		.extras-p {
+			    font-size: 20px;
+    margin: 0;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+		}
+
+        .extras-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+			font-family: 'Montserrat', sans-serif;
+			font-size: 14px;
+        }
+
+        .extras-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+			margin-left: auto;
+        }
+
+        .extras-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .extras:hover .extras-content {
+            display: block;
+        }
+		
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: transparent;
+  color: #0d0c22;
+  transition: 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
+.input::placeholder {
+  color: #9e9ea7;
+}
+
+.input:focus,
+input:hover {
+  outline: none;
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: #9e9ea7;
+  width: 1rem;
+  height: 1rem;
+}
+
+.game {
+    width: 100%;
+    height: calc(100vh - 80px);
+    position: absolute;
+    bottom: 0;
+    border: none;
+}
+
+
+.game-iframe {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: none;
+}
+
+.gibutton {
+    font-size: 16px;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center the text vertically */
+    width: auto;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+    color: #212121;
+	transform: translateX(-10px); /* Move the button to the left by 20px */
+	margin-right: 20px;
+}
+
+.gibutton:hover {
+    background-color: #e1e1e1;
+}
+
+.gibutton img {
+    margin-left: 7px;
+    margin-right: 12px;
+}
+
+</style>
+<body>
+    <nav>
+        <p class="plogo">Camden's Games</p>
+		        <div class="button-container">
+<button class="gibutton" onclick="goBack()">
+    <img src="textures/icons/back.png" alt="Back" style="max-width: 20x; max-height: 20px;">
+    <span>Back</span>
+</button>
+<button class="gibutton" onclick="toggleFullScreen()">
+    <img src="textures/icons/fullscreen.png" alt="Fullscreen" style="max-width: 20px; max-height: 20px;">
+    <span>Fullscreen</span>
+</button>
+    </nav>
+    <div class="game">
+        <iframe class="game-iframe" id="gameIframe" src="" frameborder="0"></iframe>
+    </div>
+    </div>
+	
+	<script>
+	
+    </script>
+    <script>
+        const gameUrl = sessionStorage.getItem('gameUrl');
+        document.getElementById('gameIframe').src = gameUrl;
+
+        function goBack() {
+            window.location.href = "games.html";
+        }
+		
+        function toggleFullScreen() {
+            const iframe = document.getElementById('gameIframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+
+</html>
