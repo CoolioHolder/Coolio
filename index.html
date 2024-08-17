@@ -13,18 +13,19 @@
 </head>
 <style>
 body {
-            margin: 0;
-            background-image: linear-gradient(to bottom right, #e3e4e6, #f9fafc);
-            transition: all 0.3s;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
+    margin: 0;
+    background-image: url('bg.jpg'); /* Path to your background image */
+    background-position: center center; /* Center the image */
+    background-size: cover; /* Cover the entire viewport */
+    background-attachment: fixed; /* Keep the image fixed when scrolling */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-color: #111111; /* Fallback color in case the image is not loaded */
+}
 
 	nav {
-            background-color: transparent;
+            background: rgba(0, 0, 0, 0.3);
             color: white;
-            border-bottom: 1px solid #212121;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
             display: flex;
             align-items: center;
             justify-content: space-between; /* Adjusted for space between the logo and other items */
@@ -32,12 +33,13 @@ body {
 
         .plogo {
     font-size: 25px;
-    color: #000;
+    color: #eeeeee;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     float: left;
     margin-right: auto;
 	margin-left: 20px;
+	text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
         .buttons {
@@ -85,29 +87,35 @@ body {
 .box {
     display: flex;
     align-items: center;
-    width: 275px;
-    height: 60px;
+    width: 300px;
+    height: 75px;
     margin: 20px;
     border-radius: 15px;
 	cursor: pointer;
     overflow: hidden;
 	transition: all 0.2s;
-	border: 1px solid #212121;
+	border: 1px solid rgba(0, 0, 0, 0.4);
 	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	color: #eeeeee;
+	background: rgba(0, 0, 0, 0.3);
+	text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .box:hover {
-	background-color: #e1e1e1;
-	transform: translateY(-2px);
+	background: rgba(0, 0, 0, 0.4);
+	transform: scale(1.1);
+	text-shadow: 3px 2px 5px rgba(0, 0, 0, 1);
 }
 
 .box img {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     object-fit: cover;
     margin-left: 10px;
     margin-right: 10px;
-	border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Shadow applied here */
 }
 		
 		::-webkit-scrollbar {
@@ -115,55 +123,13 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f9fafc;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e3e4e6;
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
 }
-
-.extras {
-            position: relative;
-            display: inline-block;
-            margin-right: 15px;
-			cursor: pointer;
-        }
-		
-		.extras-p {
-			    font-size: 20px;
-    margin: 0;
-    color: #000;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-		}
-
-        .extras-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            z-index: 1;
-            border-radius: 5px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-			font-family: 'Montserrat', sans-serif;
-			font-size: 14px;
-        }
-
-        .extras-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .extras-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .extras:hover .extras-content {
-            display: block;
-        }
 		
 .group {
   display: flex;
@@ -183,14 +149,15 @@ body {
   border-radius: 8px;
   outline: none;
   background-color: transparent;
-  color: #0d0c22;
+  color: #eeeeee;
   transition: 0.3s ease;
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
+  text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .input::placeholder {
-  color: #9e9ea7;
+  color: #eeeeee;
 }
 
 .input:focus,
@@ -201,21 +168,33 @@ input:hover {
 .icon {
   position: absolute;
   left: 1rem;
-  fill: #9e9ea7;
+  fill: #eeeeee;
   width: 1rem;
   height: 1rem;
 }
 
+.notification-bar {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    z-index: 1000; /* Ensure the notification bar is above other content */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+	text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
+}
 </style>
 <body>
 	<nav>
 	<p class="plogo">Camden's Games</p>
-        <div class="extras">
-            <p class="extras-p">Extras</p>
-            <div class="extras-content">
-                <a onclick="aboutBlank('https://deepai.org/chat')">AI Chat</a>
-                <a onclick="window.open('https://quillbot.com/')">Quillbot</a>
-            </div>
         </div>
         <div class="group">
 		<svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
@@ -228,15 +207,11 @@ input:hover {
         <input type="text" id="searchInput" oninput="filterGames()" placeholder="Search games" class="input">
     </div>
     </nav>
+	<div class="notification-bar">
+        <p>Games may be blocked because they haven't been checked in 3 months.</p>
+    </div>
 	
 	<div class="box-container" id="boxContainer">
-	
-	<div class="box" onclick="openGame(event,'https://docs.google.com/forms/d/e/1FAIpQLSd_uTNc0gvwSCPgr0eA_UIcLmfTgm2kyPv6daNv_rD8ZXU8ag/viewform', 'Suggestion')">
-    <img src="textures/icons/suggestion.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Suggestion</p>
-    </div>
-</div>
 	
 	<div class="box" onclick="openGame(event,'https://sd592g.github.io/zj684od4lfg/', 'Minecraft')">
     <img src="textures/games/minecraft.webp" alt="image">
