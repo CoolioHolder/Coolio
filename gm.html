@@ -13,31 +13,33 @@
 <style>
 body {
     margin: 0;
-    background-image: linear-gradient(to bottom right, #e3e4e6, #f9fafc);
-    transition: all 0.3s;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    background-image: url('bg.jpg'); /* Path to your background image */
+    background-position: center center; /* Center the image */
+    background-size: cover; /* Cover the entire viewport */
+    background-attachment: fixed; /* Keep the image fixed when scrolling */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-color: #111111; /* Fallback color in case the image is not loaded */
 	overflow: hidden;
-        }
+}
 
 	nav {
-            background-color: transparent;
+            background: rgba(0, 0, 0, 0.3);
             color: white;
-            border-bottom: 1px solid #212121;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-between; /* Adjusted for space between the logo and other items */
         }
 
         .plogo {
     font-size: 25px;
-    color: #000;
+    color: #eeeeee;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     float: left;
     margin-right: auto;
 	margin-left: 20px;
+	text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
         .buttons {
@@ -69,7 +71,9 @@ body {
 
 .button a:hover,
 .button.active a {
-    text-shadow: 0 0 13px rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.4);
+	transform: scale(1.1);
+	text-shadow: 3px 2px 5px rgba(0, 0, 0, 1);
 }
 
 
@@ -179,7 +183,7 @@ input:hover {
 }
 
 .gibutton {
-    font-size: 16px;
+    font-size: 18px;
     display: flex; /* Use flexbox */
     align-items: center; /* Center the text vertically */
     width: auto;
@@ -189,14 +193,16 @@ input:hover {
     transition: all 0.2s;
     border: none;
     font-family: 'Montserrat', sans-serif;
-    background-color: transparent;
-    color: #212121;
+    background: transparent;
+    color: #eeeeee;
 	transform: translateX(-10px); /* Move the button to the left by 20px */
 	margin-right: 20px;
+	font-weight: 450;
+	text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .gibutton:hover {
-    background-color: #e1e1e1;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .gibutton img {
