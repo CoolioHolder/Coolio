@@ -14,7 +14,7 @@
 <style>
 body {
     margin: 0;
-    background-image: url('https://github.com/camdensgms/camdensgms.github.io/blob/main/textures/bg.jpg?raw=true');
+    background-image: url('https://raw.githubusercontent.com/camdensgms/camdensgms.github.io/main/textures/bg.jpg');
     background-position: center center; /* Center the image */
     background-size: cover; /* Cover the entire viewport */
     background-attachment: fixed; /* Keep the image fixed when scrolling */
@@ -23,23 +23,21 @@ body {
 }
 
 	nav {
-            background: rgba(0, 0, 0, 0.3);
-            color: white;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Adjusted for space between the logo and other items */
-        }
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* Add padding to the left and right of the nav */
+}
 
         .plogo {
     font-size: 25px;
     color: #eeeeee;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    float: left;
-    margin-right: auto;
-	margin-left: 20px;
-	text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
         .buttons {
@@ -94,16 +92,16 @@ body {
 	cursor: pointer;
     overflow: hidden;
 	transition: all 0.2s;
-	border: 1px solid rgba(0, 0, 0, 0.4);
+	border: 1px solid rgba(0, 0, 0, 0.8);
 	font-family: 'Montserrat', sans-serif;
 	font-size: 20px;
 	color: #eeeeee;
-	background: rgba(0, 0, 0, 0.3);
+	background: rgba(0, 0, 0, 0.7);
 	text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .box:hover {
-	background: rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.9);
 	transform: scale(1.1);
 	text-shadow: 3px 2px 5px rgba(0, 0, 0, 1);
 }
@@ -179,7 +177,7 @@ input:hover {
     left: 0;
     width: 100%;
     height: 30px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     display: flex;
     align-items: center;
@@ -188,13 +186,49 @@ input:hover {
     font-size: 14px;
     z-index: 1000; /* Ensure the notification bar is above other content */
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-	text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+	text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.6);
+	opacity: 0;
 }
+
+.social-buttons {
+	position: absolute;
+    display: flex;
+    align-items: center;
+    margin-left: 0; /* No margin to the left */
+    padding-left: 0; /* Ensure no padding on the left */
+	left: 250px;
+}
+
+.social-buttons a {
+    margin-left: 0; /* No margin between buttons */
+}
+
+.social-buttons img {
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s;
+}
+
+.social-buttons img:hover {
+    filter: brightness(70%);
+}
+
+
 </style>
 <body>
 	<nav>
 	<p class="plogo">Camden's Games</p>
+	<div class="social-buttons">
+        <a href="https://github.com/camdensgms/camdensgms.github.io">
+            <img src="https://raw.githubusercontent.com/camdensgms/camdensgms.github.io/main/textures/icons/github.png" alt="GitHub">
+        </a>
+    </div>
+
+
+    <div class="group">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+        </svg>
         </div>
         <div class="group">
 		<svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
