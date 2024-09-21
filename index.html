@@ -14,7 +14,7 @@
 <style>
 body {
     margin: 0;
-    background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGtoYnpzOXFwM290a2JiNjB4YmJncmR0cDlzNWM0NDY5ZXg4MzNzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dAWZiSMbMvObDWP3aA/giphy.webp');
+    background-image: url('');
     background-position: center center; /* Center the image */
     background-size: cover; /* Cover the entire viewport */
     background-attachment: fixed; /* Keep the image fixed when scrolling */
@@ -30,6 +30,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px; /* Add padding to the left and right of the nav */
+	height: 65px;
 }
 
         .plogo {
@@ -83,37 +84,47 @@ body {
 }
 
 .box {
-    display: flex;
+	display: inline-block;
     align-items: center;
-    width: 300px;
-    height: 75px;
+    width: 155px;
+    height: 200px; /* Increase height to accommodate both image and text */
     margin: 20px;
     border-radius: 15px;
-	cursor: pointer;
+    cursor: pointer;
     overflow: hidden;
-	transition: all 0.2s;
-	border: 1px solid rgba(0, 0, 0, 0.8);
-	font-family: 'Montserrat', sans-serif;
-	font-size: 20px;
-	color: #eeeeee;
-	background: rgba(0, 0, 0, 0.5);
-	text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 19px;
+    color: #eeeeee;
+    background: rgba(0, 0, 0, 0.6);
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Center the text */
+
 }
 
 .box:hover {
-	background: rgba(0, 0, 0, 0.6);
-	transform: scale(1.05);
+	background: rgba(25, 25, 25, 0.2);
+	transform: scale(1.1);
 	text-shadow: 3px 2px 5px rgba(0, 0, 0, 1);
+	border: 2px solid rgba(50, 50, 50, 0.8);
 }
 
+.box p {
+    max-width: 140px; /* Restrict the text width */
+    overflow: hidden; /* Hide any text that exceeds the max-width */
+    margin: auto; /* Center the text horizontally */
+	margin-top: 15px;
+}
+
+
 .box img {
-    width: 55px;
-    height: 55px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
-    margin-left: 10px;
-    margin-right: 10px;
+	margin-top: 20px;
     border-radius: 5px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Shadow applied here */
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
 		
 		::-webkit-scrollbar {
@@ -241,6 +252,7 @@ input:hover {
         <input type="text" id="searchInput" oninput="filterGames()" placeholder="Search games" class="input">
     </div>
     </nav>
+	
 	<div class="notification-bar">
         <p>Update: Added 14 Games!</p>
     </div>
@@ -427,7 +439,7 @@ input:hover {
     </div>
 </div>
 
-<div class="box" onclick="openGame(event,'https://topvz.github.io/g77/crossy-road/', 'Crossy Road')">
+<div class="box" onclick="openGame(event,'https://premium158.github.io/g77/crossy-road', 'Crossy Road')">
     <img src="textures/games/crossyroad.webp" alt="image">
     <div class="slide-up-box">
         <p>Crossy Road</p>
@@ -437,7 +449,7 @@ input:hover {
 <div class="box" onclick="openGame(event,'https://webglmath.github.io/the-impossible-quiz-2/', 'The Impossible Quiz 2')">
     <img src="textures/games/theimpossiblequiz2.webp" alt="image">
     <div class="slide-up-box">
-        <p>The Impossible Quiz 2</p>
+        <p>Impossible Quiz 2</p>
     </div>
 </div>
 
@@ -553,7 +565,7 @@ input:hover {
     </div>
 </div>
 
-<div class="box" onclick="openGame(event,'https://just-fall.github.io/j6/volley-random', 'Volleyball Random')">
+<div class="box" onclick="openGame(event,'https://premium158.github.io/g9/volley-random', 'Volleyball Random')">
     <img src="textures/games/volleyrandom.webp" alt="image">
     <div class="slide-up-box">
         <p>Volleyball Random</p>
@@ -613,11 +625,6 @@ input:hover {
 <div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/UnityExplorer@b38448679f5490397649c620ad8f803f834df565/UI/card.xml&container=ig', 'Car Drawing')">
     <img src="textures/games/cardrawing.webp" alt="image">
         <p>Car Drawing</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://t52504.github.io/g17/retro-highway/')">
-    <img src="textures/games/retrohighway.webp" alt="image">
-        <p>Retro Highway</p>
 </div>
 
 <div class="box" onclick="openGame(event,'https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fhobo-prison-brawl.xml&container=ig')">
@@ -715,7 +722,25 @@ input:hover {
         <p>Masked Forces</p>
 </div>
 
+<div class="box" onclick="openGame(event,'https://premium158.github.io/g16/bomber-royale/')">
+    <img src="textures/games/bomberroyal.webp" alt="image">
+        <p>Bomber Royal</p>
+</div>
 
+<div class="box" onclick="openGame(event,'https://premium158.github.io/g3/tricks/')">
+    <img src="textures/games/tricks.webp" alt="image">
+        <p>Tricks</p>
+</div>
+
+<div class="box" onclick="openGame(event,'https://premium158.github.io/g3/zombie-derby-pixel-survival')">
+    <img src="textures/games/zombiederby.webp" alt="image">
+        <p>Zombie Derby Survival</p>
+</div>
+
+<div class="box" onclick="openGame(event,'https://unblocked-games.s3.amazonaws.com/games/stickman-ragdoll/index.html')">
+    <img src="textures/games/stickmanragdoll.webp" alt="image">
+        <p>Stickman Ragdoll</p>
+</div>
 
     <script>
 	function openGame(event, url, title) {
