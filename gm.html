@@ -13,7 +13,7 @@
 <style>
 body {
     margin: 0;
-    background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGtoYnpzOXFwM290a2JiNjB4YmJncmR0cDlzNWM0NDY5ZXg4MzNzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dAWZiSMbMvObDWP3aA/giphy.webp'); /* Path to your background image */
+    background-image: url(''); /* Path to your background image */
     background-position: center center; /* Center the image */
     background-size: cover; /* Cover the entire viewport */
     background-attachment: fixed; /* Keep the image fixed when scrolling */
@@ -30,6 +30,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px; /* Add padding to the left and right of the nav */
+	height: 60px;
 }
 
         .plogo {
@@ -131,6 +132,19 @@ body {
   max-width: 190px;
 }
 
+		::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
 .input {
   width: 100%;
   height: 40px;
@@ -166,7 +180,7 @@ input:hover {
 
 .game {
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 61px);
     position: absolute;
     bottom: 0;
     border: none;
@@ -231,6 +245,45 @@ input:hover {
     filter: brightness(70%);
 }
 
+/* From Uiverse.io by satyamchaudharydev */ 
+.loader {
+    display: block;
+    --height-of-loader: 10px;
+    --loader-color: #ffffff;
+    width: 350px;
+    height: var(--height-of-loader);
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 55%; /* Position at 50% from the top */
+    left: 50%; /* Position at 50% from the left */
+    transform: translate(-50%, -50%); /* Move back by half its own width and height */
+}
+
+.loader::before {
+    content: "";
+    position: absolute;
+    background: var(--loader-color);
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    animation: moving 1s ease-in-out infinite;
+}
+
+@keyframes moving {
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+        right: 0;
+        left: unset;
+    }
+}
+
 </style>
 <body>
     <nav>
@@ -250,6 +303,7 @@ input:hover {
     <span>Fullscreen</span>
 </button>
     </nav>
+	<div class="loader"></div>
     <div class="game">
         <iframe class="game-iframe" id="gameIframe" src="" frameborder="0"></iframe>
     </div>
