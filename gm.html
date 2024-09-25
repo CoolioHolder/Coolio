@@ -30,7 +30,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px; /* Add padding to the left and right of the nav */
-	height: 60px;
+	height: 65px;
 }
 
         .plogo {
@@ -179,20 +179,23 @@ input:hover {
 }
 
 .game {
-    width: 100%;
-    height: calc(100vh - 61px);
-    position: absolute;
-    bottom: 0;
-    border: none;
-}
+        width: 100%;
+        height: calc(100vh - 65px);
+        position: absolute;
+        bottom: 0;
+        opacity: 0; /* Initially hidden */
+        visibility: hidden;
+        transition: opacity 1.5s ease-in-out; /* Fade-in transition */
+		overflow: hidden;
+    }
 
 
 .game-iframe {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border: none;
-}
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border: none;
+    }
 
 .gibutton {
     font-size: 18px;
@@ -284,6 +287,10 @@ input:hover {
     }
 }
 
+::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
 </style>
 <body>
     <nav>
@@ -309,19 +316,28 @@ input:hover {
     </div>
     </div>
 	
-	<script>
-	
-    </script>
     <script>
-        const gameUrl = sessionStorage.getItem('gameUrl');
-        document.getElementById('gameIframe').src = gameUrl;
+    window.onload = function () {
+        setTimeout(function () {
+            const gameUrl = sessionStorage.getItem('gameUrl');
+            document.getElementById('gameIframe').src = gameUrl;
 
-        function goBack() {
-    window.history.back();
-}
-		
-        function toggleFullScreen() {
-            const iframe = document.getElementById('gameIframe');
+            setTimeout(function () {
+                document.querySelector('.loader').style.display = 'none';
+                const gameElement = document.querySelector('.game');
+                gameElement.style.visibility = 'visible';
+                gameElement.style.opacity = '1';
+            }, 3000);
+        }, 1000);
+    };
+
+    function goBack() {
+        window.history.back();
+    }
+
+    function toggleFullScreen() {
+        const iframe = document.getElementById('gameIframe');
+        if (!document.fullscreenElement) {
             if (iframe.requestFullscreen) {
                 iframe.requestFullscreen();
             } else if (iframe.webkitRequestFullscreen) {
@@ -329,8 +345,28 @@ input:hover {
             } else if (iframe.msRequestFullscreen) {
                 iframe.msRequestFullscreen();
             }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
         }
-    </script>
+    }
+
+    document.addEventListener('fullscreenchange', function () {
+        const nav = document.querySelector('nav');
+        if (document.fullscreenElement) {
+            nav.style.display = 'none';
+        } else {
+            nav.style.display = 'flex';
+        }
+    });
+</script>
+
+
 </body>
 
 </html>
