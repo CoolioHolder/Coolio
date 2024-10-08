@@ -14,7 +14,7 @@
 <style>
 body {
     margin: 0;
-    background-image: url('');
+    background-image: url('https://wallpaperaccess.com/full/9205550.gif');
     background-position: center center; /* Center the image */
     background-size: cover; /* Cover the entire viewport */
     background-attachment: fixed; /* Keep the image fixed when scrolling */
@@ -23,14 +23,15 @@ body {
 }
 
 	nav {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     color: white;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.9);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px; /* Add padding to the left and right of the nav */
 	height: 65px;
+	z-index: 2;
 }
 
         .plogo {
@@ -39,6 +40,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
+	z-index: 2;
 }
 
         .buttons {
@@ -61,6 +63,7 @@ body {
     transition: all 0.3s;
     padding: 10px;
     margin-right: 8px;
+	z-index: 2;
 }
 
 .button a:hover,
@@ -93,21 +96,19 @@ body {
     cursor: pointer;
     overflow: hidden;
     transition: all 0.2s;
-    border: 2px solid rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.9);
     font-family: 'Montserrat', sans-serif;
     font-size: 19px;
     color: #eeeeee;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
     text-align: center; /* Center the text */
-
+z-index: 2;
 }
 
 .box:hover {
-	background: rgba(25, 25, 25, 0.2);
 	transform: scale(1.1);
 	text-shadow: 3px 2px 5px rgba(0, 0, 0, 1);
-	border: 2px solid rgba(50, 50, 50, 0.8);
 }
 
 .box p {
@@ -163,6 +164,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .input::placeholder {
@@ -180,6 +182,7 @@ input:hover {
   fill: #eeeeee;
   width: 1rem;
   height: 1rem;
+  z-index: 2;
 }
 
 .notification-bar {
@@ -198,9 +201,10 @@ input:hover {
     z-index: 1000; /* Ensure the notification bar is above other content */
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.6);
-	opacity: 1;
+	opacity: 0;
 	font-weight: bold;
 	margin-top: 10px;
+	z-index: 2;
 }
 
 .social-buttons {
@@ -210,6 +214,7 @@ input:hover {
     margin-left: 0; /* No margin to the left */
     padding-left: 0; /* Ensure no padding on the left */
 	left: 250px;
+	z-index: 2;
 }
 
 .social-buttons a {
@@ -269,7 +274,7 @@ input:hover {
     </nav>
 	
 	<div class="notification-bar">
-        <p>Notice: A LOT of games have been deleted off github and I'm currently looking for new links.</p>
+        <p></p>
     </div>
 	
 	<div class="box-container" id="boxContainer">
@@ -288,10 +293,10 @@ input:hover {
     </div>
 </div>
 
-		<div class="box" onclick="openGame(event,'https://unblocked76.github.io/subway-surfers-sanfancisco/', 'Subway Surfers')">
+		<div class="box" onclick="openGame(event,'https://ubg365.github.io/subway-surfers/play.html', 'Subway Surfers')">
     <img src="textures/games/subwaysurfers.webp" alt="image">
     <div class="slide-up-box">
-        <p>Subway Surfers <span class=red-text>(NW)<span></p>
+        <p>Subway Surfers</p>
     </div>
 </div>
 
@@ -325,10 +330,10 @@ input:hover {
     </div>
 </div>
 
-<div class="box" onclick="openGame(event,'https://monkeymartgame.github.io/file/', 'Monkey Mart')">
+<div class="box" onclick="openGame(event,'https://ubg98.github.io/MonkeyMart/', 'Monkey Mart')">
     <img src="textures/games/monkeymart.webp" alt="image">
     <div class="slide-up-box">
-        <p>Monkey Mart <span class=red-text>(NW)<span></p>
+        <p>Monkey Mart</p>
     </div>
 </div>
 
@@ -403,21 +408,19 @@ input:hover {
     </div>
 </div>
 
-<div class="box" onclick="openGame(event,'https://just-fall.github.io/j5/jetpack-joyride', 'Jetpack Joyride')">
+<div class="box" onclick="openGame(event,'https://abinbins.github.io/a7/jetpack-joyride/', 'Jetpack Joyride')">
     <img src="textures/games/jetpackjoyride.webp" alt="image">
     <div class="slide-up-box">
-        <p>Jetpack Joyride <span class=red-text>(NW)<span></p>
+        <p>Jetpack Joyride</p>
     </div>
 </div>
 
-<div class="box" onclick="openGame(event,'https://unblocked76.github.io/rooftop-snipers-2/', 'Rooftop Snipers 2')">
+<div class="box" onclick="openGame(event,'https://webglmath.github.io/rooftop-snipers/', 'Rooftop Snipers 2')">
     <img src="textures/games/rooftopsnipers2.webp" alt="image">
     <div class="slide-up-box">
-        <p>Rooftop Snipers 2 <span class=red-text>(NW)<span></p>
+        <p>Rooftop Snipers 2</p>
     </div>
 </div>
-
-
 		
 		<div class="box" onclick="openGame(event,'https://unblocked76.github.io/chrome-dino/', 'Chrome Dino')">
     <img src="textures/games/chromedino.webp" alt="image">
@@ -447,17 +450,10 @@ input:hover {
     </div>
 </div>
 
-<div class="box" onclick="openGame(event,'https://unblocked76.github.io/wordle/', 'Wordle')">
-    <img src="textures/games/wordle.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Wordle <span class=red-text>(NW)<span></p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g77/crossy-road', 'Crossy Road')">
+<div class="box" onclick="openGame(event,'https://slope-game.github.io/rungame/crossy-road/', 'Crossy Road')">
     <img src="textures/games/crossyroad.webp" alt="image">
     <div class="slide-up-box">
-        <p>Crossy Road <span class=red-text>(NW)<span></p>
+        <p>Crossy Road</p>
     </div>
 </div>
 
@@ -468,10 +464,10 @@ input:hover {
     </div>
 </div>
 
-<div class="box" onclick="openGame(event,'https://unblocked76.github.io/quake/', 'Quake')">
+<div class="box" onclick="openGame(event,'https://ubg365.github.io/quake/', 'Quake')">
     <img src="textures/games/quake.webp" alt="image">
     <div class="slide-up-box">
-        <p>Quake <span class=red-text>(NW)<span></p>
+        <p>Quake</p>
     </div>
 </div>
 
@@ -503,13 +499,6 @@ input:hover {
     </div>
 </div>
 
-<div class="box" onclick="openGame(event,'https://unblocked76.github.io/blockpost2/', 'Blockpost')">
-    <img src="textures/games/blockpost.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Blockpost <span class=red-text>(NW)<span></p>
-    </div>
-</div>
-
 		<div class="box" onclick="openGame(event,'https://cubes2048io.github.io/', 'Cubes 2048')">
     <img src="textures/games/cubes2048.webp" alt="image">
     <div class="slide-up-box">
@@ -517,10 +506,10 @@ input:hover {
     </div>
 </div>
 
-<div class="box" onclick="openGame(event,'https://unblocked76.github.io/temple-run-2/', 'Temple Run 2')">
+<div class="box" onclick="openGame(event,'https://gamemonetize.co/game/pkyyuilfrqkcdnmrxsg60j22ypk0peje/', 'Temple Run 2')">
     <img src="textures/games/templerun2.webp" alt="image">
     <div class="slide-up-box">
-        <p>Temple Run 2 <span class=red-text>(NW)<span></p>
+        <p>Temple Run 2</p>
     </div>
 </div>
 
@@ -545,10 +534,17 @@ input:hover {
     </div>
 </div>
 
-		<div class="box" onclick="openGame(event,'https://premium158.github.io/g5/monster-tracks/', 'Monster Tracks')">
+<div class="box" onclick="openGame(event,'https://ubg98.github.io/WordleUnlimited/', 'Drift Boss')">
+    <img src="textures/games/wordle.webp" alt="image">
+    <div class="slide-up-box">
+        <p>Wordle</p>
+    </div>
+</div>
+
+		<div class="box" onclick="openGame(event,'https://tbg95.github.io/monster-tracks/game.html', 'Monster Tracks')">
     <img src="textures/games/monstertracks.webp" alt="image">
     <div class="slide-up-box">
-        <p>Monster Tracks <span class=red-text>(NW)<span></p>
+        <p>Monster Tracks</p>
     </div>
 </div>
 
@@ -559,31 +555,38 @@ input:hover {
     </div>
 </div>
 
-<div class="box" onclick="openGame(event,'https://retrobowl-unblocked.github.io/new/index.html', 'Retrobowl')">
+<div class="box" onclick="openGame(event,'https://shawn43.github.io/retrobowl-unlimited/', 'Retrobowl')">
     <img src="textures/games/retrobowl.webp" alt="image">
     <div class="slide-up-box">
-        <p>Retrobowl <span class=red-text>(NW)<span></p>
+        <p>Retrobowl</p>
     </div>
 </div>
 
-<div class="box" onclick="openGame(event,'https://unblocked76.github.io/soccer-random/', 'Soccer Random')">
+<div class="box" onclick="openGame(event,'https://classroomjq.github.io/retro-bowl-college/', 'Retrobowl')">
+    <img src="textures/games/retrobowlcollege.webp" alt="image">
+    <div class="slide-up-box">
+        <p>Retrobowl College</p>
+    </div>
+</div>
+
+<div class="box" onclick="openGame(event,'https://slope-game.github.io/new3723/soccer-random/', 'Soccer Random')">
     <img src="textures/games/soccerrandom.webp" alt="image">
     <div class="slide-up-box">
-        <p>Soccer Random <span class=red-text>(NW)<span></p>
+        <p>Soccer Random</p>
     </div>
 </div>
 
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g9/volley-random', 'Volleyball Random')">
+<div class="box" onclick="openGame(event,'https://bitlifeonline.github.io/volley-random/', 'Volleyball Random')">
     <img src="textures/games/volleyrandom.webp" alt="image">
     <div class="slide-up-box">
-        <p>Volleyball Random <span class=red-text>(NW)<span></p>
+        <p>Volleyball Random</p>
     </div>
 </div>
 
-<div class="box" onclick="openGame(event,'https://unblocked76.github.io/boxing-random/', 'Boxing Random')">
+<div class="box" onclick="openGame(event,'https://ubg98.github.io/BoxingRandom/', 'Boxing Random')">
     <img src="textures/games/boxingrandom.webp" alt="image">
     <div class="slide-up-box">
-        <p>Boxing Random <span class=red-text>(NW)<span></p>
+        <p>Boxing Random</p>
     </div>
 </div>
 
@@ -675,80 +678,57 @@ input:hover {
         <p>Idle Ants</p>
 </div>
 
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g177/kart-wars/')">
-    <img src="textures/games/kartwars.webp" alt="image">
-        <p>Kart Wars <span class=red-text>(NW)<span></p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g177/retro-highway')">
-    <img src="textures/games/retrohighway.webp" alt="image">
-        <p>Retro Highway <span class=red-text>(NW)<span></p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g177/smash-karts/')">
-    <img src="textures/games/smashkarts.webp" alt="image">
-        <p>Smash Karts <span class=red-text>(NW)<span></p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g8/8-ball-pool/')">
+<div class="box" onclick="openGame(event,'https://ubg98.github.io/8BallPool/')">
     <img src="textures/games/8ballpool.webp" alt="image">
-        <p>8 Ball Pool <span class=red-text>(NW)<span></p>
+        <p>8 Ball Pool</p>
 </div>
 
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g177/make-it-meme/#/')">
-    <img src="textures/games/makeitmeme.webp" alt="image">
-        <p>Make It Meme <span class=red-text>(NW)<span></p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g69/fruit-ninja/')">
-    <img src="textures/games/fruitninja.webp" alt="image">
-        <p>Fruit Ninja <span class=red-text>(NW)<span></p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g22/zen-blocks/')">
-    <img src="textures/games/zenblocks.webp" alt="image">
-        <p>Zen Blocks <span class=red-text>(NW)<span></p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g/candy-jump')">
-    <img src="textures/games/candyjump.webp" alt="image">
-        <p>Candy Jump <span class=red-text>(NW)<span></p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g2/stack')">
+<div class="box" onclick="openGame(event,'https://tbg95.github.io/rainbow-stacker/')">
     <img src="textures/games/stack.webp" alt="image">
-        <p>Stack <span class=red-text>(NW)<span></p>
+        <p>Stack</p>
 </div>
 
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g4/golf-champions')">
+<div class="box" onclick="openGame(event,'https://classroom-6x.org/games/golf-champions/')">
     <img src="textures/games/golfchampions.webp" alt="image">
-        <p>Golf Champions <span class=red-text>(NW)<span></p>
+        <p>Golf Champions</p>
 </div>
 
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g8/masked-forces')">
-    <img src="textures/games/maskedforces.webp" alt="image">
-        <p>Masked Forces <span class=red-text>(NW)<span></p>
+<div class="box" onclick="openGame(event,'https://tbg95.github.io/candy-jump/')">
+    <img src="textures/games/candyjump.webp" alt="image">
+        <p>Candy Jump</p>
 </div>
 
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g16/bomber-royale/')">
-    <img src="textures/games/bomberroyal.webp" alt="image">
-        <p>Bomber Royal <span class=red-text>(NW)<span></p>
+<div class="box" onclick="openGame(event,'https://slope-game.github.io/new3623/bottle-flip-2/')">
+    <img src="textures/games/bottleflip.webp" alt="image">
+        <p>Bottle Flip</p>
 </div>
-
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g3/tricks/')">
-    <img src="textures/games/tricks.webp" alt="image">
-        <p>Tricks <span class=red-text>(NW)<span></p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://premium158.github.io/g3/zombie-derby-pixel-survival')">
-    <img src="textures/games/zombiederby.webp" alt="image">
-        <p>Zombie Derby Survival <span class=red-text>(NW)<span></p>
-</div>z
 
 <div class="box" onclick="openGame(event,'https://unblocked-games.s3.amazonaws.com/games/stickman-ragdoll/index.html')">
     <img src="textures/games/stickmanragdoll.webp" alt="image">
         <p>Stickman Ragdoll</p>
 </div>
+
+<div class="box" onclick="openGame(event,'https://ubg98.github.io/IdleBreakout/')">
+    <img src="textures/games/idlebreakout.webp" alt="image">
+        <p>Idle Breakout</p>
+</div>
+
+<div class="box" onclick="openGame(event,'https://ubg98.github.io/CrazyCars/')">
+    <img src="textures/games/crazycars.webp" alt="image">
+        <p>Crazy Cars</p>
+</div>
+
+<div class="box" onclick="openGame(event,'https://ubg44.github.io/PresidentSimulator/')">
+    <img src="textures/games/presidentsimulator.webp" alt="image">
+        <p>President Simulator</p>
+</div>
+
+<div class="box" onclick="openGame(event,'https://ubg44.github.io/MaskedForces/')">
+    <img src="textures/games/maskedforces.webp" alt="image">
+        <p>Masked Forces</p>
+</div>
+
+
 
     <script>
 	function openGame(event, url, title) {
