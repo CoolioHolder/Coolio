@@ -2,783 +2,274 @@
 <html lang="en">
 
 <head>
-<link rel="icon" type="image/png" sizes="32x32" href="textures/icons/icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
-	<link rel="icon" type="image/png" sizes="32x32" href="textures/icons/icon.png">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Camden's Games</title>
-</head>
-<style>
-body {
-    margin: 0;
-    background-image: url('https://wallpaperaccess.com/full/9205550.gif');
-    background-position: center center; /* Center the image */
-    background-size: cover; /* Cover the entire viewport */
-    background-attachment: fixed; /* Keep the image fixed when scrolling */
-    background-repeat: no-repeat; /* Prevent repeating the image */
-    background-color: #111111; /* Fallback color in case the image is not loaded */
-}
+    <link rel="icon" type="image/png" sizes="32x32" href="textures/icons/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300..900&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camden's Games 2.0</title>
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            background-color: #0b0b0b;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-	nav {
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px; /* Add padding to the left and right of the nav */
-	height: 65px;
-	z-index: 2;
-}
+        :root {
+            --pastel-green: #66ff66;
+        }
 
-        .plogo {
-    font-size: 25px;
-    color: #eeeeee;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
-	z-index: 2;
-}
-
-        .buttons {
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 2px solid var(--pastel-green);
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 65px;
         }
 
-        .button {
-            margin-left: 30px;
-            transition: transform 0.2s, box-shadow 0.2s;
+        .nav-title {
+            font-family: 'Tektur', sans-serif;
+            font-size: 1.8rem;
+            color: var(--pastel-green);
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: #111;
+            border: 1px solid var(--pastel-green);
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            padding: 5px;
+            font-size: 1rem;
+            width: 200px;
+        }
+
+        .main-section {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .game-button {
+            background-color: #111;
+            border: 2px solid var(--pastel-green);
+            border-radius: 10px;
+            margin: 15px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
             position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
-        .button a {
-    text-decoration: none;
-    color: white;
-    border-radius: 10px;
-    font-size: 30px;
-    letter-spacing: 0.5px;
-    transition: all 0.3s;
-    padding: 10px;
-    margin-right: 8px;
-	z-index: 2;
-}
+        .game-button img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
 
-.button a:hover,
-.button.active a {
-    text-shadow: 0 0 13px rgba(255, 255, 255, 0.5);
-}
+        .game-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(102, 255, 102, 0.3);
+        }
 
+        .star-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            color: transparent;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
 
+        .game-button:hover .star-icon {
+            color: #aaa;
+        }
 
-.button:active {
-	transform: scale(0.95);
-}
+        .star-icon:hover {
+            color: yellow;
+        }
 
-.box-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    justify-content: center;
-    align-items: flex-start;
-	margin-top: 20px;
-}
+        .star-icon.favorited {
+            color: yellow;
+        }
 
-.box {
-	display: inline-block;
-    align-items: center;
-    width: 165px;
-    height: 200px; /* Increase height to accommodate both image and text */
-    margin: 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.2s;
-    border: 2px solid rgba(0, 0, 0, 0.9);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 19px;
-    color: #eeeeee;
-    background: rgba(0, 0, 0, 0.8);
-    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
-    text-align: center; /* Center the text */
-z-index: 2;
-}
+        /* Modal Styles */
+        .iframe-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            opacity: 0; /* Start with invisible */
+            transition: opacity 0.5s ease-in-out; /* Fade-in effect */
+        }
 
-.box:hover {
-	transform: scale(1.1);
-	text-shadow: 3px 2px 5px rgba(0, 0, 0, 1);
-}
+        .iframe-container {
+            position: relative;
+            width: 80%;
+            height: 70%;
+            background: #111;
+            border: 2px solid var(--pastel-green);
+            opacity: 0; /* Start with invisible */
+            transition: opacity 0.1s ease-in-out 0.3s; /* Fade-in effect with delay */
+        }
 
-.box p {
-    max-width: 160px; /* Restrict the text width */
-    overflow: hidden; /* Hide any text that exceeds the max-width */
-    margin: auto; /* Center the text horizontally */
-	margin-top: 15px;
-}
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
+        .iframe-footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background: #111;
+            border-top: 2px solid var(--pastel-green);
+        }
 
-.box img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-	margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-}
-		
-		::-webkit-scrollbar {
-  width: 8px;
-}
+        .iframe-footer button {
+            background: var(--pastel-green);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: #000;
+        }
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+        .iframe-footer button:hover {
+            background: #4db84d;
+        }
+    </style>
+</head>
 
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-}
-		
-.group {
-  display: flex;
-  line-height: 28px;
-  align-items: center;
-  position: relative;
-  max-width: 190px;
-}
-
-.input {
-  width: 100%;
-  height: 40px;
-  line-height: 28px;
-  padding: 0 1rem;
-  padding-left: 2.5rem;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  outline: none;
-  background-color: transparent;
-  color: #eeeeee;
-  transition: 0.3s ease;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.3);
-  z-index: 2;
-}
-
-.input::placeholder {
-  color: #eeeeee;
-}
-
-.input:focus,
-input:hover {
-  outline: none;
-}
-
-.icon {
-  position: absolute;
-  left: 1rem;
-  fill: #eeeeee;
-  width: 1rem;
-  height: 1rem;
-  z-index: 2;
-}
-
-.notification-bar {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30px;
-    background-color: rgba(0, 0, 0, 0);
-    color: yellow;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    z-index: 1000; /* Ensure the notification bar is above other content */
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-	text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.6);
-	opacity: 0;
-	font-weight: bold;
-	margin-top: 10px;
-	z-index: 2;
-}
-
-.social-buttons {
-	position: absolute;
-    display: flex;
-    align-items: center;
-    margin-left: 0; /* No margin to the left */
-    padding-left: 0; /* Ensure no padding on the left */
-	left: 250px;
-	z-index: 2;
-}
-
-.social-buttons a {
-    margin-left: 0; /* No margin between buttons */
-}
-
-.social-buttons img {
-    width: 40px;
-    height: 40px;
-    transition: all 0.3s;
-}
-
-.social-buttons img:hover {
-    filter: brightness(70%);
-}
-
-.red-text {
-	color: red;
-	font-weight: bold;
-}
-
-.smaller-text {
-	font-size: 10px;
-	color: white;
-}
-
-.smaller-red-text {
-	font-size: 10px;
-	color: red;
-	font-weight: bold;
-}
-</style>
 <body>
-	<nav>
-	<p class="plogo">Camden's Games</p>
-	<div class="social-buttons">
-        <a href="https://github.com/camdensgms/camdensgms.github.io">
-            <img src="https://raw.githubusercontent.com/camdensgms/camdensgms.github.io/main/textures/icons/github.png" alt="GitHub">
-        </a>
-    </div>
-
-
-    <div class="group">
-        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
-        </svg>
+    <nav>
+        <div class="nav-title">Camden's Games 2.0</div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search games..." oninput="filterGames()">
         </div>
-        <div class="group">
-		<svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
-    <g>
-      <path
-        d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
-      ></path>
-    </g>
-  </svg>
-        <input type="text" id="searchInput" oninput="filterGames()" placeholder="Search games" class="input">
-    </div>
     </nav>
-	
-	<div class="notification-bar">
-        <p></p>
+
+    <section class="main-section" id="gameSection">
+        <div class="game-button" data-url="games/boxing-random/index.html">
+            <img src="textures/games/boxingrandom.webp" alt="Game 1">
+            <p class="game-title">Boxing Random</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+        <div class="game-button" data-url="games/basket-random/index.html">
+            <img src="textures/games/basketrandom.webp" alt="Game 2">
+            <p class="game-title">Basket Random</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+        <div class="game-button" data-url="games/soccer-random/index.html">
+            <img src="textures/games/soccerrandom.webp" alt="Game 2">
+            <p class="game-title">Soccer Random</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+        <div class="game-button" data-url="games/temple-of-boom/index.html">
+            <img src="textures/games/templeofboom.webp" alt="Game 2">
+            <p class="game-title">Temple Of Boom</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+    </section>
+
+    <div class="iframe-modal" id="iframeModal">
+        <div class="iframe-container">
+            <iframe id="gameIframe"></iframe>
+            <div class="iframe-footer">
+                <button onclick="fullscreenIframe()">Fullscreen</button>
+                <button id="openNewTab">Open in New Tab</button>
+                <button onclick="closeModal()">Close</button>
+            </div>
+        </div>
     </div>
-	
-	<div class="box-container" id="boxContainer">
-	
-	<div class="box" onclick="openGame(event,'https://sd592g.github.io/zj684od4lfg/', 'Minecraft')">
-    <img src="textures/games/minecraft.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Minecraft</p>
-    </div>
-</div>
-
-		<div class="box" onclick="openGame(event,'https://webglmath.github.io/drift-hunters/', 'Drift Hunters')">
-    <img src="textures/games/drifthunters.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Drift Hunters</p>
-    </div>
-</div>
-
-		<div class="box" onclick="openGame(event,'https://ubg365.github.io/subway-surfers/play.html', 'Subway Surfers')">
-    <img src="textures/games/subwaysurfers.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Subway Surfers</p>
-    </div>
-</div>
-
-		
-		<div class="box" onclick="openGame(event,'https://ubg77.github.io/game131022/drive-mad/', 'Drive Mad')">
-    <img src="textures/games/drivemad.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Drive Mad</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@0d8fb9c7430567ed0900902593eee6ba2ba8d297/ts3.xml&container=ig', 'Time Shooter 3')">
-    <img src="textures/games/timeshooter3.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Time Shooter 3</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/element@9cccb2fafb569c963501a5d818472b561121cea6/totm.xml&container=ig', 'Tomb of The Mask')">
-    <img src="textures/games/tombofthemask.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Tomb of The Mask</p>
-    </div>
-</div>
-
-		
-		<div class="box" onclick="openGame(event,'https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/RobiFet/workflow@60b41ef8c9123ae41b86bf04c9b39e1a5713aaa9/bin/gs.xml&container=ig', 'Gun Spin')">
-    <img src="textures/games/gunspin.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Gun Spin</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://ubg98.github.io/MonkeyMart/', 'Monkey Mart')">
-    <img src="textures/games/monkeymart.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Monkey Mart</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://unblocked-games.s3.amazonaws.com/games/snow-war-io/index.html', 'Snow War.io')">
-    <img src="textures/games/snowwario.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Snow War.io</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://unblocked-games.s3.amazonaws.com/games/2021/3/love-tester/unblocked.html', 'Love Tester')">
-    <img src="textures/games/lovetester.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Love Tester</p>
-    </div>
-</div>
-
-		
-		<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/89574567@71f165531792ae450fe0a522a52ba4e827344de2/sr3d.xml&container=ig', 'Snow Rider 3D')">
-    <img src="textures/games/snowrider3d.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Snow Rider 3D</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@77d7c057275710c07925ba951e9e56902d101c84/3sp.xml&container=ig', 'Slope')">
-    <img src="textures/games/slope.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Slope</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://docs-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/mind4ur/WPpluginsync@main/lib/edit/up.xml&container=ig', '1v1.lol')">
-    <img src="textures/games/1v1lol.webp" alt="image">
-    <div class="slide-up-box">
-        <p>1v1.lol</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@b8b8a03997f38305098c2f2f5fe14907463cd23b/build/ppo2/ppo2.xml&container=ig', 'Paper.io 2')">
-    <img src="textures/games/paperio2.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Paper.io 2</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@0d9afabd2522344a702e1b692ad58039f6290b0d/build/c-c/cc.xml&container=ig', 'Cookie Clicker')">
-    <img src="textures/games/cookieclicker.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Cookie Clicker</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://ubg98.github.io/ClickerHeroes/', 'Clicker Heroes')">
-    <img src="textures/games/clickerheros.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Clicker Heroes</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/awesome-aws@37c682c65a5a4c1ddc5b5ff2b840924526f209b4/scripts/blf.xml&container=ig', 'BitLife')">
-    <img src="textures/games/bitlife.webp" alt="image">
-    <div class="slide-up-box">
-        <p>BitLife</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@26eeeba4fc0707142876c24a52c87db7bf2d0a38/build/2048/2048.xml&container=ig', '2048')">
-    <img src="textures/games/2048.webp" alt="image">
-    <div class="slide-up-box">
-        <p>2048</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://abinbins.github.io/a7/jetpack-joyride/', 'Jetpack Joyride')">
-    <img src="textures/games/jetpackjoyride.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Jetpack Joyride</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://webglmath.github.io/rooftop-snipers/', 'Rooftop Snipers 2')">
-    <img src="textures/games/rooftopsnipers2.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Rooftop Snipers 2</p>
-    </div>
-</div>
-		
-		<div class="box" onclick="openGame(event,'https://unblocked76.github.io/chrome-dino/', 'Chrome Dino')">
-    <img src="textures/games/chromedino.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Chrome Dino</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://awesometanks.github.io/2/', 'Awesome Tanks 2')">
-    <img src="textures/games/awesometanks2.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Awesome Tanks 2</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://webglmath.github.io/stickmanhook/', 'Stickman Hook')">
-    <img src="textures/games/stickmanhook.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Stickman Hook</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/nurimoores/clawapps@58fb3d0c5415516fc50ca617833ee9d98dd0f987/chap6/mcc.xml&container=ig', 'Minecraft Classic')">
-    <img src="textures/games/minecraftclassic.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Minecraft Classic</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://slope-game.github.io/rungame/crossy-road/', 'Crossy Road')">
-    <img src="textures/games/crossyroad.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Crossy Road</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://webglmath.github.io/the-impossible-quiz-2/', 'The Impossible Quiz 2')">
-    <img src="textures/games/theimpossiblequiz2.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Impossible Quiz 2</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://ubg365.github.io/quake/', 'Quake')">
-    <img src="textures/games/quake.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Quake</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://arkshocer.github.io/sm64/', 'Super Mario 64')">
-    <img src="textures/games/supermario64.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Super Mario 64</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/godotpack@46eac786a55b026b450ab931f360d90910e75971/side/eman/face.xml&container=ig', 'Elastic Man')">
-    <img src="textures/games/elasticman.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Elastic Man</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://ubg98.github.io/TinyFishing/', 'Tiny Fishing')">
-    <img src="textures/games/tinyfishing.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Tiny Fishing</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/element@d16a581fca7911cde19e71e5cc182ddd255e6295/bs.xml&container=ig', 'Blocky Snakes')">
-    <img src="textures/games/blockysnakes.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Blocky Snakes</p>
-    </div>
-</div>
-
-		<div class="box" onclick="openGame(event,'https://cubes2048io.github.io/', 'Cubes 2048')">
-    <img src="textures/games/cubes2048.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Cubes 2048</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://gamemonetize.co/game/pkyyuilfrqkcdnmrxsg60j22ypk0peje/', 'Temple Run 2')">
-    <img src="textures/games/templerun2.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Temple Run 2</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Ffive-nights-at-freddy-s.xml&container=ig', 'FNAF')">
-    <img src="textures/games/fnaf.webp" alt="image">
-    <div class="slide-up-box">
-        <p>FNAF</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/Toolkit@93a27eabbbe5eb626af5b9b7dd0926ac16810a41/Code/Java/hole.xml&container=ig', 'Hole.io')">
-    <img src="textures/games/holeio.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Hole.io</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://ubg98.github.io/DriftBoss/', 'Drift Boss')">
-    <img src="textures/games/driftboss.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Drift Boss</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://ubg98.github.io/WordleUnlimited/', 'Drift Boss')">
-    <img src="textures/games/wordle.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Wordle</p>
-    </div>
-</div>
-
-		<div class="box" onclick="openGame(event,'https://tbg95.github.io/monster-tracks/game.html', 'Monster Tracks')">
-    <img src="textures/games/monstertracks.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Monster Tracks</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://webglmath.github.io/eggy-car/', 'Eggy Car')">
-    <img src="textures/games/eggycar.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Eggy Car</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://shawn43.github.io/retrobowl-unlimited/', 'Retrobowl')">
-    <img src="textures/games/retrobowl.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Retrobowl</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://classroomjq.github.io/retro-bowl-college/', 'Retrobowl')">
-    <img src="textures/games/retrobowlcollege.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Retrobowl College</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://slope-game.github.io/new3723/soccer-random/', 'Soccer Random')">
-    <img src="textures/games/soccerrandom.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Soccer Random</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://bitlifeonline.github.io/volley-random/', 'Volleyball Random')">
-    <img src="textures/games/volleyrandom.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Volleyball Random</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://ubg98.github.io/BoxingRandom/', 'Boxing Random')">
-    <img src="textures/games/boxingrandom.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Boxing Random</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://ubg98.github.io/BasketRandom/', 'Basket Random')">
-    <img src="textures/games/basketrandom.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Basket Random</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://googleusercontent.b-cdn.net/pixel-shooter/ps.xml&container=ig', 'Pixel Shooter')">
-    <img src="textures/games/pixelshooter.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Pixel Shooter</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/8c491f21-7353-4f1f-b2a0-9544824c4d28%2Fhobo.xml&container=ig', 'Hobo')">
-    <img src="textures/games/hobo.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Hobo</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/TAhlQLDa/index.html', 'Flappy Bird')">
-    <img src="textures/games/flappybird.webp" alt="image">
-    <div class="slide-up-box">
-        <p>Flappy Bird</p>
-    </div>
-</div>
-
-<div class="box" onclick="openGame(event,'https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/godotpack@a808d88ace701810e236b7de190215fa6eed6415/side/gr-cr/gc.xml&container=ig', 'Grindcraft')">
-    <img src="textures/games/grindcraft.webp" alt="image">
-        <p>Grindcraft</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@93f7f60b0f054c956ca9b6622f2daeeeb450632c/death_run.xml&container=ig', 'Death Run 3D')">
-    <img src="textures/games/deathrun3d.webp" alt="image">
-        <p>Death Run 3D</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/vue-tables-2@7ed0fcdb35fa9b9b39ca92afcccbb83a9f47fc0a/lib/srd.xml&container=ig', 'Short Ride')">
-    <img src="textures/games/shortride.webp" alt="image">
-        <p>Short Ride</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/UnityExplorer@b38448679f5490397649c620ad8f803f834df565/UI/card.xml&container=ig', 'Car Drawing')">
-    <img src="textures/games/cardrawing.webp" alt="image">
-        <p>Car Drawing</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fhobo-prison-brawl.xml&container=ig')">
-    <img src="textures/games/hoboprisonbrawl.webp" alt="image">
-        <p>Hobo 2: Prison Brawl</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/8c491f21-7353-4f1f-b2a0-9544824c4d28%2Fhobo3-wanted.xml&container=ig')">
-    <img src="textures/games/hobowanted.webp" alt="image">
-        <p>Hobo 3: Wanted</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/8c491f21-7353-4f1f-b2a0-9544824c4d28%2Fhobo-4-total-war.xml&container=ig')">
-    <img src="textures/games/hobototalwar.webp" alt="image">
-        <p>Hobo 4: Total War</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://35310661-713299160685702142.preview.editmysite.com/uploads/b/1285710-351987768514667200/files/bab.xml&container=ig')">
-    <img src="textures/games/ballsandbricks.webp" alt="image">
-        <p>Balls and Bricks</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://107867007-460744551111723157.preview.editmysite.com/uploads/b/148239657-716773247581577736/files/mf.xml&container=ig')">
-    <img src="textures/games/mergefruits.webp" alt="image">
-        <p>Merge Fruits</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/learning-Python-3@c4e9b8674140aaedb18b0546400d6f6ac5b34949/scripts/dl3.xml&container=ig')">
-    <img src="textures/games/ducklife3.webp" alt="image">
-        <p>Duck Life 3</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://script.google.com/macros/s/AKfycbzjgnGGeTNL2DTjJzVx3WGvsLjEyA47O6xYss-ijTLWWwrQv9siK9Gn_QqNDlDkrc27/exec')">
-    <img src="textures/games/nuggetclicker.webp" alt="image">
-        <p>Nugget Clicker</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://geometryedu.github.io/s1/idle-ants')">
-    <img src="textures/games/idleants.webp" alt="image">
-        <p>Idle Ants</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://ubg98.github.io/8BallPool/')">
-    <img src="textures/games/8ballpool.webp" alt="image">
-        <p>8 Ball Pool</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://tbg95.github.io/rainbow-stacker/')">
-    <img src="textures/games/stack.webp" alt="image">
-        <p>Stack</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://classroom-6x.org/games/golf-champions/')">
-    <img src="textures/games/golfchampions.webp" alt="image">
-        <p>Golf Champions</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://tbg95.github.io/candy-jump/')">
-    <img src="textures/games/candyjump.webp" alt="image">
-        <p>Candy Jump</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://slope-game.github.io/new3623/bottle-flip-2/')">
-    <img src="textures/games/bottleflip.webp" alt="image">
-        <p>Bottle Flip</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://unblocked-games.s3.amazonaws.com/games/stickman-ragdoll/index.html')">
-    <img src="textures/games/stickmanragdoll.webp" alt="image">
-        <p>Stickman Ragdoll</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://ubg98.github.io/IdleBreakout/')">
-    <img src="textures/games/idlebreakout.webp" alt="image">
-        <p>Idle Breakout</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://ubg98.github.io/CrazyCars/')">
-    <img src="textures/games/crazycars.webp" alt="image">
-        <p>Crazy Cars</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://ubg44.github.io/PresidentSimulator/')">
-    <img src="textures/games/presidentsimulator.webp" alt="image">
-        <p>President Simulator</p>
-</div>
-
-<div class="box" onclick="openGame(event,'https://ubg44.github.io/MaskedForces/')">
-    <img src="textures/games/maskedforces.webp" alt="image">
-        <p>Masked Forces</p>
-</div>
-
-
 
     <script>
-	function openGame(event, url, title) {
-    const imgSrc = event.currentTarget.querySelector('img').src;
-    sessionStorage.setItem('gameImg', imgSrc);
-    sessionStorage.setItem('gameUrl', url);
-    sessionStorage.setItem('gameTitle', title);
-    window.location.href = 'gm.html';
-}
+        // Open Modal and Load Game
+        const modal = document.getElementById('iframeModal');
+        const iframe = document.getElementById('gameIframe');
+        const iframeContainer = document.querySelector('.iframe-container');
 
-		function filterGames() {
-            var input, filter, boxContainer, boxes, box, p, i, txtValue;
-            input = document.getElementById("searchInput");
-            filter = input.value.toUpperCase();
-            boxContainer = document.getElementById("boxContainer");
-            boxes = boxContainer.getElementsByClassName("box");
-            for (i = 0; i < boxes.length; i++) {
-                box = boxes[i];
-                p = box.getElementsByTagName("p")[0];
-                txtValue = p.textContent || p.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    box.style.display = "";
+        document.querySelectorAll('.game-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const url = button.getAttribute('data-url');
+                iframe.src = url;
+                modal.style.display = 'flex';
+                
+                // Trigger fade-in animation for modal and iframe
+                setTimeout(() => {
+                    modal.style.opacity = 1;
+                    iframeContainer.style.opacity = 1;
+                }, 50);
+
+                document.getElementById('openNewTab').onclick = () => window.open(url, '_blank');
+            });
+        });
+
+        function closeModal() {
+            modal.style.opacity = 0;
+            iframeContainer.style.opacity = 0;
+            setTimeout(() => {
+                modal.style.display = 'none';
+                iframe.src = ''; // Clear the iframe source when closing
+            }, 500); // Match the fade-out duration
+        }
+
+        function fullscreenIframe() {
+            if (iframe.requestFullscreen) iframe.requestFullscreen();
+        }
+
+        // Toggle Favorite
+        function toggleFavorite(star) {
+            const button = star.parentElement;
+            const section = document.getElementById('gameSection');
+            if (star.classList.contains('favorited')) {
+                star.classList.remove('favorited');
+                section.appendChild(button);
+            } else {
+                star.classList.add('favorited');
+                section.insertBefore(button, section.firstChild);
+            }
+        }
+
+        // Filter Games
+        function filterGames() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const gameButtons = document.querySelectorAll(".game-button");
+
+            gameButtons.forEach((button) => {
+                const title = button.querySelector(".game-title").textContent.toLowerCase();
+                if (title.includes(input)) {
+                    button.style.display = "block";
                 } else {
-                    box.style.display = "none";
+                    button.style.display = "none";
                 }
-            }
+            });
         }
-	
-        function goBack() {
-            window.history.back();
-        }
-        function toggleFullScreen() {
-            const iframe = document.getElementById('gameIframe');
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen();
-            } else if (iframe.webkitRequestFullscreen) {
-                iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) {
-                iframe.msRequestFullscreen();
-            }
-        }
-		
-		function aboutBlank(url) {
-        var newTab = window.open('', '_blank');
-        newTab.document.write('<html><body style="margin:0;"><iframe width="100%" height="100%" src="' + url + '" frameborder="0"></iframe></body></html>');
-        newTab.document.close();
-    }
-		
-		
-
     </script>
 </body>
 
