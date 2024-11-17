@@ -22,7 +22,7 @@
         }
 
         :root {
-            --pastel-green: #66ff66;
+            --accent: #f1f1f1;
         }
 		
 		::-webkit-scrollbar {
@@ -30,7 +30,7 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background-color: var(--pastel-green); /* Green thumb color */
+            background-color: var(--accent); /* Green thumb color */
             border-radius: 10px; /* Rounded edges */
         }
 
@@ -40,28 +40,42 @@
         }
 
         nav {
-            background: rgba(0, 0, 0, 0.9);
-            border-bottom: 2px solid var(--pastel-green);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-            height: 65px;
-        }
+    background: rgba(16, 16, 16, 0.7); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 60px;
+    backdrop-filter: blur(10px); /* Intense blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+}
 
         .nav-title {
-            font-family: 'Tektur', sans-serif;
-            font-size: 1.8rem;
-            color: var(--pastel-green);
-        }
+    font-family: 'Tektur', sans-serif;
+    font-size: 1.8rem;
+    color: var(--accent);
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.8), 0 0 6px rgba(255, 255, 255, 0.6), 0 0 11px rgba(255, 255, 255, 0.4);
+	user-select: none;
+}
 
         .search-bar {
             display: flex;
             align-items: center;
-            background: #111;
-            border: 1px solid var(--pastel-green);
-            border-radius: 5px;
-            padding: 5px;
+            background: rgba(16, 16, 16, 0.3);
+            border-radius: 25px;
+            padding: 2px;
+			margin-right: 35px;
+			box-shadow: 0 2px 5px rgba(255, 255, 255, 0.5);
+			backdrop-filter: blur(10px); /* Intense blur effect */
+			-webkit-backdrop-filter: blur(10px); /* For Safari */
+			transition: all 0.2s;
+        }
+		
+		.search-bar:hover {
+			box-shadow: 0 4px 7px rgba(255, 255, 255, 0.6);
         }
 
         .search-bar input {
@@ -69,21 +83,24 @@
             border: none;
             outline: none;
             color: #fff;
-            padding: 5px;
+            padding: 10px;
             font-size: 1rem;
             width: 200px;
+			border-radius: 25px;
         }
 
         .main-section {
-            padding: 20px;
+            padding: 25px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+			margin-bottom: 50px;
+			padding-top: 60px;
         }
 
         .game-button {
-            background-color: #111;
-            border: 2px solid var(--pastel-green);
+            background: linear-gradient(45deg, #111, #121212);
+            border: 2px solid #252525;
             border-radius: 10px;
             margin: 15px;
             padding: 10px;
@@ -102,7 +119,8 @@
 
         .game-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 15px rgba(102, 255, 102, 0.3);
+            box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3);
+			border: 2px solid #ffffff;
         }
 
         .star-icon {
@@ -149,7 +167,7 @@
             width: 80%;
             height: 70%;
             background: #111;
-            border: 2px solid var(--pastel-green);
+            border: 2px solid var(--accent);
             opacity: 0; /* Start with invisible */
             transition: opacity 0.1s ease-in-out 0.3s; /* Fade-in effect with delay */
         }
@@ -165,11 +183,10 @@
             justify-content: space-between;
             padding: 10px;
             background: #111;
-            border-top: 2px solid var(--pastel-green);
         }
 
         .iframe-footer button {
-            background: var(--pastel-green);
+            background: var(--accent);
             border: none;
             padding: 10px;
             cursor: pointer;
@@ -189,11 +206,22 @@
     color: #fff;
     margin-top: 10px;
 }
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* To ensure particles are behind other content */
+}
+
 		
     </style>
 </head>
 
 <body>
+<div id="particles-js"></div>
     <nav>
         <div class="nav-title">Camden's Games 2.0</div>
         <div class="search-bar">
@@ -310,6 +338,12 @@
             <span class="star-icon" onclick="toggleFavorite(this)">★</span>
         </div>
 		
+		<div class="game-button" data-url="games/snow-rider-3d/index.html">
+            <img src="textures/games/snowrider3d.webp" alt="Game 2">
+            <p class="game-title">Snow Rider 3D</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+		
     </section>
 
     <div class="iframe-modal" id="iframeModal">
@@ -422,6 +456,10 @@
             });
         }
     </script>
+
+<script src="particles.js"></script>
+<script src="app.js"></script>
+
 </body>
 
 </html>
