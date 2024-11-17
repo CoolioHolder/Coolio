@@ -5,7 +5,10 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300..900&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300..900&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camden's Games 2.0</title>
@@ -20,6 +23,20 @@
 
         :root {
             --pastel-green: #66ff66;
+        }
+		
+		::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--pastel-green); /* Green thumb color */
+            border-radius: 10px; /* Rounded edges */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #333; /* Track color */
+            border-radius: 10px; /* Rounded edges */
         }
 
         nav {
@@ -96,6 +113,7 @@
             color: transparent;
             cursor: pointer;
             transition: color 0.3s;
+			z-index: 999;
         }
 
         .game-button:hover .star-icon {
@@ -163,6 +181,15 @@
         .iframe-footer button:hover {
             background: #4db84d;
         }
+		
+		.game-title {
+    font-family: "Geist Mono", monospace;
+    font-weight: 300; /* Lighter weight */
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 10px;
+}
+		
     </style>
 </head>
 
@@ -211,8 +238,77 @@
             <span class="star-icon" onclick="toggleFavorite(this)">★</span>
         </div>
 		
+		<div class="game-button" data-url="games/drive-mad/index.html">
+            <img src="textures/games/drivemad.webp" alt="Game 2">
+            <p class="game-title">Drive Mad</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
 		
+		<div class="game-button" data-url="games/eaglercraft/index.html">
+            <img src="textures/games/eaglercraft.webp" alt="Game 2">
+            <p class="game-title">Eaglercraft 1.5.2</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
 		
+		<div class="game-button" data-url="games/gunspin/index.html">
+            <img src="textures/games/gunspin.webp" alt="Game 2">
+            <p class="game-title">Gunspin</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+		
+		<div class="game-button" data-url="games/1v1-lol/index.html">
+            <img src="textures/games/1v1lol.webp" alt="Game 2">
+            <p class="game-title">1v1.lol</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+		
+		<div class="game-button" data-url="games/2048/index.html">
+            <img src="textures/games/2048.webp" alt="Game 2">
+            <p class="game-title">2048</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+		
+		<div class="game-button" data-url="games/awesome-tanks-2/index.html">
+            <img src="textures/games/awesometanks2.webp" alt="Game 2">
+            <p class="game-title">Awesome Tanks 2</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+		
+		<div class="game-button" data-url="games/bit-life/index.html">
+            <img src="textures/games/bitlife.webp" alt="Game 2">
+            <p class="game-title">Bitlife</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+		
+		<div class="game-button" data-url="games/cookie-clicker/index.html">
+            <img src="textures/games/cookieclicker.webp" alt="Game 2">
+            <p class="game-title">Cookie Clicker</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+		
+		<div class="game-button" data-url="games/crossy-road/index.html">
+            <img src="textures/games/crossyroad.webp" alt="Game 2">
+            <p class="game-title">Crossy Road</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+		
+		<div class="game-button" data-url="games/drift-boss/index.html">
+            <img src="textures/games/driftboss.webp" alt="Game 2">
+            <p class="game-title">Drift Boss</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+		
+		<div class="game-button" data-url="games/monkey-mart/index.html">
+            <img src="textures/games/monkeymart.webp" alt="Game 2">
+            <p class="game-title">Monkey Mart</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
+		
+		<div class="game-button" data-url="games/idle-breakout/index.html">
+            <img src="textures/games/idlebreakout.webp" alt="Game 2">
+            <p class="game-title">Idle Breakout</p>
+            <span class="star-icon" onclick="toggleFavorite(this)">★</span>
+        </div>
 		
     </section>
 
@@ -228,11 +324,26 @@
     </div>
 
     <script>
-        // Open Modal and Load Game
         const modal = document.getElementById('iframeModal');
         const iframe = document.getElementById('gameIframe');
         const iframeContainer = document.querySelector('.iframe-container');
 
+        // Load favorites from localStorage on page load
+        window.onload = () => {
+            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            document.querySelectorAll('.game-button').forEach(button => {
+                const gameTitle = button.querySelector('.game-title').textContent;
+                if (favorites.includes(gameTitle)) {
+                    const star = button.querySelector('.star-icon');
+                    star.classList.add('favorited');
+                    // Move the favorited game to the top
+                    const section = document.getElementById('gameSection');
+                    section.insertBefore(button, section.firstChild);
+                }
+            });
+        };
+
+        // Open Modal and Load Game
         document.querySelectorAll('.game-button').forEach(button => {
             button.addEventListener('click', () => {
                 const url = button.getAttribute('data-url');
@@ -262,18 +373,39 @@
             if (iframe.requestFullscreen) iframe.requestFullscreen();
         }
 
-        // Toggle Favorite
+        // Toggle Favorite and save to localStorage
         function toggleFavorite(star) {
             const button = star.parentElement;
-            const section = document.getElementById('gameSection');
+            const gameTitle = button.querySelector('.game-title').textContent;
+            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
             if (star.classList.contains('favorited')) {
                 star.classList.remove('favorited');
-                section.appendChild(button);
+                // Remove from favorites
+                const index = favorites.indexOf(gameTitle);
+                if (index > -1) {
+                    favorites.splice(index, 1);
+                }
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+                button.style.order = ""; // Return to normal order
             } else {
                 star.classList.add('favorited');
+                // Add to favorites
+                favorites.push(gameTitle);
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+                // Move the favorited game to the top
+                const section = document.getElementById('gameSection');
                 section.insertBefore(button, section.firstChild);
             }
         }
+
+        // Prevent the star click from opening the game
+        document.querySelectorAll('.star-icon').forEach(star => {
+            star.addEventListener('click', function (event) {
+                event.stopPropagation(); // Prevent game from opening
+                toggleFavorite(star);
+            });
+        });
 
         // Filter Games
         function filterGames() {
