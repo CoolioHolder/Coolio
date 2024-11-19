@@ -28,7 +28,7 @@
 }
 
         :root {
-            --accent: #f1f1f1;
+            --accent: #fff;
         }
 		
 		::-webkit-scrollbar {
@@ -42,7 +42,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #333; /* Track color */
+    background-color: #222; /* Track color */
     border-radius: 10px; /* Rounded edges */
 }
 
@@ -64,7 +64,7 @@
     font-family: 'Tektur', sans-serif;
     font-size: 1.8rem;
     color: var(--accent);
-    text-shadow: 0 0 1px rgba(255, 255, 255, 0.8), 0 0 6px rgba(255, 255, 255, 0.6), 0 0 11px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 1px var(--accent), 0 0 3px var(--accent), 0 0 7px var(--accent);
 	user-select: none;
 }
 
@@ -102,7 +102,7 @@
             flex-wrap: wrap;
             justify-content: center;
 			margin-bottom: 50px;
-			padding-top: 100px;
+			padding-top: 60px;
         }
 
         .game-button {
@@ -126,31 +126,8 @@
 
         .game-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3);
-			border: 2px solid #ffffff;
-        }
-
-        .star-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1.7rem;
-            color: transparent;
-            cursor: pointer;
-            transition: color 0.3s;
-			z-index: 999;
-        }
-
-        .game-button:hover .star-icon:not(.favorited) {
-    color: gray;
-}
-
-        .star-icon:hover {
-            color: yellow;
-        }
-
-        .star-icon.favorited {
-            color: yellow;
+            box-shadow: 0 8px 15px color-mix(in srgb, var(--accent) 30%, transparent);
+			border: 2px solid var(--accent);
         }
 
         /* Modal Styles */
@@ -166,13 +143,13 @@
             align-items: center;
             z-index: 10;
             opacity: 0; /* Start with invisible */
-            transition: opacity 0.5s ease-in-out; /* Fade-in effect */
+            transition: opacity 0.3s ease-in-out; /* Fade-in effect */
         }
 
         .iframe-container {
             position: relative;
-            width: 80%;
-            height: 70%;
+            width: 100%;
+            height: 90%;
             background: #111;
             opacity: 0; /* Start with invisible */
             transition: opacity 0.1s ease-in-out 0.3s; /* Fade-in effect with delay */
@@ -187,7 +164,7 @@
         .iframe-footer {
             display: flex;
             justify-content: space-between;
-            padding: 10px;
+            padding: 15px;
             background: #111;
         }
 
@@ -232,9 +209,18 @@
         <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Search games..." oninput="filterGames()">
         </div>
+		
     </nav>
 
-    <section class="main-section" id="gameSection">
+	<section class="main-section" id="gameSection">
+	
+	<section class="main-section" id="gameSection">
+        <div class="game-button" data-url="https://docs.google.com/forms/d/e/1FAIpQLSfGL1e7OqLF33SESfHseKldPbCApT5INSAiy2gx7-nUQJaUvQ/viewform">
+            <img src="textures/icons/suggestion.webp" alt="Game 1">
+            <p class="game-title">Suggestion</p>
+            
+        </div>
+	
         <div class="game-button" data-url="games/boxing-random/index.html">
             <img src="textures/games/boxingrandom.webp" alt="Game 1">
             <p class="game-title">Boxing Random</p>
@@ -271,6 +257,12 @@
             
         </div>
 		
+		<div class="game-button" data-url="games/sausage-flip/index.html">
+            <img src="textures/games/sausageflip.webp" alt="image">
+            <p class="game-title">Sausage Flip</p>
+            
+        </div>
+		
 		<div class="game-button" data-url="games/stickman-hook/index.html">
             <img src="textures/games/stickmanhook.webp" alt="image">
             <p class="game-title">Stickman Hook</p>
@@ -280,6 +272,12 @@
 		<div class="game-button" data-url="games/drive-mad/index.html">
             <img src="textures/games/drivemad.webp" alt="image">
             <p class="game-title">Drive Mad</p>
+            
+        </div>
+		
+		<div class="game-button" data-url="games/super-mario-64/index.html">
+            <img src="textures/games/supermario64.webp" alt="image">
+            <p class="game-title">Super Mario 64</p>
             
         </div>
 		
@@ -307,15 +305,45 @@
             
         </div>
 		
+		<div class="game-button" data-url="games/traffic-rush/index.html">
+            <img src="textures/games/trafficrush.webp" alt="image">
+            <p class="game-title">Traffic Rush</p>
+            
+        </div>
+		
 		<div class="game-button" data-url="games/awesome-tanks-2/index.html">
             <img src="textures/games/awesometanks2.webp" alt="image">
             <p class="game-title">Awesome Tanks 2</p>
             
         </div>
 		
+		<div class="game-button" data-url="games/bloxorz/index.html">
+            <img src="textures/games/bloxorz.webp" alt="image">
+            <p class="game-title">Bloxorz</p>
+            
+        </div>
+		
+		<div class="game-button" data-url="games/idle-ants/index.html">
+            <img src="textures/games/idleants.webp" alt="image">
+            <p class="game-title">Idle Ants</p>
+            
+        </div>
+		
+		<div class="game-button" data-url="games/wordle-unlimited/index.html">
+            <img src="textures/games/wordleunlimited.webp" alt="image">
+            <p class="game-title">Wordle Unlimited</p>
+            
+        </div>
+		
 		<div class="game-button" data-url="games/bit-life/index.html">
             <img src="textures/games/bitlife.webp" alt="image">
             <p class="game-title">Bitlife</p>
+            
+        </div>
+		
+		<div class="game-button" data-url="games/baldis-basics/index.html">
+            <img src="textures/games/baldisbasics.webp" alt="image">
+            <p class="game-title">Baldis Basics</p>
             
         </div>
 		
@@ -367,9 +395,21 @@
             
         </div>
 		
+		<div class="game-button" data-url="games/retrobowl-college/index.html">
+            <img src="textures/games/retrobowlcollege.webp" alt="image">
+            <p class="game-title">Retrobowl College</p>
+            
+        </div>
+		
 		<div class="game-button" data-url="games/subway-surfers/index.html">
             <img src="textures/games/subwaysurfers.webp" alt="image">
             <p class="game-title">Subway Surfers</p>
+            
+        </div>
+		
+		<div class="game-button" data-url="games/shell-shockers/index.html">
+            <img src="textures/games/shellshockers.webp" alt="image">
+            <p class="game-title">Shell Shockers</p>
             
         </div>
 		
@@ -382,6 +422,18 @@
 		<div class="game-button" data-url="games/time-shooter-3/index.html">
             <img src="textures/games/timeshooter3.webp" alt="image">
             <p class="game-title">Time Shooter 3</p>
+            
+        </div>
+		
+		<div class="game-button" data-url="games/learn-to-fly-1/index.html">
+            <img src="textures/icons/missing.webp" alt="image">
+            <p class="game-title">Learn To Fly 1</p>
+            
+        </div>
+		
+		<div class="game-button" data-url="games/learn-to-fly-2/index.html">
+            <img src="textures/icons/missing.webp" alt="image">
+            <p class="game-title">Learn To Fly 2</p>
             
         </div>
 		
@@ -400,6 +452,12 @@
 		<div class="game-button" data-url="games/clicker-heros/index.html">
             <img src="textures/games/clickerheros.webp" alt="image">
             <p class="game-title">Clicker Heros</p>
+            
+        </div>
+		
+		<div class="game-button" data-url="games/grindcraft/index.html">
+            <img src="textures/games/grindcraft.webp" alt="image">
+            <p class="game-title">Grindcraft</p>
             
         </div>
 		
@@ -466,6 +524,12 @@
 		<div class="game-button" data-url="games/paperio2/index.html">
             <img src="textures/games/paperio2.webp" alt="image">
             <p class="game-title">Paper.io 2</p>
+            
+        </div>
+		
+		<div class="game-button" data-url="games/worlds-hardest-game/index.html">
+            <img src="textures/games/worldshardestgame.webp" alt="image">
+            <p class="game-title">Worlds Hardest Game</p>
             
         </div>
 		
