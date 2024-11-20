@@ -149,7 +149,7 @@
         .iframe-container {
             position: relative;
             width: 100%;
-            height: 90%;
+            height: 100%;
             background: #111;
             opacity: 0; /* Start with invisible */
             transition: opacity 0.1s ease-in-out 0.3s; /* Fade-in effect with delay */
@@ -159,27 +159,6 @@
             width: 100%;
             height: 100%;
             border: none;
-        }
-
-        .iframe-footer {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px;
-            background: #111;
-        }
-
-        .iframe-footer button {
-            background: var(--accent);
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1rem;
-            color: #000;
-        }
-
-        .iframe-footer button:hover {
-            
         }
 		
 		.game-title {
@@ -197,6 +176,33 @@
     top: 0;
     left: 0;
     z-index: -1; /* To ensure particles are behind other content */
+}
+
+.modalbuttons button {
+    background: rgba(16, 16, 16, 0.7);
+    border: none;
+    border-radius: 5px;
+    padding: 4px 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+	z-index: 50;
+	top: 0;
+	position: absolute;
+}
+
+.modalbuttons button:hover {
+    background: rgba(30, 30, 30, 0.7);
+    transform: scale(1.1);
+}
+
+.modalbuttons button:active {
+    transform: scale(0.95);
+}
+
+.modalbuttons img {
+    width: 25px; /* Set image size */
+    height: 25px; /* Set image size */
 }
 		
     </style>
@@ -254,12 +260,6 @@
 		<div class="game-button" data-url="games/slope/index.html">
             <img src="textures/games/slope.webp" alt="image">
             <p class="game-title">Slope</p>
-            
-        </div>
-		
-		<div class="game-button" data-url="games/sausage-flip/index.html">
-            <img src="textures/games/sausageflip.webp" alt="image">
-            <p class="game-title">Sausage Flip</p>
             
         </div>
 		
@@ -395,12 +395,6 @@
             
         </div>
 		
-		<div class="game-button" data-url="games/retrobowl-college/index.html">
-            <img src="textures/games/retrobowlcollege.webp" alt="image">
-            <p class="game-title">Retrobowl College</p>
-            
-        </div>
-		
 		<div class="game-button" data-url="games/subway-surfers/index.html">
             <img src="textures/games/subwaysurfers.webp" alt="image">
             <p class="game-title">Subway Surfers</p>
@@ -426,14 +420,8 @@
         </div>
 		
 		<div class="game-button" data-url="games/learn-to-fly-1/index.html">
-            <img src="textures/icons/missing.webp" alt="image">
-            <p class="game-title">Learn To Fly 1</p>
-            
-        </div>
-		
-		<div class="game-button" data-url="games/learn-to-fly-2/index.html">
-            <img src="textures/icons/missing.webp" alt="image">
-            <p class="game-title">Learn To Fly 2</p>
+            <img src="textures/games/learntofly.webp" alt="image">
+            <p class="game-title">Learn To Fly</p>
             
         </div>
 		
@@ -455,15 +443,9 @@
             
         </div>
 		
-		<div class="game-button" data-url="games/grindcraft/index.html">
-            <img src="textures/games/grindcraft.webp" alt="image">
-            <p class="game-title">Grindcraft</p>
-            
-        </div>
-		
 		<div class="game-button" data-url="games/duck-life-1/index.html">
             <img src="textures/games/ducklife1.webp" alt="image">
-            <p class="game-title">Duck Life 1</p>
+            <p class="game-title">Duck Life</p>
             
         </div>
 		
@@ -482,12 +464,6 @@
 		<div class="game-button" data-url="games/duck-life-4/index.html">
             <img src="textures/games/ducklife4.webp" alt="image">
             <p class="game-title">Duck Life 4</p>
-            
-        </div>
-		
-		<div class="game-button" data-url="games/flappy-bird/index.html">
-            <img src="textures/games/flappybird.webp" alt="image">
-            <p class="game-title">Flappy Bird</p>
             
         </div>
 		
@@ -527,9 +503,9 @@
             
         </div>
 		
-		<div class="game-button" data-url="games/worlds-hardest-game/index.html">
-            <img src="textures/games/worldshardestgame.webp" alt="image">
-            <p class="game-title">Worlds Hardest Game</p>
+		<div class="game-button" data-url="games/crazy-cars/index.html">
+            <img src="textures/games/crazycars.webp" alt="image">
+            <p class="game-title">Crazy Cars</p>
             
         </div>
 		
@@ -538,10 +514,11 @@
     <div class="iframe-modal" id="iframeModal">
         <div class="iframe-container">
             <iframe id="gameIframe"></iframe>
-            <div class="iframe-footer">
-                <button onclick="fullscreenIframe()">Fullscreen</button>
-                <button onclick="closeModal()">Close</button>
-            </div>
+                <div class="modalbuttons">
+    <button onclick="closeModal()">
+        <img src="textures/icons/exit.webp">
+    </button>
+</div>
         </div>
     </div>
 
@@ -592,15 +569,25 @@
         }
 
         function fullscreenIframe() {
-    let e = document.querySelector("iframe");
-    if (document.fullscreenElement) {
-        document.exitFullscreen();
-    } else {
-        e.requestFullscreen();
+    const gameIframeElement = document.getElementById("iframeModal");
+    try {
+        if (gameIframeElement.requestFullscreen) {
+            gameIframeElement.requestFullscreen();
+        } else if (gameIframeElement.webkitRequestFullscreen) { // Safari
+            gameIframeElement.webkitRequestFullscreen();
+        } else if (gameIframeElement.mozRequestFullScreen) { // Firefox
+            gameIframeElement.mozRequestFullScreen();
+        } else if (gameIframeElement.msRequestFullscreen) { // IE/Edge
+            gameIframeElement.msRequestFullscreen();
+        } else {
+            alert("Fullscreen is not supported in this browser.");
+        }
+    } catch (err) {
+        alert(`There was an error: ${err.message}`);
     }
 }
 
-        // Filter Games
+
         function filterGames() {
             const input = document.getElementById("searchInput").value.toLowerCase();
             const gameButtons = document.querySelectorAll(".game-button");
