@@ -15,14 +15,18 @@
     <style>
         /* General Styling */
         body {
-            margin: 0;
-            background-color: #0b0b0b;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-			opacity: 0;
-			transition: opacity 0.5s ease-in-out;
-        }
-		
+    margin: 0;
+    background-image: url('textures/bg.png'); /* Replace with your image path */
+    background-size: 100% 100%; /* Adjust the size (width x height) of the image */
+    background-position: top left; /* Positions the image in the top-left corner */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed during scrolling */
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+	
 		body.loaded {
     opacity: 1;
 }
@@ -51,7 +55,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 18px;
     height: 60px;
     backdrop-filter: blur(10px); /* Intense blur effect */
     -webkit-backdrop-filter: blur(10px); /* For Safari */
@@ -66,23 +70,31 @@
     color: var(--accent);
     text-shadow: 0 0 1px var(--accent), 0 0 3px var(--accent), 0 0 7px var(--accent);
 	user-select: none;
+	transition: transform 0.15s ease-in-out;
+	margin-bottom: 3px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+.nav-title:hover {
+transform: scale(1.05);
 }
 
         .search-bar {
             display: flex;
             align-items: center;
-            background: rgba(16, 16, 16, 0.3);
-            border-radius: 25px;
+            background: rgba(16, 16, 16, 0.1);
+            border-radius: 10px;
             padding: 2px;
 			margin-right: 35px;
-			box-shadow: 0 2px 5px rgba(255, 255, 255, 0.5);
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 			backdrop-filter: blur(10px); /* Intense blur effect */
 			-webkit-backdrop-filter: blur(10px); /* For Safari */
 			transition: all 0.2s;
         }
 		
 		.search-bar:hover {
-			box-shadow: 0 4px 7px rgba(255, 255, 255, 0.6);
+			transform: scale(1.05);
         }
 
         .search-bar input {
@@ -106,15 +118,16 @@
         }
 
         .game-button {
-            background: linear-gradient(45deg, #111, #121212);
-            border: 2px solid #252525;
+			backdrop-filter: blur(5px); /* Intense blur effect */
+            background: rgba(16, 16, 16, 0.8);
+            border: 1px solid #222;
             border-radius: 10px;
             margin: 15px;
             padding: 10px;
             width: 200px;
             text-align: center;
             position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
         }
 
@@ -126,8 +139,9 @@
 
         .game-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 15px color-mix(in srgb, var(--accent) 30%, transparent);
-			border: 2px solid var(--accent);
+			backdrop-filter: blur(5px); /* Intense blur effect */
+            background: rgba(16, 16, 16, 0.5);
+			text-shadow: 0 0 1px var(#000), 0 0 3px var(#000), 0 0 7px var(#000);
         }
 
         /* Modal Styles */
@@ -344,12 +358,6 @@
 		<div class="game-button" data-url="games/baldis-basics/index.html">
             <img src="textures/games/baldisbasics.webp" alt="image">
             <p class="game-title">Baldis Basics</p>
-            
-        </div>
-
-		<div class="game-button" data-url="games/motox3m/index.html">
-            <img src="textures/games/motox3m.webp" alt="image">
-            <p class="game-title">Moto X3M</p>
             
         </div>
 		
