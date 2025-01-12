@@ -13,7 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camden's Games 2.0</title>
     <style>
-        /* General Styling */
         body {
     margin: 0;
     background-image: url('textures/bg.png'); /* Replace with your image path */
@@ -80,32 +79,64 @@
 transform: scale(1.05);
 }
 
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-buttons button {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-buttons button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.nav-buttons button:active {
+    transform: scale(0.95);
+}
+
         .search-bar {
-            display: flex;
-            align-items: center;
-            background: rgba(16, 16, 16, 0.1);
-            border-radius: 10px;
-            padding: 2px;
-			margin-right: 35px;
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-			backdrop-filter: blur(10px); /* Intense blur effect */
-			-webkit-backdrop-filter: blur(10px); /* For Safari */
-			transition: all 0.2s;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(16, 16, 16, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.2s;
+    position: absolute;
+    width: 100%; /* Set a responsive width */
+    max-width: 500px; /* Limit the max width */
+    z-index: 1; /* Ensure it stays above other content */
+}
 		
-		.search-bar:hover {
-			transform: scale(1.05);
-        }
+		.search-bar:focus-within {
+    transform: scale(1.05);
+}
 
         .search-bar input {
-            background: transparent;
+			text-align: center;
+			font-family: "Geist Mono", monospace;
+            background: none;
             border: none;
             outline: none;
             color: #fff;
-            padding: 10px;
-            font-size: 1rem;
-            width: 200px;
-			border-radius: 25px;
+            padding: 20px;
+            font-size: 1.3rem;
+            width: 100%; /* Set a responsive width */
+			max-width: 500px;
+			border-radius: 10px;
         }
 
         .main-section {
@@ -114,7 +145,7 @@ transform: scale(1.05);
             flex-wrap: wrap;
             justify-content: center;
 			margin-bottom: 50px;
-			padding-top: 60px;
+			padding-top: 130px;
         }
 
         .game-button {
@@ -226,13 +257,19 @@ transform: scale(1.05);
 <div id="particles-js"></div>
     <nav>
         <div class="nav-title">Camden's Games 2.0</div>
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search games..." oninput="filterGames()">
-        </div>
-		
+		<div class="nav-buttons">
+        <button>Home</button>
+        <button>Games</button>
+        <button>Proxy</button>
+        <button>Settings</button>
+    </div>
     </nav>
 
 	<section class="main-section" id="gameSection">
+	
+	<div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search games" oninput="filterGames()">
+        </div>
 	
 	<section class="main-section" id="gameSection">
         <div class="game-button" data-url="https://docs.google.com/forms/d/e/1FAIpQLSfGL1e7OqLF33SESfHseKldPbCApT5INSAiy2gx7-nUQJaUvQ/viewform">
