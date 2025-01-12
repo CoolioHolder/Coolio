@@ -2,7 +2,7 @@ particlesJS('particles-js',
 {
   "particles": {
     "number": {
-      "value": 150, // Increase the number of particles for a denser snowfall
+      "value": 50, // Increase the number of particles for a denser snowfall
       "density": {
         "enable": true,
         "value_area": 800
